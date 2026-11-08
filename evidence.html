@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -366,7 +367,7 @@ nav a:hover {
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:22px;
-  margin:35px 0 55px;
+  margin:35px 0 30px;
 }
 
 .photo-card {
@@ -446,6 +447,39 @@ nav a:hover {
   line-height:1.8;
 }
 
+/* SOURCE ANALYSIS */
+
+.source-analysis {
+  background:#fff;
+  border-left:5px solid var(--pink);
+  padding:23px 25px;
+  margin:0 0 28px;
+}
+
+.source-analysis .analysis-label {
+  color:var(--pink);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+.source-analysis p {
+  color:#444;
+  font-size:12px;
+  line-height:1.9;
+}
+
+.source-analysis strong {
+  color:var(--black);
+}
+
+.source-analysis a {
+  color:var(--blue);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
 /* STAT CARDS */
 
 .stat-grid {
@@ -508,7 +542,7 @@ nav a:hover {
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:20px;
-  margin:40px 0;
+  margin:40px 0 25px;
 }
 
 .document-card {
@@ -605,6 +639,59 @@ nav a:hover {
   color:#333;
 }
 
+/* PAGE CONNECTIONS */
+
+.connection-panel {
+  margin:40px 0;
+  padding:30px;
+  border:1px solid #d8d4cd;
+  background:rgba(255,255,255,.65);
+}
+
+.connection-panel h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.connection-panel > p {
+  font-size:12px;
+  line-height:1.8;
+  color:#555;
+  max-width:750px;
+}
+
+.connection-links {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:22px;
+}
+
+.connection-links a {
+  display:block;
+  padding:17px;
+  background:var(--black);
+  color:white;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  line-height:1.7;
+  transition:.2s;
+}
+
+.connection-links a:hover {
+  background:var(--pink);
+  transform:translateY(-3px);
+}
+
+.connection-links span {
+  display:block;
+  color:var(--yellow);
+  font-size:9px;
+  margin-bottom:5px;
+}
+
 /* REFLECTION */
 
 .reflection {
@@ -623,6 +710,45 @@ nav a:hover {
 .reflection p {
   font-size:13px;
   line-height:1.9;
+}
+
+/* SOURCE EVALUATION */
+
+.evaluation-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin:35px 0;
+}
+
+.evaluation-card {
+  padding:25px;
+  background:#fff;
+  border-top:5px solid var(--blue);
+}
+
+.evaluation-card:nth-child(2) {
+  border-color:var(--pink);
+}
+
+.evaluation-card:nth-child(3) {
+  border-color:var(--orange);
+}
+
+.evaluation-card:nth-child(4) {
+  border-color:var(--purple);
+}
+
+.evaluation-card h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:29px;
+  margin-bottom:10px;
+}
+
+.evaluation-card p {
+  font-size:12px;
+  line-height:1.9;
+  color:#555;
 }
 
 /* SOURCE LINKS */
@@ -805,7 +931,8 @@ footer {
 
   .stat-grid,
   .document-grid,
-  .photo-gallery {
+  .photo-gallery,
+  .evaluation-grid {
     grid-template-columns:1fr;
   }
 
@@ -828,6 +955,10 @@ footer {
   .highlight,
   .reflection {
     padding:28px;
+  }
+
+  .connection-links {
+    grid-template-columns:1fr;
   }
 
   .footer-top {
@@ -919,9 +1050,10 @@ footer {
 
   <p class="hero-description">
     Stories explain what happened. Evidence helps show why it
-    mattered. Explore the records, statistics, photographs and
-    legislation that reveal the reality of racial inequality
-    and the changes demanded by the Civil Rights Movement.
+    mattered. Explore the original photographs, historical
+    records, statistics and legislation that reveal the reality
+    of racial inequality and the changes demanded by the
+    Civil Rights Movement.
   </p>
 
   <div class="sticker sticker-one">LOOK CLOSER.</div>
@@ -946,6 +1078,7 @@ footer {
 <div class="jump-nav">
   <a href="#history-evidence">01 / THE PROBLEM ↓</a>
   <a href="#impact-evidence">02 / THE CHANGE ↓</a>
+  <a href="#source-evaluation">03 / SOURCE EVALUATION ↓</a>
 </div>
 
 <!-- HISTORY EVIDENCE -->
@@ -977,7 +1110,9 @@ footer {
       Segregation affected public spaces, education, employment
       and political participation. The evidence below shows
       different ways racial inequality was experienced and
-      documented in the United States.
+      documented in the United States. It also helps explain
+      why activists challenged both individual acts of
+      discrimination and the institutions that supported them.
     </p>
   </div>
 
@@ -988,45 +1123,77 @@ footer {
     <article class="photo-card wide">
       <img
         src="https://loc.gov/exhibits/civil-rights-act/images/3c09643_enlarge.jpg"
-        alt="Rosa Parks being fingerprinted in Montgomery, Alabama, in 1956"
+        alt="Rosa Parks being fingerprinted in Montgomery, Alabama, in February 1956"
         loading="lazy"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       >
       <div class="image-fallback">Photograph unavailable. Open the Library of Congress record below to view it.</div>
       <div class="photo-caption">
-        <div class="photo-tag">MONTGOMERY / 1956</div>
+        <div class="photo-tag">MONTGOMERY / 22 FEBRUARY 1956</div>
         <h3>ROSA PARKS BEING FINGERPRINTED.</h3>
         <p>
-          This photograph documents Rosa Parks after her arrest
-          during the Montgomery Bus Boycott. Her arrest followed
-          her refusal to give up her seat on a segregated bus.
-          The boycott became a major campaign against segregation
-          in public transport.
+          This photograph records Rosa Parks being fingerprinted
+          by Deputy Sheriff D.H. Lackey in Montgomery. It was
+          taken after Parks and other activists were arrested
+          in connection with the Montgomery Bus Boycott.
+          The image places an individual activist inside the
+          wider legal and political response to organised
+          resistance against bus segregation.
         </p>
-        <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html#obj090" target="_blank" rel="noopener">
-          VIEW LIBRARY OF CONGRESS RECORD ↗
+        <a href="https://www.loc.gov/item/94500293/" target="_blank" rel="noopener">
+          VIEW THE ORIGINAL LIBRARY OF CONGRESS RECORD ↗
         </a>
       </div>
     </article>
 
+  </div>
+
+  <div class="source-analysis">
+    <div class="analysis-label">SOURCE ANALYSIS / WHAT THIS PHOTOGRAPH SHOWS</div>
+    <p>
+      <strong>Source type:</strong> Primary visual source — a photograph
+      taken in 1956 and preserved by the Library of Congress.
+      <br><br>
+      <strong>What it supports:</strong> It documents the arrest
+      process faced by Parks during the boycott and provides
+      visual evidence that protest could bring activists into
+      conflict with local authorities.
+      <br><br>
+      <strong>What it cannot prove alone:</strong> The photograph
+      does not explain the full boycott, the reasons for Parks'
+      activism or the experiences of every person involved.
+      Those claims need to be supported by other records and
+      historical accounts.
+      <br><br>
+      <strong>Page connection:</strong> This supports the discussion
+      of resistance and activism on the <a href="movement.html">Movement page</a>
+      and the Montgomery Bus Boycott timeline on the
+      <a href="history.html#emergence">History page</a>.
+    </p>
+  </div>
+
+  <div class="photo-gallery">
+
     <article class="photo-card">
       <img
-        src="https://loc.gov/exhibits/civil-rights-act/images/3c11236_enlarge.jpg"
-        alt="Civil rights lawyers congratulating one another after the Brown v Board decision in 1954"
+        src="https://loc.gov/exhibits/brown/images/br0099s.jpg"
+        alt="Thurgood Marshall, George E. C. Hayes and James M. Nabrit celebrating the Brown v Board decision in 1954"
         loading="lazy"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       >
-      <div class="image-fallback">Photograph unavailable. Open the Library of Congress record below to view it.</div>
+      <div class="image-fallback">Photograph unavailable. Open the Library of Congress record below.</div>
       <div class="photo-caption">
         <div class="photo-tag">SUPREME COURT / 1954</div>
         <h3>THE BROWN DECISION.</h3>
         <p>
           Thurgood Marshall, George E. C. Hayes and James M. Nabrit
-          celebrate the Supreme Court decision declaring school
-          segregation unconstitutional.
+          are shown celebrating the Supreme Court's decision
+          declaring racial segregation in public schools
+          unconstitutional. Their work demonstrates the
+          importance of legal action alongside public protest.
         </p>
-        <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html#obj083" target="_blank" rel="noopener">
-          VIEW LIBRARY OF CONGRESS RECORD ↗
+        <a href="https://www.loc.gov/exhibits/brown/brown-brown.html#obj99" target="_blank" rel="noopener">
+          VIEW THE LIBRARY OF CONGRESS RECORD ↗
         </a>
       </div>
     </article>
@@ -1034,7 +1201,7 @@ footer {
     <article class="photo-card">
       <img
         src="https://www.loc.gov/exhibits/brown/images/br0225s.jpg"
-        alt="Civil rights demonstrators marching in Washington in 1963"
+        alt="Civil rights demonstrators in Washington in 1963"
         loading="lazy"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       >
@@ -1043,13 +1210,14 @@ footer {
         <div class="photo-tag">WASHINGTON / 1963</div>
         <h3>DEMANDING EQUAL RIGHTS.</h3>
         <p>
-          Civil rights demonstrators march in Washington.
-          Protesters used public demonstrations to make
-          demands for equal treatment, education and
-          opportunity visible.
+          The March on Washington for Jobs and Freedom brought
+          a huge crowd to the nation's capital on 28 August 1963.
+          Demonstrators called for civil rights, fair employment
+          and equal opportunity. The event made the movement's
+          demands visible to a national and international audience.
         </p>
-        <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">
-          EXPLORE THE HISTORICAL COLLECTION ↗
+        <a href="https://www.loc.gov/item/2003654395/" target="_blank" rel="noopener">
+          VIEW A LIBRARY OF CONGRESS MARCH PHOTOGRAPH ↗
         </a>
       </div>
     </article>
@@ -1061,81 +1229,140 @@ footer {
         loading="lazy"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       >
-      <div class="image-fallback">Photograph unavailable. Open the Library of Congress record below to view it.</div>
+      <div class="image-fallback">Photograph unavailable. Open the Library of Congress Civil Rights Era collection below.</div>
       <div class="photo-caption">
         <div class="photo-tag">CIVIL RIGHTS LEADERSHIP</div>
         <h3>MARTIN LUTHER KING JR.</h3>
         <p>
           King became a prominent leader in the movement,
           advocating nonviolent protest and helping organise
-          campaigns against racial segregation.
+          campaigns against racial segregation. His leadership
+          was important, but the movement also depended on
+          local organisers, students, workers and community groups.
         </p>
-        <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html#obj092" target="_blank" rel="noopener">
-          VIEW LIBRARY OF CONGRESS RECORD ↗
+        <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">
+          EXPLORE THE LIBRARY OF CONGRESS COLLECTION ↗
         </a>
       </div>
     </article>
 
   </div>
 
+  <div class="source-analysis">
+    <div class="analysis-label">SOURCE ANALYSIS / PHOTOGRAPHS AS HISTORICAL EVIDENCE</div>
+    <p>
+      Photographs can show people, places, public demonstrations
+      and visible responses to events. They are valuable because
+      they preserve a visual record from the period being studied.
+      However, a photograph captures only one moment and one
+      viewpoint. It cannot automatically explain the motives
+      of everyone pictured or represent the experiences of
+      every person involved.
+      <br><br>
+      Comparing photographs with court records, laws, speeches
+      and eyewitness accounts creates a stronger and more
+      balanced understanding of the movement.
+    </p>
+  </div>
+
   <div class="section-label">EVIDENCE 02 / LAWS AND INSTITUTIONS</div>
+
+  <p class="lead-text">
+    Photographs help show what discrimination and resistance
+    looked like, but written records reveal how inequality
+    was supported by institutions. Court decisions, legislation
+    and government documents allow historians to examine the
+    rules that shaped people's lives.
+  </p>
 
   <div class="document-grid">
 
     <div class="document-card">
-      <div class="document-tag">PRIMARY SOURCE / LAW</div>
+      <div class="document-tag">HISTORICAL CONTEXT / SECONDARY SOURCE</div>
       <h3>JIM CROW SEGREGATION</h3>
       <p>
         Jim Crow laws and practices enforced racial separation
         across many areas of public life, particularly in
         Southern states. Segregation affected transport,
-        education and access to public facilities.
+        education and access to public facilities. The
+        Library of Congress collection provides historical
+        context and examples of the period.
       </p>
       <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">
-        VIEW HISTORICAL RECORDS ↗
+        EXPLORE THE HISTORICAL COLLECTION ↗
       </a>
     </div>
 
     <div class="document-card">
-      <div class="document-tag">PRIMARY SOURCE / EDUCATION</div>
+      <div class="document-tag">PRIMARY SOURCE / COURT DECISION</div>
       <h3>BROWN v. BOARD</h3>
       <p>
         The 1954 Supreme Court decision ruled that racial
         segregation in public schools was unconstitutional.
-        It challenged the legal basis of segregated education.
+        The Library of Congress preserves material connected
+        to the case, including a reading copy of Chief Justice
+        Earl Warren's opinion and records of the lawyers involved.
       </p>
-      <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html#obj082" target="_blank" rel="noopener">
-        VIEW THE HISTORICAL RECORD ↗
+      <a href="https://www.loc.gov/exhibits/naacp/the-civil-rights-era.html" target="_blank" rel="noopener">
+        VIEW THE BROWN v. BOARD RECORDS ↗
       </a>
     </div>
 
     <div class="document-card">
-      <div class="document-tag">PRIMARY SOURCE / VOTING</div>
+      <div class="document-tag">PRIMARY SOURCE / FEDERAL LEGISLATION</div>
       <h3>VOTING BARRIERS</h3>
       <p>
-        Literacy tests, poll taxes and other discriminatory
-        practices were used in some places to prevent Black
-        citizens from registering and voting.
+        Literacy tests and other discriminatory practices
+        were used in some places to prevent Black citizens
+        from registering and voting. The Voting Rights Act
+        of 1965 provides a government record of the federal
+        response to these barriers.
       </p>
       <a href="https://www.archives.gov/milestone-documents/voting-rights-act" target="_blank" rel="noopener">
-        VIEW NATIONAL ARCHIVES RECORD ↗
+        VIEW THE NATIONAL ARCHIVES RECORD ↗
       </a>
     </div>
 
     <div class="document-card">
-      <div class="document-tag">PRIMARY SOURCE / ACTIVISM</div>
+      <div class="document-tag">PRIMARY MATERIAL / ACTIVISM</div>
       <h3>THE MONTGOMERY BOYCOTT</h3>
       <p>
-        The Montgomery Bus Boycott demonstrated organised
-        resistance to segregated public transport. The
-        Library of Congress preserves photographs, accounts
-        and other material relating to the campaign.
+        The Library of Congress preserves photographs and
+        records connected to the Montgomery Bus Boycott.
+        These materials help document how local protest
+        developed into a coordinated campaign against
+        segregated public transport.
       </p>
-      <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html#obj277" target="_blank" rel="noopener">
-        EXPLORE PRIMARY SOURCES ↗
+      <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">
+        EXPLORE THE PRIMARY MATERIAL ↗
       </a>
     </div>
 
+  </div>
+
+  <div class="source-analysis">
+    <div class="analysis-label">SOURCE ANALYSIS / WHY COURT AND GOVERNMENT RECORDS MATTER</div>
+    <p>
+      <strong>Source type:</strong> Legal and government records,
+      including court decisions and federal legislation.
+      <br><br>
+      <strong>What they support:</strong> These records show that
+      racial inequality was not only a matter of personal
+      prejudice. It was also connected to laws, official
+      decisions and institutional practices. The Brown
+      decision provides evidence of a legal challenge to
+      school segregation.
+      <br><br>
+      <strong>Limitations:</strong> A court ruling does not prove
+      that every school immediately integrated or that all
+      discrimination ended. The existence of a law also does
+      not show how consistently it was enforced.
+      <br><br>
+      <strong>Page connection:</strong> This evidence supports the
+      explanation of segregation and social norms on the
+      <a href="history.html#deviance">History page</a>, and the
+      movement's goals on the <a href="movement.html">Movement page</a>.
+    </p>
   </div>
 
   <div class="highlight">
@@ -1145,7 +1372,10 @@ footer {
       historical accounts provide different forms of evidence.
       Together, they help establish that racial inequality
       was present in law, public institutions and everyday
-      opportunities.
+      opportunities. This is important because it shows
+      why activists demanded more than changes in individual
+      attitudes: they also challenged the systems that
+      maintained unequal treatment.
     </p>
   </div>
 
@@ -1156,8 +1386,35 @@ footer {
       it is difficult to understand why people organised
       protests, challenged laws and demanded change.
       These records help explain what the movement was
-      fighting against.
+      fighting against. They also provide a way to check
+      historical claims rather than relying on a single
+      person's interpretation.
     </p>
+  </div>
+
+  <div class="connection-panel">
+    <h3>FOLLOW THE RESEARCH.</h3>
+    <p>
+      The evidence in this section supports the earlier
+      research into the movement's identity, the conditions
+      that led to its emergence and the social norms it
+      challenged.
+    </p>
+
+    <div class="connection-links">
+      <a href="movement.html">
+        <span>01 / MOVEMENT</span>
+        PEOPLE, GOALS & ORGANISATIONS ↗
+      </a>
+      <a href="history.html#emergence">
+        <span>02 / HISTORY</span>
+        HISTORICAL EMERGENCE ↗
+      </a>
+      <a href="history.html#deviance">
+        <span>03 / HISTORY</span>
+        DEVIANCE & SOCIAL NORMS ↗
+      </a>
+    </div>
   </div>
 
 </section>
@@ -1192,19 +1449,20 @@ footer {
       1965 were major legislative achievements. Their
       original government records provide direct evidence
       of the legal changes secured during the movement.
+      Looking at the actual legislation helps distinguish
+      between what campaigners demanded and what the
+      government formally changed.
     </p>
   </div>
 
   <div class="section-label">EVIDENCE 03 / THE CIVIL RIGHTS ACT</div>
-
-  <!-- REPLACED PHOTOGRAPHS: BARNARD SCHOOL AND CLINTON, TENNESSEE -->
 
   <div class="photo-gallery">
 
     <article class="photo-card">
       <img
         src="https://cdn.loc.gov/service/pnp/ppmsca/03100/03119v.jpg"
-        alt="Students in an integrated classroom at Barnard School in Washington DC, 1955"
+        alt="Students in an integrated classroom at Barnard School in Washington DC"
         loading="lazy"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       >
@@ -1213,10 +1471,10 @@ footer {
         <div class="photo-tag">EDUCATION / 1955</div>
         <h3>A CLASSROOM BEGINS TO CHANGE.</h3>
         <p>
-          This photograph shows an integrated classroom at
-          Barnard School in Washington, DC. It provides a
-          visual record of school integration during the
-          years following the Brown v. Board decision.
+          This photograph is presented as a record of an
+          integrated classroom at Barnard School in Washington,
+          DC. It provides a visual example of school integration
+          during the years following the Brown v. Board decision.
         </p>
         <a href="https://www.loc.gov/pictures/item/2003654384/" target="_blank" rel="noopener">
           VIEW LIBRARY OF CONGRESS PHOTO RECORD ↗
@@ -1250,17 +1508,38 @@ footer {
 
   </div>
 
+  <div class="source-analysis">
+    <div class="analysis-label">SOURCE ANALYSIS / THE GAP BETWEEN LAW AND REALITY</div>
+    <p>
+      These photographs are useful because they help illustrate
+      that school integration was a process rather than an
+      instant result of a court decision. The Brown ruling
+      changed the legal position, but communities still
+      experienced resistance and conflict.
+      <br><br>
+      <strong>Important limitation:</strong> Two photographs cannot
+      represent every school or every student's experience.
+      They are examples that need to be considered alongside
+      court records, government documents and wider historical
+      research.
+      <br><br>
+      <strong>Page connection:</strong> This evidence supports the
+      discussion of the limits of legal change on the
+      <a href="impact.html#limitations">Impact page</a>.
+    </p>
+  </div>
+
   <div class="document-grid">
 
     <div class="document-card">
-      <div class="document-tag">UNITED STATES LAW / 2 JULY 1964</div>
+      <div class="document-tag">PRIMARY SOURCE / FEDERAL LAW</div>
       <h3>CIVIL RIGHTS ACT</h3>
       <p>
-        The Civil Rights Act of 1964 prohibited discrimination
-        in many public places and made employment discrimination
-        based on race, colour, religion, sex or national origin
-        illegal. It strengthened the federal government's
-        ability to address discrimination.
+        Signed on 2 July 1964, the Civil Rights Act prohibited
+        discrimination in many public places and addressed
+        discrimination in employment. It strengthened the
+        federal government's ability to challenge racial
+        discrimination.
       </p>
       <a href="https://www.archives.gov/milestone-documents/civil-rights-act" target="_blank" rel="noopener">
         READ THE ORIGINAL ACT ↗
@@ -1268,19 +1547,42 @@ footer {
     </div>
 
     <div class="document-card">
-      <div class="document-tag">UNITED STATES LAW / 6 AUGUST 1965</div>
+      <div class="document-tag">PRIMARY SOURCE / FEDERAL LAW</div>
       <h3>VOTING RIGHTS ACT</h3>
       <p>
-        The Voting Rights Act of 1965 targeted discriminatory
-        voting practices, including literacy tests used to
-        prevent eligible citizens from voting. It created
-        stronger federal protections for voting rights.
+        Signed on 6 August 1965, the Voting Rights Act targeted
+        discriminatory voting practices, including literacy
+        tests used to prevent eligible citizens from voting.
+        It created stronger federal protections for voting rights.
       </p>
       <a href="https://www.archives.gov/milestone-documents/voting-rights-act" target="_blank" rel="noopener">
         READ THE ORIGINAL ACT ↗
       </a>
     </div>
 
+  </div>
+
+  <div class="source-analysis">
+    <div class="analysis-label">SOURCE ANALYSIS / LEGISLATION AS EVIDENCE</div>
+    <p>
+      <strong>Source type:</strong> Primary sources — federal laws
+      passed by the United States government in 1964 and 1965.
+      <br><br>
+      <strong>What they support:</strong> The Acts provide direct
+      evidence that the federal government introduced legal
+      protections addressing discrimination in public life,
+      employment and voting.
+      <br><br>
+      <strong>What they cannot prove alone:</strong> The text of a
+      law does not show that discrimination disappeared after
+      it was passed. Its effects need to be considered alongside
+      evidence about enforcement, public participation and
+      continuing inequality.
+      <br><br>
+      <strong>Page connection:</strong> These documents directly
+      support the social change section of the
+      <a href="impact.html#social-change">Impact page</a>.
+    </p>
   </div>
 
   <div class="highlight">
@@ -1290,19 +1592,19 @@ footer {
       that the movement's demands led to formal changes
       in federal legislation. They also show that the
       government recognised the need to address racial
-      discrimination and barriers to voting.
+      discrimination and barriers to voting. Their passage
+      was a major achievement, even though the work of
+      achieving equality continued.
     </p>
   </div>
 
   <div class="section-label">EVIDENCE 04 / VOTING RIGHTS AND PUBLIC ACTION</div>
 
-  <!-- REPLACED PHOTOGRAPH: SELMA TO MONTGOMERY MARCH -->
-
   <div class="photo-gallery">
 
     <article class="photo-card wide">
       <img
-        src="https://cdn.loc.gov/service/pnp/cph/3d00000/3d02000/3d02300/3d02329v.jpg"
+        src="https://tile.loc.gov/storage-services/service/pnp/cph/3g00000/3g04000/3g04900/3g04914v.jpg"
         alt="Participants in the Selma to Montgomery voting rights march in 1965"
         loading="lazy"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
@@ -1312,18 +1614,42 @@ footer {
         <div class="photo-tag">SELMA TO MONTGOMERY / 1965</div>
         <h3>THE JOURNEY FOR EQUAL RIGHTS.</h3>
         <p>
-          Participants in the Selma to Montgomery march
-          demonstrated for voting rights. The 1965 marches
-          brought national attention to racial discrimination
-          in voter registration and helped build pressure
-          for federal voting rights protections.
+          James H. Karales photographed the Selma to Montgomery
+          voting rights march in March 1965. The image forms
+          part of the visual record of a campaign that brought
+          national attention to racial discrimination in voter
+          registration and helped build pressure for federal
+          voting rights protections.
         </p>
-        <a href="https://www.loc.gov/pictures/item/2003675346/" target="_blank" rel="noopener">
-          VIEW LIBRARY OF CONGRESS PHOTO RECORD ↗
+        <a href="https://www.loc.gov/item/97504801/" target="_blank" rel="noopener">
+          VIEW THE ORIGINAL LIBRARY OF CONGRESS PHOTO RECORD ↗
         </a>
       </div>
     </article>
 
+  </div>
+
+  <div class="source-analysis">
+    <div class="analysis-label">SOURCE ANALYSIS / PUBLIC PROTEST</div>
+    <p>
+      <strong>Source type:</strong> Primary visual source — a photograph
+      taken during the 1965 Selma to Montgomery campaign.
+      <br><br>
+      <strong>What it supports:</strong> The image documents the
+      presence and visibility of people participating in a
+      voting rights campaign. It provides visual evidence
+      of organised collective action.
+      <br><br>
+      <strong>What it cannot prove alone:</strong> The photograph
+      does not explain every event that led to the Voting
+      Rights Act or measure how much public opinion changed.
+      It needs to be considered alongside government records
+      and historical accounts of the campaign.
+      <br><br>
+      <strong>Page connection:</strong> This supports the
+      discussion of demonstrations and mobilisation on the
+      <a href="impact.html#methods">Impact page</a>.
+    </p>
   </div>
 
   <div class="evidence-box">
@@ -1335,10 +1661,38 @@ footer {
       It also provided for federal examiners to register
       eligible voters in certain jurisdictions.
       <br><br>
-      This is direct evidence of a change in the way
-      voting discrimination could be challenged and
-      addressed by the federal government.
+      The National Archives also records that approximately
+      250,000 Black Americans registered to vote by the end
+      of 1965. This statistic helps demonstrate the scale
+      of increased voter registration after the Act.
+      <br><br>
+      However, registration figures do not mean that every
+      eligible citizen could vote without difficulty or
+      that political equality had been fully achieved.
     </p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card blue">
+      <div class="stat-label">NATIONAL ARCHIVES / END OF 1965</div>
+      <div class="stat-number">250,000</div>
+      <p>
+        Approximately 250,000 Black Americans registered
+        to vote by the end of 1965, demonstrating an important
+        change in political participation.
+      </p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">WHY THE FIGURE MATTERS</div>
+      <div class="stat-number">1965</div>
+      <p>
+        The Voting Rights Act strengthened federal protection
+        against discriminatory voting practices. The figure
+        provides measurable evidence of increased registration
+        during the year it was introduced.
+      </p>
+    </div>
   </div>
 
   <div class="section-label" style="margin-top:55px;">EVIDENCE 05 / WHAT STILL REMAINED</div>
@@ -1351,6 +1705,8 @@ footer {
       immediately remove every form of racial inequality.
       Discrimination, economic disadvantage and unequal
       opportunities continued to affect communities.
+      This is why the movement's impact needs to be assessed
+      through both its achievements and its limitations.
     </p>
   </div>
 
@@ -1408,6 +1764,150 @@ footer {
       what changed and what remained. They show that the
       Civil Rights Movement had a lasting impact, even
       though it did not solve every problem it confronted.
+      This distinction is important when evaluating the
+      movement: its achievements were substantial, but
+      they were not the same as complete equality.
+    </p>
+  </div>
+
+  <div class="connection-panel">
+    <h3>THE EVIDENCE CONNECTS THE WHOLE PROJECT.</h3>
+    <p>
+      The records in this section provide support for the
+      movement's methods, its achievements and the challenges
+      that continued after major legislative victories.
+    </p>
+
+    <div class="connection-links">
+      <a href="impact.html#methods">
+        <span>01 / IMPACT</span>
+        METHODS & MOBILISATION ↗
+      </a>
+      <a href="impact.html#social-change">
+        <span>02 / IMPACT</span>
+        SOCIAL CHANGE ↗
+      </a>
+      <a href="impact.html#limitations">
+        <span>03 / IMPACT</span>
+        ONGOING CHALLENGES ↗
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- SOURCE EVALUATION -->
+
+<section class="content-section" id="source-evaluation">
+
+  <div class="section-label">03 / RESEARCH QUALITY</div>
+
+  <div class="section-top">
+    <div>
+      <h2>READ THE<br><span>RECORD.</span></h2>
+    </div>
+    <div class="section-number">03</div>
+  </div>
+
+  <p class="lead-text">
+    Historical evidence is not just about finding information.
+    It is also about deciding how reliable, useful and
+    representative that information is. Different sources
+    reveal different parts of the past, which is why this
+    research uses photographs, government documents,
+    legislation and historical collections together.
+  </p>
+
+  <div class="evidence-intro">
+    <div class="section-label" style="color:var(--yellow);">HOW TO EXAMINE A SOURCE</div>
+    <h3>WHO MADE IT?<br><span>WHY DOES IT MATTER?</span></h3>
+    <p>
+      A source should be considered in context. Its creator,
+      date, purpose and intended audience can affect what
+      information it provides. A photograph may document
+      an event, while a government law records an official
+      decision. Neither source automatically explains
+      the entire historical experience.
+    </p>
+  </div>
+
+  <div class="evaluation-grid">
+
+    <article class="evaluation-card">
+      <h3>01 / ORIGIN</h3>
+      <p>
+        Who created the source, and when? A photograph taken
+        during the movement is a primary visual source.
+        A modern museum article explaining that photograph
+        is a secondary source. Knowing the difference helps
+        identify how close the source is to the event.
+      </p>
+    </article>
+
+    <article class="evaluation-card">
+      <h3>02 / PURPOSE</h3>
+      <p>
+        Why was the source created? A government law records
+        official legislation. A newspaper photograph may
+        have been created to report an event to the public.
+        The original purpose can influence what was included
+        and what was left out.
+      </p>
+    </article>
+
+    <article class="evaluation-card">
+      <h3>03 / LIMITATIONS</h3>
+      <p>
+        What does the source leave out? One photograph cannot
+        represent every protester, and one law cannot show
+        how every community experienced its enforcement.
+        A source may be valuable while still providing
+        only a partial view.
+      </p>
+    </article>
+
+    <article class="evaluation-card">
+      <h3>04 / CORROBORATION</h3>
+      <p>
+        Can another independent source support the same
+        claim? Comparing photographs with legislation,
+        court records and statistics makes an argument
+        stronger because it does not depend on one
+        document or interpretation.
+      </p>
+    </article>
+
+  </div>
+
+  <div class="evidence-box">
+    <h3>PRIMARY AND SECONDARY SOURCES ARE BOTH USEFUL.</h3>
+    <p>
+      A primary source comes directly from the period being
+      studied or from someone who experienced it. Examples
+      include original laws, photographs, court documents
+      and contemporary records.
+      <br><br>
+      A secondary source is created later and interprets
+      or explains historical events. Museum exhibitions,
+      history books and educational articles can provide
+      useful context, but they should not be mistaken for
+      the original document or photograph they discuss.
+      <br><br>
+      Using both types allows the research to examine
+      original evidence while also understanding its
+      wider historical meaning.
+    </p>
+  </div>
+
+  <div class="reflection">
+    <h3>DON'T JUST COLLECT SOURCES. QUESTION THEM.</h3>
+    <p>
+      Strong historical research does not treat every
+      source as complete or unquestionable. It considers
+      what the evidence reveals, recognises what it cannot
+      establish and compares it with other records.
+      This makes the conclusions more balanced and
+      better supported.
     </p>
   </div>
 
@@ -1428,14 +1928,36 @@ footer {
 
   <p class="lead-text">
     The evidence on this page draws on government records,
-    historical collections and photographs. Explore the
-    original sources to check the information and discover
-    more about the Civil Rights Movement.
+    historical collections and photographs. Where possible,
+    links lead directly to the original record or the
+    institution that preserves it. Explore the sources
+    yourself to check the information and discover more
+    about the Civil Rights Movement.
   </p>
 
   <div class="source-note">
     <h3>PRIMARY SOURCES & GOVERNMENT RECORDS</h3>
     <ul>
+      <li>
+        <a href="https://www.loc.gov/item/94500293/" target="_blank" rel="noopener">
+          Library of Congress — Rosa Parks fingerprinting photograph, 1956 ↗
+        </a>
+      </li>
+      <li>
+        <a href="https://www.loc.gov/exhibits/brown/brown-brown.html#obj99" target="_blank" rel="noopener">
+          Library of Congress — Brown v. Board lawyers photograph, 1954 ↗
+        </a>
+      </li>
+      <li>
+        <a href="https://www.loc.gov/item/2003654395/" target="_blank" rel="noopener">
+          Library of Congress — Civil rights march in Washington, 1963 ↗
+        </a>
+      </li>
+      <li>
+        <a href="https://www.loc.gov/item/97504801/" target="_blank" rel="noopener">
+          Library of Congress — Selma to Montgomery march photograph, 1965 ↗
+        </a>
+      </li>
       <li>
         <a href="https://www.archives.gov/milestone-documents/civil-rights-act" target="_blank" rel="noopener">
           National Archives — Civil Rights Act of 1964 ↗
@@ -1446,6 +1968,12 @@ footer {
           National Archives — Voting Rights Act of 1965 ↗
         </a>
       </li>
+    </ul>
+  </div>
+
+  <div class="source-note">
+    <h3>HISTORICAL COLLECTIONS & CONTEXT</h3>
+    <ul>
       <li>
         <a href="https://www.loc.gov/classroom-materials/civil-rights-movement/" target="_blank" rel="noopener">
           Library of Congress — The Civil Rights Movement ↗
@@ -1457,8 +1985,13 @@ footer {
         </a>
       </li>
       <li>
-        <a href="https://www.loc.gov/exhibits/african-american-odyssey/civil-rights-era.html" target="_blank" rel="noopener">
-          Library of Congress — The Civil Rights Era ↗
+        <a href="https://www.loc.gov/exhibits/naacp/the-civil-rights-era.html" target="_blank" rel="noopener">
+          Library of Congress — NAACP: A Century in the Fight for Freedom ↗
+        </a>
+      </li>
+      <li>
+        <a href="https://www.archives.gov/education/lessons/brown-v-board/timeline.html" target="_blank" rel="noopener">
+          National Archives — Brown v. Board timeline ↗
         </a>
       </li>
       <li>
@@ -1479,13 +2012,16 @@ footer {
   <h2>LOOK BEYOND<br>THE NUMBERS.</h2>
 
   <p>
-    Evidence helps explain the problem and prove that change
-    happened. Now explore the research index to see the wider
+    Evidence helps explain the problem and demonstrate
+    that change happened. The movement's history, methods
+    and impact are connected by the records that support
+    each claim. Explore the research index to see the wider
     collection of sources used throughout BLACKNWHITE.
   </p>
 
   <div class="bottom-links">
     <a href="home.html">← BACK HOME</a>
+    <a href="movement.html">THE MOVEMENT ↗</a>
     <a href="history.html">THE HISTORY ↗</a>
     <a href="impact.html">THE IMPACT ↗</a>
     <a href="index.html">VIEW THE INDEX ↗</a>
@@ -1576,5 +2112,4 @@ window.addEventListener('scroll',() => {
 
 </body>
 </html>
-
 
