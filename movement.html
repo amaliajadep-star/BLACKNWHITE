@@ -542,45 +542,65 @@ nav .active {
   color:#555;
 }
 
-/* CLASSIFICATION */
+/* TARGET AUDIENCE */
 
-.classification {
-  background:var(--yellow);
-  border-top:2px solid var(--black);
-  border-bottom:2px solid var(--black);
+.audience-section {
+  background:#eeece7;
+  max-width:none;
 }
 
-.classification-inner {
+.audience-inner {
   max-width:1200px;
   margin:auto;
-  padding:85px 7%;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:45px;
-  align-items:center;
 }
 
-.classification-stamp {
+.audience-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:38px;
+}
+
+.audience-card {
+  background:var(--paper);
+  border:2px solid var(--black);
+  padding:25px;
+  min-height:230px;
+}
+
+.audience-card .number {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:35px;
+  color:var(--pink);
+}
+
+.audience-card h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:27px;
+  margin:12px 0;
+}
+
+.audience-card p {
+  font-size:13px;
+  line-height:1.8;
+  color:#555;
+}
+
+.audience-note {
+  margin-top:25px;
+  padding:23px 25px;
   background:var(--black);
   color:white;
-  padding:35px;
-  transform:rotate(-2deg);
-  box-shadow:9px 9px 0 var(--pink);
+  border-left:7px solid var(--pink);
 }
 
-.classification-stamp small {
-  font-size:11px;
-  letter-spacing:2px;
-  color:var(--pink);
-  font-weight:700;
+.audience-note strong {
+  color:var(--yellow);
 }
 
-.classification-stamp strong {
-  display:block;
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(48px,7vw,80px);
-  line-height:.9;
-  margin-top:18px;
+.audience-note p {
+  font-size:13px;
+  line-height:1.8;
 }
 
 /* PHOTO STRIP */
@@ -622,6 +642,93 @@ nav .active {
   color:var(--pink);
   font-weight:700;
   text-decoration:underline;
+}
+
+/* CLASSIFICATION */
+
+.classification {
+  background:var(--yellow);
+  border-top:2px solid var(--black);
+  border-bottom:2px solid var(--black);
+}
+
+.classification-inner {
+  max-width:1200px;
+  margin:auto;
+  padding:85px 7%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+}
+
+.classification-stamp {
+  background:var(--black);
+  color:white;
+  padding:35px;
+  transform:rotate(-2deg);
+  box-shadow:9px 9px 0 var(--pink);
+}
+
+.classification-stamp small {
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--pink);
+  font-weight:700;
+}
+
+.classification-stamp strong {
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,7vw,80px);
+  line-height:.9;
+  margin-top:18px;
+}
+
+.classification-detail {
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.classification-point {
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(23,23,23,.25);
+  padding:17px;
+}
+
+.classification-point strong {
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;
+  margin-bottom:6px;
+}
+
+.classification-point p {
+  font-size:12px;
+  line-height:1.7;
+}
+
+/* SUMMARY */
+
+.summary-panel {
+  background:#f0eee9;
+  border-left:7px solid var(--blue);
+  padding:25px 28px;
+  margin-top:30px;
+}
+
+.summary-panel h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:27px;
+  margin-bottom:10px;
+}
+
+.summary-panel p {
+  font-size:13px;
+  line-height:1.8;
+  color:#444;
 }
 
 /* CTA */
@@ -797,7 +904,8 @@ footer {
   }
 
   .goal-grid,
-  .people-grid {
+  .people-grid,
+  .audience-grid {
     grid-template-columns:1fr 1fr;
   }
 
@@ -847,7 +955,9 @@ footer {
   .goal-grid,
   .people-grid,
   .org-list,
-  .photo-grid {
+  .photo-grid,
+  .audience-grid,
+  .classification-detail {
     grid-template-columns:1fr;
   }
 
@@ -970,6 +1080,18 @@ footer {
         Its central message was simple: rights should not depend on a
         person's race.
       </p>
+
+      <br>
+
+      <p class="body-copy">
+        Although the movement became especially visible during the
+        mid-twentieth century, it was not a single organisation with one
+        leader or one campaign. It was made up of many connected local
+        struggles. Some activists focused on court cases and changing laws,
+        while others organised demonstrations, student campaigns and
+        community action. These different approaches contributed to a
+        shared demand for racial equality.
+      </p>
     </div>
 
     <div class="intro-art">
@@ -991,7 +1113,9 @@ footer {
     <p class="body-copy">
       The movement aimed to remove the systems and practices that kept
       African Americans from having the same opportunities and protections
-      as white Americans.
+      as white Americans. Its goals were connected: ending segregation
+      meant little if people were still prevented from voting, accessing
+      education or receiving equal treatment under the law.
     </p>
 
     <div class="goal-grid">
@@ -1049,6 +1173,16 @@ footer {
         </p>
       </div>
     </div>
+
+    <div style="margin-top:35px;">
+      <p class="body-copy">
+        These goals show that the movement was concerned with more than
+        changing individual behaviour. It challenged rules, institutions
+        and accepted practices that shaped everyday life. Activists wanted
+        legal rights to be recognised in practice, not simply promised in
+        principle.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -1088,6 +1222,75 @@ footer {
         centre: organising, leading campaigns and demanding change in
         their own communities.
       </p>
+      <p>
+        The movement was not limited to one age group or one part of the
+        country. Students, parents, workers, religious leaders, lawyers
+        and community members all contributed. Their experiences were
+        different, but they were connected by the unequal treatment
+        they were challenging.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET AUDIENCE -->
+
+<section class="section audience-section">
+  <div class="audience-inner">
+    <div class="eyebrow">04 / WHO DID THEY NEED TO REACH?</div>
+    <h2 class="section-title">THE TARGET WAS BIGGER THAN <span class="pink">ONE GROUP.</span></h2>
+
+    <p class="body-copy">
+      The people who benefited from the movement were not necessarily
+      the same as the people it needed to influence. African Americans
+      were the main group seeking equal rights, but activists also
+      directed their campaigns towards the institutions and decision-makers
+      that maintained or could change discriminatory systems.
+    </p>
+
+    <div class="audience-grid">
+      <article class="audience-card">
+        <div class="number">01</div>
+        <h3>GOVERNMENT & LAWMAKERS</h3>
+        <p>
+          Activists pressured local, state and federal governments to
+          change discriminatory laws, protect constitutional rights
+          and enforce court decisions. Their campaigns sought action
+          from elected representatives and public officials.
+        </p>
+      </article>
+
+      <article class="audience-card">
+        <div class="number">02</div>
+        <h3>PUBLIC INSTITUTIONS & BUSINESSES</h3>
+        <p>
+          Schools, transport systems, employers and businesses were
+          challenged when their rules or practices excluded people
+          because of race. Boycotts and demonstrations aimed to make
+          these institutions reconsider their actions.
+        </p>
+      </article>
+
+      <article class="audience-card">
+        <div class="number">03</div>
+        <h3>THE WIDER AMERICAN PUBLIC</h3>
+        <p>
+          Speeches, marches, newspapers and television coverage helped
+          bring racial inequality to national attention. Activists
+          wanted people who had ignored or accepted segregation to
+          recognise the injustice and support change.
+        </p>
+      </article>
+    </div>
+
+    <div class="audience-note">
+      <p>
+        <strong>WHY THIS MATTERS:</strong> The movement had a clear group
+        seeking change — African Americans — but it also needed to influence
+        people and institutions with the power to make that change possible.
+        This is why its campaigns involved both community participation
+        and pressure on governments, businesses and the wider public.
+      </p>
     </div>
   </div>
 </section>
@@ -1095,13 +1298,14 @@ footer {
 <!-- PEOPLE -->
 
 <section class="section">
-  <div class="eyebrow">04 / THE PEOPLE</div>
+  <div class="eyebrow">05 / THE PEOPLE</div>
   <h2 class="section-title">THE FACES BEHIND <span class="blue">THE FIGHT.</span></h2>
 
   <p class="body-copy">
     The movement was not led by one person alone. It involved organisers,
     students, lawyers, ministers, families and ordinary people who took
-    action in their communities.
+    action in their communities. Some became nationally recognised, while
+    many others worked locally and received far less public attention.
   </p>
 
   <div class="people-grid">
@@ -1152,18 +1356,32 @@ footer {
     Portrait image sources: Wikimedia Commons. See the Index page for
     research sources and the Evidence page for additional archival records.
   </p>
+
+  <div class="summary-panel">
+    <h3>LEADERSHIP WAS NOT THE SAME AS PARTICIPATION.</h3>
+    <p>
+      Famous leaders helped attract attention and coordinate major
+      campaigns, but the movement depended on thousands of people who
+      organised meetings, joined boycotts, registered voters, supported
+      local campaigns and kept taking part. Focusing only on well-known
+      figures would leave out much of the work that made the movement
+      possible.
+    </p>
+  </div>
 </section>
 
 <!-- ORGANISATIONS -->
 
 <section class="section" style="background:#eeece7;max-width:none;">
   <div style="max-width:1200px;margin:auto;">
-    <div class="eyebrow">05 / COLLECTIVE ACTION</div>
+    <div class="eyebrow">06 / COLLECTIVE ACTION</div>
     <h2 class="section-title">STRONGER <span class="pink">TOGETHER.</span></h2>
 
     <p class="body-copy">
       Organisations helped people coordinate campaigns, share information,
       raise support and challenge discrimination across different states.
+      They did not all use the same methods or have identical priorities,
+      but their work contributed to the wider movement.
     </p>
 
     <div class="org-list">
@@ -1204,19 +1422,33 @@ footer {
         </p>
       </div>
     </div>
+
+    <div class="summary-panel">
+      <h3>WHY ORGANISATIONS MATTERED</h3>
+      <p>
+        Working together allowed campaigns to reach beyond individual
+        communities. Organisations could share resources, train volunteers,
+        coordinate events and connect local concerns to national debates.
+        This helped turn separate acts of resistance into a more organised
+        movement capable of putting sustained pressure on powerful
+        institutions.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- NEW PHOTO FEATURE -->
 
 <section class="section">
-  <div class="eyebrow">06 / MOMENTS THAT MATTERED</div>
+  <div class="eyebrow">07 / MOMENTS THAT MATTERED</div>
   <h2 class="section-title">THE STRUGGLE IN <span class="pink">REAL LIFE.</span></h2>
 
   <p class="body-copy">
     These photographs show different parts of the struggle: access to
     education, the challenge to segregation in universities and the
-    determination of people who took part in the movement.
+    determination of people who took part in the movement. They also
+    show that legal decisions did not automatically lead to immediate
+    change in everyday life.
   </p>
 
   <div class="photo-grid">
@@ -1265,29 +1497,60 @@ footer {
 <section class="classification">
   <div class="classification-inner">
     <div>
-      <div class="eyebrow" style="color:var(--black);">07 / TYPE OF MOVEMENT</div>
+      <div class="eyebrow" style="color:var(--black);">08 / TYPE OF MOVEMENT</div>
       <h2 class="section-title">WHAT KIND OF SOCIAL MOVEMENT?</h2>
 
       <p class="body-copy" style="color:#333;">
-        The American Civil Rights Movement is generally understood as a
-        reform-oriented movement. It sought major changes to laws,
-        institutions and social attitudes, while working to achieve equal
-        rights within the existing political system.
+        The American Civil Rights Movement can be classified as a
+        <strong>reformative social movement</strong>. In the four-part
+        classification used in sociology, reformative movements seek
+        specific changes to society and aim to affect groups of people
+        rather than transform the behaviour of just one individual.
       </p>
 
       <br>
 
       <p class="body-copy" style="color:#333;">
-        It used collective action to challenge established rules and
-        practices rather than attempting to replace the entire political
-        system. Its campaigns aimed to reform the way society treated
-        African Americans.
+        This fits the Civil Rights Movement because it sought major
+        changes to racial laws, public institutions and social practices.
+        Its campaigns aimed to improve the rights and treatment of
+        African Americans across society, rather than persuade only
+        individual people to change.
       </p>
+
+      <br>
+
+      <p class="body-copy" style="color:#333;">
+        Although its goals challenged deeply established systems, the
+        movement was not primarily trying to overthrow the entire
+        American political system. It sought to make the country apply
+        its existing democratic and constitutional principles more
+        equally. This is why reformative is a more suitable classification
+        than revolutionary.
+      </p>
+
+      <div class="classification-detail">
+        <div class="classification-point">
+          <strong>SCOPE OF CHANGE</strong>
+          <p>
+            Focused on specific areas of society, especially racial
+            equality, civil rights, voting, education and public access.
+          </p>
+        </div>
+
+        <div class="classification-point">
+          <strong>WHO IT TARGETED</strong>
+          <p>
+            Groups and institutions across society, including governments,
+            schools, businesses and the wider public.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="classification-stamp">
       <small>MOVEMENT CLASSIFICATION</small>
-      <strong>REFORM-<br>ORIENTED.</strong>
+      <strong>REFORM-<br>ATIVE.</strong>
       <p style="font-size:12px;line-height:1.7;margin-top:20px;">
         Changing laws. Challenging institutions. Demanding equality.
       </p>
@@ -1298,7 +1561,7 @@ footer {
 <!-- SUMMARY -->
 
 <section class="section">
-  <div class="eyebrow">08 / WHY IT MATTERS</div>
+  <div class="eyebrow">09 / WHY IT MATTERS</div>
   <h2 class="section-title">A MOVEMENT THAT <span class="pink">CHANGED THE RULES.</span></h2>
 
   <div class="image-feature">
@@ -1316,6 +1579,12 @@ footer {
         continued in many areas of American life.
       </p>
       <p>
+        The movement's achievements were the result of sustained
+        collective action, not one speech, one march or one individual.
+        Its history shows how people can organise around a shared goal
+        and put pressure on institutions to change.
+      </p>
+      <p>
         Understanding the movement means looking at both what it achieved
         and the challenges that remained.
       </p>
@@ -1331,6 +1600,19 @@ footer {
         <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">View exhibition ↗</a>
       </div>
     </div>
+  </div>
+
+  <div class="summary-panel">
+    <h3>THE CENTRAL IDEA</h3>
+    <p>
+      The American Civil Rights Movement was a reformative movement
+      centred on racial equality. African Americans and their allies
+      challenged discrimination through collective action, while
+      directing pressure towards governments, institutions and the
+      wider public. Its goals reached beyond individual treatment:
+      activists wanted lasting changes to the laws and practices
+      shaping American society.
+    </p>
   </div>
 </section>
 
