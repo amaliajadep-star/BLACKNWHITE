@@ -1,0 +1,1348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INDEX — BLACKNWHITE.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#ff168b;
+  --blue:#245bff;
+  --purple:#8b35e8;
+  --yellow:#ffe600;
+  --orange:#ff7135;
+  --black:#171717;
+  --paper:#faf9f6;
+  --grey:#777;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
+body {
+  background:var(--paper);
+  color:var(--black);
+  font-family:'Space Grotesk',sans-serif;
+  overflow-x:hidden;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+/* HEADER */
+
+header {
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #dedbd5;
+  position:sticky;
+  top:0;
+  background:rgba(250,249,246,.96);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:29px;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.logo span,
+.footer-logo span {
+  color:var(--pink);
+}
+
+nav {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.3px;
+}
+
+nav a {
+  transition:color .2s;
+}
+
+nav a:hover {
+  color:var(--pink);
+}
+
+.nav-active {
+  color:var(--pink);
+}
+
+/* DROPDOWNS */
+
+.nav-dropdown {
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.nav-dropdown-trigger {
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.dropdown-arrow {
+  border:0;
+  background:transparent;
+  color:var(--pink);
+  font:inherit;
+  font-size:11px;
+  cursor:pointer;
+  padding:2px;
+}
+
+.dropdown-menu {
+  position:absolute;
+  top:100%;
+  left:-12px;
+  min-width:205px;
+  padding:16px 0 8px;
+  background:var(--paper);
+  border:1px solid #dedbd5;
+  box-shadow:5px 5px 0 var(--pink);
+  display:none;
+  flex-direction:column;
+  z-index:200;
+}
+
+.nav-dropdown.is-open .dropdown-menu {
+  display:flex;
+}
+
+.dropdown-menu a {
+  display:block;
+  padding:12px 14px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.dropdown-menu a:hover {
+  background:var(--pink);
+  color:white;
+}
+
+/* HERO */
+
+.page-hero {
+  min-height:510px;
+  padding:100px 9%;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.eyebrow,
+.section-label {
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:var(--pink);
+}
+
+.page-hero h1 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(100px,17vw,190px);
+  line-height:.76;
+  letter-spacing:-3px;
+  margin-top:25px;
+  position:relative;
+  z-index:2;
+}
+
+.page-hero h1 span {
+  color:var(--pink);
+}
+
+.hero-description {
+  max-width:570px;
+  font-size:14px;
+  line-height:1.9;
+  margin-top:35px;
+  color:#444;
+  position:relative;
+  z-index:2;
+}
+
+.sticker {
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+  font-family:'Permanent Marker',cursive;
+}
+
+.sticker-one {
+  right:12%;
+  top:18%;
+  background:var(--yellow);
+  padding:12px 17px;
+  transform:rotate(8deg);
+  font-size:17px;
+}
+
+.sticker-two {
+  right:8%;
+  bottom:17%;
+  background:var(--blue);
+  color:white;
+  padding:10px 15px;
+  transform:rotate(-7deg);
+  font-size:16px;
+}
+
+.sticker-three {
+  right:28%;
+  top:52%;
+  color:var(--purple);
+  font-size:40px;
+  transform:rotate(12deg);
+}
+
+.sticker-four {
+  left:4%;
+  bottom:8%;
+  color:var(--orange);
+  font-size:24px;
+  transform:rotate(-8deg);
+}
+
+/* TICKER */
+
+.ticker {
+  background:var(--pink);
+  color:white;
+  padding:14px 0;
+  overflow:hidden;
+  white-space:nowrap;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;
+  letter-spacing:3px;
+}
+
+.ticker-track {
+  display:inline-block;
+  animation:ticker 27s linear infinite;
+}
+
+@keyframes ticker {
+  from {transform:translateX(0);}
+  to {transform:translateX(-50%);}
+}
+
+/* JUMP LINKS */
+
+.jump-nav {
+  padding:30px 8%;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  border-bottom:1px solid #dedbd5;
+}
+
+.jump-nav a {
+  border:1px solid var(--black);
+  padding:12px 16px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+  transition:.2s;
+}
+
+.jump-nav a:hover {
+  background:var(--pink);
+  color:white;
+  border-color:var(--pink);
+  transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
+.content-section {
+  padding:100px 9%;
+  position:relative;
+}
+
+.content-section.alt {
+  background:#f1eee9;
+}
+
+.section-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:30px;
+  margin-bottom:45px;
+}
+
+.section-top h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(65px,9vw,110px);
+  line-height:.83;
+  margin-top:18px;
+}
+
+.section-top h2 span {
+  color:var(--pink);
+}
+
+.section-number {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:65px;
+  color:#dedbd5;
+  line-height:1;
+}
+
+.lead-text {
+  max-width:850px;
+  font-size:16px;
+  line-height:1.9;
+  color:#444;
+  margin-bottom:45px;
+}
+
+/* INTRO PANEL */
+
+.index-intro {
+  background:var(--black);
+  color:white;
+  padding:40px;
+  margin:35px 0 55px;
+}
+
+.index-intro h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(42px,7vw,75px);
+  line-height:.9;
+}
+
+.index-intro h3 span {
+  color:var(--pink);
+}
+
+.index-intro p {
+  max-width:760px;
+  margin-top:20px;
+  font-size:13px;
+  line-height:1.9;
+  color:#ddd;
+}
+
+/* SOURCE CATEGORIES */
+
+.source-category {
+  margin:65px 0;
+  scroll-margin-top:110px;
+}
+
+.category-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:20px;
+  padding-bottom:18px;
+  border-bottom:2px solid var(--black);
+  margin-bottom:25px;
+}
+
+.category-heading h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(38px,6vw,60px);
+  line-height:.9;
+}
+
+.category-heading h3 span {
+  color:var(--pink);
+}
+
+.category-number {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:45px;
+  color:#d7d2ca;
+}
+
+/* SOURCE CARDS */
+
+.source-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.source-card {
+  background:white;
+  border:1px solid #e1ded8;
+  padding:28px;
+  position:relative;
+  transition:.2s;
+  display:flex;
+  flex-direction:column;
+  min-height:245px;
+}
+
+.source-card:hover {
+  transform:translateY(-4px);
+  box-shadow:5px 5px 0 var(--pink);
+}
+
+.source-type {
+  color:var(--pink);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.source-card h4 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:32px;
+  margin:13px 0 10px;
+  line-height:1;
+}
+
+.source-card p {
+  font-size:12px;
+  line-height:1.8;
+  color:#555;
+  flex:1;
+}
+
+.source-card a {
+  display:inline-block;
+  align-self:flex-start;
+  margin-top:20px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.source-card a:hover {
+  color:var(--pink);
+}
+
+/* SOURCE NOTE */
+
+.source-reminder {
+  background:#e9edff;
+  border-left:7px solid var(--blue);
+  padding:30px;
+  margin:45px 0;
+}
+
+.source-reminder h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;
+  margin-bottom:12px;
+}
+
+.source-reminder p {
+  font-size:13px;
+  line-height:1.9;
+  color:#333;
+}
+
+/* RESEARCH NOTE */
+
+.research-note {
+  background:var(--yellow);
+  padding:38px;
+  margin-top:55px;
+  transform:rotate(-.3deg);
+}
+
+.research-note h3 {
+  font-family:'Permanent Marker',cursive;
+  font-size:27px;
+  margin-bottom:15px;
+}
+
+.research-note p {
+  font-size:13px;
+  line-height:1.9;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+  padding:65px 9%;
+  background:var(--pink);
+  color:white;
+}
+
+.bottom-nav h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(55px,9vw,100px);
+  line-height:.85;
+}
+
+.bottom-nav p {
+  font-size:13px;
+  line-height:1.8;
+  margin-top:20px;
+  max-width:550px;
+}
+
+.bottom-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+.bottom-links a {
+  background:white;
+  color:var(--black);
+  padding:13px 18px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  transition:.2s;
+}
+
+.bottom-links a:hover {
+  background:var(--black);
+  color:white;
+}
+
+/* FOOTER */
+
+footer {
+  background:var(--black);
+  color:white;
+  padding:35px 7%;
+}
+
+.footer-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:25px;
+}
+
+.footer-logo {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:35px;
+}
+
+.footer-nav {
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.footer-nav a:hover {
+  color:var(--pink);
+}
+
+.footer-bottom {
+  border-top:1px solid #444;
+  margin-top:30px;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  font-size:10px;
+  color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:750px) {
+  header {
+    padding:15px 5%;
+  }
+
+  .logo {
+    font-size:25px;
+  }
+
+  nav {
+    gap:10px;
+    font-size:8px;
+  }
+
+  .page-hero {
+    min-height:480px;
+    padding:80px 7%;
+  }
+
+  .page-hero h1 {
+    font-size:clamp(85px,16vw,130px);
+  }
+
+  .sticker-one {
+    right:5%;
+    top:7%;
+    font-size:12px;
+  }
+
+  .sticker-two {
+    right:5%;
+    bottom:7%;
+    font-size:12px;
+  }
+
+  .sticker-three,
+  .sticker-four {
+    display:none;
+  }
+
+  .content-section {
+    padding:75px 7%;
+  }
+
+  .section-top {
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .section-number {
+    font-size:45px;
+  }
+
+  .source-grid {
+    grid-template-columns:1fr;
+  }
+
+  .jump-nav {
+    padding:22px 6%;
+  }
+
+  .index-intro,
+  .research-note {
+    padding:28px;
+  }
+
+  .footer-top {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:480px) {
+  header {
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav {
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .page-hero {
+    min-height:430px;
+  }
+
+  .page-hero h1 {
+    font-size:clamp(75px,18vw,105px);
+  }
+
+  .jump-nav a {
+    font-size:8px;
+  }
+
+  .bottom-links {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <a href="home.html" class="logo">BLACK<span>N</span>WHITE.</a>
+
+  <nav>
+    <a href="home.html">HOME</a>
+    <a href="movement.html">MOVEMENT</a>
+
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-trigger">
+        <a href="history.html">HISTORY</a>
+        <button class="dropdown-arrow" type="button" aria-label="Open History menu" aria-expanded="false">⌄</button>
+      </div>
+      <div class="dropdown-menu">
+        <a href="history.html#emergence">HISTORY & EMERGENCE</a>
+        <a href="history.html#deviance">DEVIANCE</a>
+        <a href="history.html#movement-cycle">MOVEMENT CYCLE</a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-trigger">
+        <a href="impact.html">IMPACT</a>
+        <button class="dropdown-arrow" type="button" aria-label="Open Impact menu" aria-expanded="false">⌄</button>
+      </div>
+      <div class="dropdown-menu">
+        <a href="impact.html#methods">METHODS & MOBILISATION</a>
+        <a href="impact.html#social-change">SOCIAL CHANGE</a>
+        <a href="impact.html#limitations">ONGOING CHALLENGES</a>
+      </div>
+    </div>
+
+    <a href="evidence.html">EVIDENCE</a>
+    <a href="index.html" class="nav-active">INDEX ↗</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="page-hero">
+  <div class="eyebrow">06 / THE RESEARCH BEHIND THE STORY</div>
+
+  <h1>
+    THE<br>
+    <span>INDEX.</span>
+  </h1>
+
+  <p class="hero-description">
+    Every claim has a source. This is the research directory
+    behind BLACKNWHITE. Explore the books, historical records,
+    government documents and collections used to investigate
+    the American Civil Rights Movement.
+  </p>
+
+  <div class="sticker sticker-one">CHECK THE SOURCE.</div>
+  <div class="sticker sticker-two">FOLLOW THE FACTS.</div>
+  <div class="sticker sticker-three">✳</div>
+  <div class="sticker sticker-four">RESEARCH MATTERS.</div>
+</section>
+
+<!-- TICKER -->
+
+<div class="ticker">
+  <div class="ticker-track">
+    EVERY SOURCE HAS A STORY. EVERY RECORD LEAVES A TRACE. ✳
+    LOOK IT UP. READ IT. QUESTION IT. ✳
+    EVERY SOURCE HAS A STORY. EVERY RECORD LEAVES A TRACE. ✳
+    LOOK IT UP. READ IT. QUESTION IT. ✳
+  </div>
+</div>
+
+<!-- JUMP LINKS -->
+
+<div class="jump-nav">
+  <a href="#background">01 / BACKGROUND ↓</a>
+  <a href="#history-sources">02 / HISTORY ↓</a>
+  <a href="#movement-sources">03 / MOVEMENT ↓</a>
+  <a href="#impact-sources">04 / IMPACT ↓</a>
+  <a href="#photo-sources">05 / PHOTOGRAPHS ↓</a>
+</div>
+
+<!-- INTRODUCTION -->
+
+<section class="content-section">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">RESEARCH / SOURCE DIRECTORY</div>
+      <h2>WHERE THE<br><span>FACTS COME FROM.</span></h2>
+    </div>
+    <div class="section-number">↗</div>
+  </div>
+
+  <p class="lead-text">
+    This index brings together the external sources used to
+    research the Civil Rights Movement and its effects on
+    American society. The sources include government archives,
+    historical collections, educational resources and
+    statistical information.
+  </p>
+
+  <div class="index-intro">
+    <div class="section-label" style="color:var(--yellow);">A NOTE ON THE RESEARCH</div>
+    <h3>DON'T JUST<br><span>TAKE OUR WORD.</span></h3>
+    <p>
+      BLACKNWHITE. uses historical evidence and published
+      research to explain the movement. Whenever possible,
+      original documents and official records are included
+      so readers can investigate the information themselves.
+    </p>
+  </div>
+
+</section>
+
+<!-- BACKGROUND SOURCES -->
+
+<section class="content-section alt" id="background">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">01 / UNDERSTANDING THE ISSUE</div>
+      <h2>BACKGROUND &<br><span>CONTEXT.</span></h2>
+    </div>
+    <div class="section-number">01</div>
+  </div>
+
+  <p class="lead-text">
+    These sources provide broader explanations of racial
+    segregation, discrimination and the development of the
+    American Civil Rights Movement.
+  </p>
+
+  <div class="source-grid">
+
+    <article class="source-card">
+      <div class="source-type">HISTORICAL OVERVIEW</div>
+      <h4>LIBRARY OF CONGRESS</h4>
+      <p>
+        An introduction to the Civil Rights Movement, its
+        purpose and the wider struggle against racial
+        discrimination in the United States.
+      </p>
+      <a href="https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/" target="_blank" rel="noopener">
+        EXPLORE THE RESOURCE ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">HISTORICAL COLLECTION</div>
+      <h4>NAACP: A CENTURY IN THE FIGHT FOR FREEDOM</h4>
+      <p>
+        A Library of Congress exhibition examining the
+        NAACP's history and its role in challenging
+        segregation and racial injustice.
+      </p>
+      <a href="https://loc.gov/exhibits/naacp/the-civil-rights-era.html" target="_blank" rel="noopener">
+        EXPLORE THE EXHIBITION ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">HISTORICAL RESEARCH GUIDE</div>
+      <h4>CIVIL RIGHTS IN AMERICA</h4>
+      <p>
+        A Library of Congress research guide connecting
+        readers with digitised primary sources, related
+        websites and further reading.
+      </p>
+      <a href="https://guides.loc.gov/civil-rights-in-america" target="_blank" rel="noopener">
+        OPEN THE RESEARCH GUIDE ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">HISTORICAL BACKGROUND</div>
+      <h4>THE CIVIL RIGHTS ERA</h4>
+      <p>
+        A historical overview of the events, campaigns
+        and resistance surrounding the Civil Rights
+        Movement from the 1950s onwards.
+      </p>
+      <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">
+        EXPLORE THE COLLECTION ↗
+      </a>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- HISTORY SOURCES -->
+
+<section class="content-section" id="history-sources">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">02 / EVENTS, PEOPLE & TIMELINES</div>
+      <h2>THE HISTORY<br><span>BEHIND IT.</span></h2>
+    </div>
+    <div class="section-number">02</div>
+  </div>
+
+  <p class="lead-text">
+    These resources help explain the historical conditions
+    that led to the movement, including segregation,
+    landmark court decisions and important events.
+  </p>
+
+  <div class="source-grid">
+
+    <article class="source-card">
+      <div class="source-type">GOVERNMENT ARCHIVE / TIMELINE</div>
+      <h4>BROWN v. BOARD OF EDUCATION</h4>
+      <p>
+        The National Archives provides a timeline of the
+        legal cases and events leading to the 1954 Supreme
+        Court decision against racial segregation in public
+        schools.
+      </p>
+      <a href="https://www.archives.gov/education/lessons/brown-v-board/timeline.html" target="_blank" rel="noopener">
+        VIEW THE TIMELINE ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">LIBRARY OF CONGRESS / TIMELINE</div>
+      <h4>THE CIVIL RIGHTS ERA</h4>
+      <p>
+        A timeline of significant events during the
+        Civil Rights Era, including the Montgomery Bus
+        Boycott, school integration and major campaigns.
+      </p>
+      <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era-timeline.html" target="_blank" rel="noopener">
+        VIEW THE TIMELINE ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">SMITHSONIAN / EDUCATIONAL RESOURCE</div>
+      <h4>SEPARATE IS NOT EQUAL</h4>
+      <p>
+        A Smithsonian resource examining the Brown v.
+        Board of Education case and the history of
+        segregated education in the United States.
+      </p>
+      <a href="https://americanhistory.si.edu/brown/resources/timeline.html" target="_blank" rel="noopener">
+        EXPLORE THE RESOURCE ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">NATIONAL PARK SERVICE</div>
+      <h4>THE MODERN CIVIL RIGHTS MOVEMENT</h4>
+      <p>
+        Historical information from the National Park
+        Service about the modern movement and its
+        important events and campaigns.
+      </p>
+      <a href="https://www.nps.gov/subjects/civilrights/modern-civil-rights-movement.htm" target="_blank" rel="noopener">
+        EXPLORE THE RESOURCE ↗
+      </a>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- MOVEMENT SOURCES -->
+
+<section class="content-section alt" id="movement-sources">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">03 / ORGANISATION & ACTIVISM</div>
+      <h2>THE PEOPLE<br><span>WHO MOVED.</span></h2>
+    </div>
+    <div class="section-number">03</div>
+  </div>
+
+  <p class="lead-text">
+    These sources provide information about the organisations,
+    campaigners and forms of collective action that helped
+    build the Civil Rights Movement.
+  </p>
+
+  <div class="source-grid">
+
+    <article class="source-card">
+      <div class="source-type">PRIMARY SOURCE COLLECTION</div>
+      <h4>SNCC DIGITAL GATEWAY</h4>
+      <p>
+        A digital history project documenting the Student
+        Nonviolent Coordinating Committee and the people
+        involved in grassroots organising.
+      </p>
+      <a href="https://snccdigital.org/" target="_blank" rel="noopener">
+        EXPLORE THE GATEWAY ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">PRIMARY SOURCE DIRECTORY</div>
+      <h4>DIGITAL PRIMARY SOURCES</h4>
+      <p>
+        A collection of links to documents, photographs,
+        interviews and archival material relating to
+        civil rights activism.
+      </p>
+      <a href="https://snccdigital.org/resources/digital-primary-sources/" target="_blank" rel="noopener">
+        EXPLORE THE SOURCES ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">LIBRARY OF CONGRESS / PRIMARY SOURCES</div>
+      <h4>THE CIVIL RIGHTS MOVEMENT</h4>
+      <p>
+        Historical material showing how activists used
+        boycotts, sit-ins, marches, Freedom Rides and
+        political lobbying to demand change.
+      </p>
+      <a href="https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/" target="_blank" rel="noopener">
+        VIEW THE COLLECTION ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">LIBRARY OF CONGRESS / HISTORICAL ESSAY</div>
+      <h4>NONVIOLENT PHILOSOPHY</h4>
+      <p>
+        An examination of nonviolent protest and the
+        ideas surrounding nonviolence and self-defence
+        during the Civil Rights Movement.
+      </p>
+      <a href="https://www.loc.gov/collections/civil-rights-history-project/articles-and-essays/nonviolent-philosophy-and-self-defense/" target="_blank" rel="noopener">
+        READ THE ESSAY ↗
+      </a>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- IMPACT SOURCES -->
+
+<section class="content-section" id="impact-sources">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">04 / LAWS, RESULTS & CONTINUING ISSUES</div>
+      <h2>MEASURING<br><span>THE CHANGE.</span></h2>
+    </div>
+    <div class="section-number">04</div>
+  </div>
+
+  <p class="lead-text">
+    These sources provide official records of legislative
+    achievements and information about the issues that
+    continued after the movement's major campaigns.
+  </p>
+
+  <div class="source-grid">
+
+    <article class="source-card">
+      <div class="source-type">PRIMARY SOURCE / FEDERAL LAW</div>
+      <h4>CIVIL RIGHTS ACT OF 1964</h4>
+      <p>
+        The National Archives provides the original
+        historical record of the legislation that
+        prohibited discrimination in public places
+        and employment.
+      </p>
+      <a href="https://www.archives.gov/milestone-documents/civil-rights-act" target="_blank" rel="noopener">
+        READ THE ORIGINAL ACT ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">PRIMARY SOURCE / FEDERAL LAW</div>
+      <h4>VOTING RIGHTS ACT OF 1965</h4>
+      <p>
+        The original government record of the legislation
+        that targeted discriminatory voting practices
+        and strengthened federal voting protections.
+      </p>
+      <a href="https://www.archives.gov/milestone-documents/voting-rights-act" target="_blank" rel="noopener">
+        READ THE ORIGINAL ACT ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">GOVERNMENT STATISTICS</div>
+      <h4>US CENSUS BUREAU</h4>
+      <p>
+        Official poverty data tables that can help
+        researchers investigate economic conditions
+        and inequality in the United States.
+      </p>
+      <a href="https://www.census.gov/topics/income-poverty/poverty/data/tables.html" target="_blank" rel="noopener">
+        EXPLORE CENSUS DATA ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">HISTORICAL RECORD / LEGISLATION</div>
+      <h4>THE CIVIL RIGHTS ERA</h4>
+      <p>
+        The Library of Congress collection provides
+        historical context for the campaigns and
+        political pressure that preceded major
+        legislative changes.
+      </p>
+      <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">
+        EXPLORE THE RECORDS ↗
+      </a>
+    </article>
+
+  </div>
+
+  <div class="source-reminder">
+    <h3>WHY USE GOVERNMENT RECORDS?</h3>
+    <p>
+      Official legislation and statistical records allow
+      readers to examine what governments formally changed
+      and what information was recorded. They are particularly
+      useful when investigating laws, voting rights and
+      economic conditions.
+    </p>
+  </div>
+
+</section>
+
+<!-- PHOTOGRAPH SOURCES -->
+
+<section class="content-section alt" id="photo-sources">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">05 / VISUAL HISTORICAL RECORDS</div>
+      <h2>THE PICTURES<br><span>THAT REMAIN.</span></h2>
+    </div>
+    <div class="section-number">05</div>
+  </div>
+
+  <p class="lead-text">
+    Photographs provide visual records of the people,
+    places and events connected to the movement. The
+    following Library of Congress records are linked
+    to photographs featured on the Evidence page.
+  </p>
+
+  <div class="source-grid">
+
+    <article class="source-card">
+      <div class="source-type">PHOTOGRAPH / EDUCATION / 1955</div>
+      <h4>BARNARD SCHOOL</h4>
+      <p>
+        A photograph record relating to an integrated
+        classroom at Barnard School in Washington, DC.
+      </p>
+      <a href="https://www.loc.gov/pictures/item/2003654384/" target="_blank" rel="noopener">
+        VIEW PHOTOGRAPH RECORD ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">PHOTOGRAPH / TENNESSEE / 1956</div>
+      <h4>CLINTON SCHOOL INTEGRATION</h4>
+      <p>
+        A historical photograph record documenting
+        the conflict surrounding school integration
+        in Clinton, Tennessee.
+      </p>
+      <a href="https://www.loc.gov/pictures/item/2003654360/" target="_blank" rel="noopener">
+        VIEW PHOTOGRAPH RECORD ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">PHOTOGRAPH / SELMA / 1965</div>
+      <h4>SELMA TO MONTGOMERY MARCH</h4>
+      <p>
+        A Library of Congress photograph record connected
+        to the voting rights marches from Selma to
+        Montgomery in 1965.
+      </p>
+      <a href="https://www.loc.gov/pictures/item/2003675346/" target="_blank" rel="noopener">
+        VIEW PHOTOGRAPH RECORD ↗
+      </a>
+    </article>
+
+    <article class="source-card">
+      <div class="source-type">PHOTOGRAPH COLLECTION</div>
+      <h4>LIBRARY OF CONGRESS PICTURES</h4>
+      <p>
+        Explore the Library of Congress Prints and
+        Photographs collections for further historical
+        images and records from the Civil Rights Era.
+      </p>
+      <a href="https://www.loc.gov/pictures/" target="_blank" rel="noopener">
+        EXPLORE THE COLLECTION ↗
+      </a>
+    </article>
+
+  </div>
+
+  <div class="research-note">
+    <h3>LOOK BEYOND THE IMAGE.</h3>
+    <p>
+      A photograph can show what a moment looked like,
+      but its catalogue record can provide additional
+      information such as the date, location, photographer
+      and historical context. Always check the original
+      record when using a photograph as evidence.
+    </p>
+  </div>
+
+</section>
+
+<!-- FINAL NOTE -->
+
+<section class="content-section">
+
+  <div class="section-label">THE RESEARCH DOESN'T END HERE</div>
+
+  <div class="section-top">
+    <div>
+      <h2>READ IT.<br><span>QUESTION IT.</span></h2>
+    </div>
+    <div class="section-number">↗</div>
+  </div>
+
+  <p class="lead-text">
+    These sources provide a starting point for understanding
+    the American Civil Rights Movement. Exploring original
+    records, comparing different accounts and checking
+    evidence helps build a clearer picture of the past.
+  </p>
+
+  <div class="index-intro">
+    <div class="section-label" style="color:var(--yellow);">BLACKNWHITE. / THE BIGGER PICTURE</div>
+    <h3>THE PAST IS<br><span>WORTH QUESTIONING.</span></h3>
+    <p>
+      History is not just a collection of dates. It is
+      made up of people, decisions, resistance and change.
+      The sources behind this project allow readers to
+      investigate those stories beyond this website.
+    </p>
+  </div>
+
+</section>
+
+<!-- BOTTOM NAVIGATION -->
+
+<section class="bottom-nav">
+  <div class="section-label" style="color:white;">YOU'VE SEEN THE SOURCES. NOW EXPLORE THE STORY.</div>
+
+  <h2>BACK TO<br>THE BEGINNING.</h2>
+
+  <p>
+    Explore the movement itself, follow its history,
+    examine its impact and investigate the evidence
+    behind the changes.
+  </p>
+
+  <div class="bottom-links">
+    <a href="home.html">← BACK HOME</a>
+    <a href="movement.html">THE MOVEMENT ↗</a>
+    <a href="history.html">THE HISTORY ↗</a>
+    <a href="impact.html">THE IMPACT ↗</a>
+    <a href="evidence.html">THE EVIDENCE ↗</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">BLACK<span>N</span>WHITE.</div>
+
+    <div class="footer-nav">
+      <a href="home.html">HOME</a>
+      <a href="movement.html">MOVEMENT</a>
+      <a href="history.html">HISTORY</a>
+      <a href="impact.html">IMPACT</a>
+      <a href="evidence.html">EVIDENCE</a>
+      <a href="index.html">THE INDEX ↗</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>BACK IN LIGHT. — REWRITING THE BEGINNING.</span>
+    <span>BLACKNWHITE. © 2026</span>
+  </div>
+</footer>
+
+<!-- DROPDOWN INTERACTION -->
+
+<script>
+const dropdowns = document.querySelectorAll('.nav-dropdown');
+let scrollClosed = false;
+
+function closeDropdowns() {
+  dropdowns.forEach(dropdown => {
+    dropdown.classList.remove('is-open');
+    const button = dropdown.querySelector('.dropdown-arrow');
+    button.setAttribute('aria-expanded','false');
+  });
+}
+
+dropdowns.forEach(dropdown => {
+  const button = dropdown.querySelector('.dropdown-arrow');
+
+  dropdown.addEventListener('mouseenter',() => {
+    if (window.matchMedia('(hover: hover)').matches && !scrollClosed) {
+      closeDropdowns();
+      dropdown.classList.add('is-open');
+      button.setAttribute('aria-expanded','true');
+    }
+  });
+
+  dropdown.addEventListener('mouseleave',() => {
+    dropdown.classList.remove('is-open');
+    button.setAttribute('aria-expanded','false');
+    scrollClosed = false;
+  });
+
+  button.addEventListener('click',event => {
+    event.stopPropagation();
+
+    const willOpen = !dropdown.classList.contains('is-open');
+    closeDropdowns();
+
+    if (willOpen) {
+      dropdown.classList.add('is-open');
+      button.setAttribute('aria-expanded','true');
+    }
+  });
+
+  dropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
+    link.addEventListener('click',closeDropdowns);
+  });
+});
+
+document.addEventListener('click',event => {
+  if (!event.target.closest('.nav-dropdown')) {
+    closeDropdowns();
+  }
+});
+
+window.addEventListener('scroll',() => {
+  closeDropdowns();
+  scrollClosed = true;
+},{passive:true});
+</script>
+
+</body>
+</html>
