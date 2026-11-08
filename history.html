@@ -1,0 +1,1572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HISTORY — BLACKNWHITE.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#ff168b;
+  --blue:#245bff;
+  --purple:#8b35e8;
+  --yellow:#ffe600;
+  --orange:#ff7135;
+  --black:#171717;
+  --paper:#faf9f6;
+  --grey:#777;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
+body {
+  background:var(--paper);
+  color:var(--black);
+  font-family:'Space Grotesk',sans-serif;
+  overflow-x:hidden;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+/* HEADER */
+
+header {
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #dedbd5;
+  position:sticky;
+  top:0;
+  background:rgba(250,249,246,.96);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.logo {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:29px;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.logo span {
+  color:var(--pink);
+}
+
+nav {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.3px;
+}
+
+nav a {
+  transition:color .2s;
+}
+
+nav a:hover {
+  color:var(--pink);
+}
+
+.nav-index {
+  color:var(--pink);
+}
+
+/* DROPDOWNS */
+
+.nav-dropdown {
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.nav-dropdown-trigger {
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.dropdown-arrow {
+  border:0;
+  background:transparent;
+  color:var(--pink);
+  font:inherit;
+  font-size:11px;
+  cursor:pointer;
+  padding:2px;
+}
+
+.dropdown-menu {
+  position:absolute;
+  top:100%;
+  left:-12px;
+  min-width:205px;
+  padding:16px 0 8px;
+  background:var(--paper);
+  border:1px solid #dedbd5;
+  box-shadow:5px 5px 0 var(--pink);
+  display:none;
+  flex-direction:column;
+  z-index:200;
+}
+
+.nav-dropdown.is-open .dropdown-menu {
+  display:flex;
+}
+
+.dropdown-menu a {
+  display:block;
+  padding:12px 14px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+  white-space:nowrap;
+  transition:background .2s,color .2s;
+}
+
+.dropdown-menu a:hover {
+  background:var(--pink);
+  color:white;
+}
+
+/* PAGE INTRO */
+
+.page-hero {
+  min-height:510px;
+  padding:100px 9%;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.eyebrow,
+.section-label {
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:var(--pink);
+}
+
+.page-hero h1 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(100px,17vw,190px);
+  line-height:.76;
+  letter-spacing:-3px;
+  margin-top:25px;
+  position:relative;
+  z-index:2;
+}
+
+.page-hero h1 span {
+  color:var(--pink);
+}
+
+.hero-description {
+  max-width:540px;
+  font-size:14px;
+  line-height:1.9;
+  margin-top:35px;
+  color:#444;
+  position:relative;
+  z-index:2;
+}
+
+.sticker {
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+  font-family:'Permanent Marker',cursive;
+}
+
+.sticker-one {
+  right:12%;
+  top:18%;
+  background:var(--yellow);
+  padding:12px 17px;
+  transform:rotate(8deg);
+  font-size:17px;
+}
+
+.sticker-two {
+  right:8%;
+  bottom:17%;
+  background:var(--blue);
+  color:white;
+  padding:10px 15px;
+  transform:rotate(-7deg);
+  font-size:16px;
+}
+
+.sticker-three {
+  right:28%;
+  top:52%;
+  color:var(--purple);
+  font-size:40px;
+  transform:rotate(12deg);
+}
+
+.sticker-four {
+  left:4%;
+  bottom:8%;
+  color:var(--orange);
+  font-size:24px;
+  transform:rotate(-8deg);
+}
+
+/* TICKER */
+
+.ticker {
+  background:var(--pink);
+  color:white;
+  padding:14px 0;
+  overflow:hidden;
+  white-space:nowrap;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;
+  letter-spacing:3px;
+}
+
+.ticker-track {
+  display:inline-block;
+  animation:ticker 27s linear infinite;
+}
+
+@keyframes ticker {
+  from {transform:translateX(0);}
+  to {transform:translateX(-50%);}
+}
+
+/* SECTION NAVIGATION */
+
+.jump-nav {
+  padding:30px 8%;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  border-bottom:1px solid #dedbd5;
+}
+
+.jump-nav a {
+  border:1px solid var(--black);
+  padding:12px 16px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+  transition:.2s;
+}
+
+.jump-nav a:hover {
+  background:var(--pink);
+  color:white;
+  border-color:var(--pink);
+  transform:translateY(-3px);
+}
+
+/* GENERAL SECTION */
+
+.content-section {
+  padding:100px 9%;
+  position:relative;
+}
+
+.content-section:nth-of-type(even) {
+  background:#f1eee9;
+}
+
+.section-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:30px;
+  margin-bottom:50px;
+}
+
+.section-top h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(65px,9vw,110px);
+  line-height:.83;
+  margin-top:18px;
+}
+
+.section-top h2 span {
+  color:var(--pink);
+}
+
+.section-number {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:65px;
+  color:#dedbd5;
+  line-height:1;
+}
+
+/* INTRO TEXT */
+
+.lead-text {
+  max-width:850px;
+  font-size:16px;
+  line-height:1.9;
+  color:#444;
+  margin-bottom:45px;
+}
+
+.lead-text strong {
+  color:var(--black);
+}
+
+/* TIMELINE */
+
+.timeline {
+  border-left:3px solid var(--pink);
+  margin:45px 0 20px 10px;
+  padding-left:35px;
+}
+
+.timeline-item {
+  position:relative;
+  margin-bottom:38px;
+  padding:25px 30px;
+  background:white;
+  border:1px solid #e1ded8;
+  transition:.2s;
+}
+
+.timeline-item:hover {
+  transform:translateX(5px);
+  box-shadow:5px 5px 0 var(--pink);
+}
+
+.timeline-item::before {
+  content:"";
+  position:absolute;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:var(--pink);
+  left:-44px;
+  top:29px;
+  border:3px solid var(--paper);
+}
+
+.timeline-date {
+  color:var(--pink);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:29px;
+  letter-spacing:1px;
+}
+
+.timeline-item h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;
+  margin:7px 0;
+}
+
+.timeline-item p {
+  font-size:13px;
+  line-height:1.8;
+  color:#555;
+  max-width:760px;
+}
+
+/* PEOPLE / KEY DETAILS */
+
+.detail-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin:40px 0;
+}
+
+.detail-card {
+  padding:27px;
+  background:white;
+  border:1px solid #e1ded8;
+  min-height:190px;
+}
+
+.detail-card .detail-tag {
+  color:var(--pink);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.detail-card h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:35px;
+  margin:12px 0;
+}
+
+.detail-card p {
+  font-size:13px;
+  line-height:1.8;
+  color:#555;
+}
+
+.detail-card.pink {
+  background:var(--pink);
+  color:white;
+}
+
+.detail-card.pink .detail-tag,
+.detail-card.pink p {
+  color:white;
+}
+
+.detail-card.blue {
+  background:var(--blue);
+  color:white;
+}
+
+.detail-card.blue .detail-tag,
+.detail-card.blue p {
+  color:white;
+}
+
+/* HIGHLIGHT STRIP */
+
+.highlight {
+  margin:45px 0;
+  padding:35px;
+  background:var(--black);
+  color:white;
+  position:relative;
+}
+
+.highlight h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(38px,6vw,65px);
+  line-height:.95;
+}
+
+.highlight h3 span {
+  color:var(--pink);
+}
+
+.highlight p {
+  max-width:700px;
+  margin-top:18px;
+  font-size:13px;
+  line-height:1.8;
+  color:#ddd;
+}
+
+/* THEORY */
+
+.theory-box {
+  padding:35px;
+  border-left:7px solid var(--blue);
+  background:#e9edff;
+  margin:40px 0;
+}
+
+.theory-box h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.theory-box p {
+  font-size:13px;
+  line-height:1.9;
+  color:#333;
+}
+
+/* DEVIANCE SECTION */
+
+.deviance-intro {
+  background:var(--black);
+  color:white;
+  padding:45px;
+  margin:35px 0;
+}
+
+.deviance-intro h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(45px,7vw,75px);
+  line-height:.9;
+}
+
+.deviance-intro h3 span {
+  color:var(--pink);
+}
+
+.deviance-intro p {
+  margin-top:22px;
+  max-width:760px;
+  font-size:14px;
+  line-height:1.9;
+  color:#ddd;
+}
+
+.norm-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin:40px 0;
+}
+
+.norm-card {
+  padding:30px;
+  background:white;
+  border-top:5px solid var(--pink);
+}
+
+.norm-card:nth-child(2) {
+  border-color:var(--blue);
+}
+
+.norm-card:nth-child(3) {
+  border-color:var(--yellow);
+}
+
+.norm-card:nth-child(4) {
+  border-color:var(--purple);
+}
+
+.norm-card h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.norm-card p {
+  font-size:13px;
+  line-height:1.8;
+  color:#555;
+}
+
+.norm-card .small-label {
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:var(--grey);
+  margin-bottom:12px;
+}
+
+/* CYCLE */
+
+.cycle-list {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin:45px 0;
+}
+
+.cycle-card {
+  background:white;
+  padding:30px;
+  border:1px solid #e1ded8;
+  position:relative;
+  min-height:220px;
+}
+
+.cycle-card .cycle-no {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:55px;
+  color:var(--pink);
+  line-height:1;
+}
+
+.cycle-card h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;
+  margin:10px 0;
+}
+
+.cycle-card p {
+  font-size:13px;
+  line-height:1.8;
+  color:#555;
+}
+
+.cycle-card:nth-child(2) {
+  box-shadow:5px 5px 0 var(--blue);
+}
+
+.cycle-card:nth-child(3) {
+  box-shadow:5px 5px 0 var(--yellow);
+}
+
+.cycle-card:nth-child(4) {
+  box-shadow:5px 5px 0 var(--purple);
+}
+
+/* REFLECTION */
+
+.reflection {
+  background:var(--yellow);
+  padding:45px;
+  margin-top:45px;
+  transform:rotate(-.5deg);
+}
+
+.reflection h3 {
+  font-family:'Permanent Marker',cursive;
+  font-size:27px;
+  margin-bottom:15px;
+}
+
+.reflection p {
+  font-size:13px;
+  line-height:1.9;
+}
+
+/* SOURCES */
+
+.source-note {
+  margin-top:45px;
+  padding-top:25px;
+  border-top:1px solid #d5d1ca;
+}
+
+.source-note h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.source-note ul {
+  list-style:none;
+}
+
+.source-note li {
+  margin:10px 0;
+  font-size:12px;
+}
+
+.source-note a {
+  color:var(--blue);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.source-note a:hover {
+  color:var(--pink);
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+  padding:65px 9%;
+  background:var(--pink);
+  color:white;
+}
+
+.bottom-nav h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(55px,9vw,100px);
+  line-height:.85;
+}
+
+.bottom-nav p {
+  font-size:13px;
+  line-height:1.8;
+  margin-top:20px;
+  max-width:550px;
+}
+
+.bottom-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+.bottom-links a {
+  background:white;
+  color:var(--black);
+  padding:13px 18px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  transition:.2s;
+}
+
+.bottom-links a:hover {
+  background:var(--black);
+  color:white;
+}
+
+/* FOOTER */
+
+footer {
+  background:var(--black);
+  color:white;
+  padding:35px 7%;
+}
+
+.footer-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:25px;
+}
+
+.footer-logo {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:35px;
+}
+
+.footer-logo span {
+  color:var(--pink);
+}
+
+.footer-nav {
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.footer-nav a:hover {
+  color:var(--pink);
+}
+
+.footer-bottom {
+  border-top:1px solid #444;
+  margin-top:30px;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  font-size:10px;
+  color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:750px) {
+  header {
+    padding:15px 5%;
+  }
+
+  .logo {
+    font-size:25px;
+  }
+
+  nav {
+    gap:10px;
+    font-size:8px;
+  }
+
+  .page-hero {
+    min-height:480px;
+    padding:80px 7%;
+  }
+
+  .page-hero h1 {
+    font-size:clamp(85px,16vw,130px);
+  }
+
+  .sticker-one {
+    right:5%;
+    top:7%;
+    font-size:12px;
+  }
+
+  .sticker-two {
+    right:5%;
+    bottom:7%;
+    font-size:12px;
+  }
+
+  .sticker-three,
+  .sticker-four {
+    display:none;
+  }
+
+  .content-section {
+    padding:75px 7%;
+  }
+
+  .section-top {
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .section-number {
+    font-size:45px;
+  }
+
+  .detail-grid,
+  .norm-grid,
+  .cycle-list {
+    grid-template-columns:1fr;
+  }
+
+  .jump-nav {
+    padding:22px 6%;
+  }
+
+  .timeline {
+    padding-left:25px;
+  }
+
+  .timeline-item::before {
+    left:-34px;
+  }
+
+  .deviance-intro,
+  .reflection,
+  .highlight {
+    padding:28px;
+  }
+
+  .footer-top {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:480px) {
+  header {
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav {
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .page-hero {
+    min-height:430px;
+  }
+
+  .page-hero h1 {
+    font-size:clamp(75px,18vw,105px);
+  }
+
+  .jump-nav a {
+    font-size:8px;
+  }
+
+  .timeline-item {
+    padding:20px;
+  }
+
+  .bottom-links {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <a href="index.html" class="logo">BLACK<span>N</span>WHITE.</a>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="movement.html">MOVEMENT</a>
+
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-trigger">
+        <a href="history.html">HISTORY</a>
+        <button class="dropdown-arrow" type="button" aria-label="Open History menu" aria-expanded="false">⌄</button>
+      </div>
+      <div class="dropdown-menu">
+        <a href="history.html#emergence">HISTORY & EMERGENCE</a>
+        <a href="history.html#deviance">DEVIANCE</a>
+        <a href="history.html#movement-cycle">MOVEMENT CYCLE</a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-trigger">
+        <a href="impact.html">IMPACT</a>
+        <button class="dropdown-arrow" type="button" aria-label="Open Impact menu" aria-expanded="false">⌄</button>
+      </div>
+      <div class="dropdown-menu">
+        <a href="impact.html#methods">METHODS & MOBILISATION</a>
+        <a href="impact.html#social-change">SOCIAL CHANGE</a>
+        <a href="impact.html#limitations">ONGOING CHALLENGES</a>
+      </div>
+    </div>
+
+    <a href="sources.html">EVIDENCE</a>
+    <a href="index-of-sources.html" class="nav-index">INDEX ↗</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="page-hero">
+  <div class="eyebrow">02 / THE STORY BEHIND THE STRUGGLE</div>
+
+  <h1>
+    THE<br>
+    <span>HISTORY.</span>
+  </h1>
+
+  <p class="hero-description">
+    Every movement has a beginning. But the American Civil Rights
+    Movement did not appear overnight. It grew from generations of
+    resistance, inequality and people demanding something different.
+  </p>
+
+  <div class="sticker sticker-one">KNOW THE PAST.</div>
+  <div class="sticker sticker-two">QUESTION EVERYTHING.</div>
+  <div class="sticker sticker-three">✳</div>
+  <div class="sticker sticker-four">NO MORE SILENCE.</div>
+</section>
+
+<!-- TICKER -->
+
+<div class="ticker">
+  <div class="ticker-track">
+    HISTORY IS NOT JUST WHAT HAPPENED. IT IS WHY IT MATTERS. ✳
+    REMEMBER. QUESTION. UNDERSTAND. ✳
+    HISTORY IS NOT JUST WHAT HAPPENED. IT IS WHY IT MATTERS. ✳
+    REMEMBER. QUESTION. UNDERSTAND. ✳
+  </div>
+</div>
+
+<!-- QUICK JUMP LINKS -->
+
+<div class="jump-nav">
+  <a href="#emergence">01 / HISTORY & EMERGENCE ↓</a>
+  <a href="#deviance">02 / DEVIANCE ↓</a>
+  <a href="#movement-cycle">03 / MOVEMENT CYCLE ↓</a>
+</div>
+
+<!-- SECTION ONE -->
+
+<section class="content-section" id="emergence">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">01 / WHERE IT ALL BEGAN</div>
+      <h2>HISTORY &<br><span>EMERGENCE.</span></h2>
+    </div>
+    <div class="section-number">01</div>
+  </div>
+
+  <p class="lead-text">
+    The American Civil Rights Movement of the 1950s and 1960s was a
+    nationwide struggle led largely by African Americans and their
+    supporters to challenge racial discrimination and segregation.
+    Its emergence was shaped by a much longer history of unequal
+    treatment, organised resistance and demands for equal rights.
+    <strong>The movement was not one event or one person — it was
+    the result of generations of people pushing for change.</strong>
+  </p>
+
+  <div class="highlight">
+    <h3>THE PROBLEM WAS<br><span>BUILT INTO THE SYSTEM.</span></h3>
+    <p>
+      After slavery ended, racial inequality continued through
+      discriminatory laws and practices. In many Southern states,
+      Jim Crow laws enforced racial segregation in public life.
+      Black Americans faced barriers in education, transport,
+      employment, housing and voting.
+    </p>
+  </div>
+
+  <div class="section-label">A TIMELINE OF RESISTANCE</div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-date">1896</div>
+      <h3>Plessy v. Ferguson</h3>
+      <p>
+        The US Supreme Court upheld racial segregation under the
+        principle of "separate but equal". In practice, facilities
+        and opportunities for Black Americans were often unequal.
+        This decision helped provide legal support for segregation
+        for decades.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1909</div>
+      <h3>The NAACP is founded</h3>
+      <p>
+        The National Association for the Advancement of Colored
+        People (NAACP) was established to challenge racial injustice.
+        It became an important organisation in the legal fight
+        against segregation and discrimination.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">17 MAY 1954</div>
+      <h3>Brown v. Board of Education</h3>
+      <p>
+        The Supreme Court ruled that racial segregation in public
+        schools was unconstitutional. The decision challenged the
+        "separate but equal" approach in education, although many
+        communities resisted putting desegregation into practice.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1 DECEMBER 1955</div>
+      <h3>Rosa Parks and the Montgomery Bus Boycott</h3>
+      <p>
+        Rosa Parks was arrested after refusing to give up her seat
+        to a white passenger on a Montgomery bus. Her arrest helped
+        spark a 13-month boycott organised by Black residents.
+        The campaign challenged bus segregation and brought
+        national attention to the movement.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1957</div>
+      <h3>Little Rock and the SCLC</h3>
+      <p>
+        Nine Black students, known as the Little Rock Nine, faced
+        resistance when they attempted to attend Central High
+        School in Arkansas. The Southern Christian Leadership
+        Conference (SCLC) was also formed in 1957, helping
+        coordinate civil rights campaigns.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1960</div>
+      <h3>The Greensboro sit-ins</h3>
+      <p>
+        Four Black college students began a sit-in at a segregated
+        lunch counter in Greensboro, North Carolina. Their action
+        inspired similar demonstrations in other places and
+        encouraged student participation in the movement.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">28 AUGUST 1963</div>
+      <h3>The March on Washington</h3>
+      <p>
+        Hundreds of thousands of people gathered in Washington,
+        D.C., to demand jobs, freedom and civil rights. Martin
+        Luther King Jr. delivered his famous "I Have a Dream"
+        speech during the event.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1964</div>
+      <h3>The Civil Rights Act</h3>
+      <p>
+        The Civil Rights Act of 1964 prohibited discrimination
+        in many public places and made employment discrimination
+        based on race, colour, religion, sex or national origin
+        illegal. It was a major legal achievement of the movement.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1965</div>
+      <h3>The Voting Rights Act</h3>
+      <p>
+        Following campaigns for voting rights, including the
+        Selma-to-Montgomery marches, the Voting Rights Act of
+        1965 aimed to overcome barriers that prevented Black
+        Americans from exercising their right to vote.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="section-label">PEOPLE WHO HELPED SHAPE THE MOVEMENT</div>
+
+  <div class="detail-grid">
+
+    <div class="detail-card pink">
+      <div class="detail-tag">ACTIVIST / ORGANISER</div>
+      <h3>ROSA PARKS</h3>
+      <p>
+        Rosa Parks was an experienced civil rights activist whose
+        arrest in 1955 helped trigger the Montgomery Bus Boycott.
+        Her action became an important symbol of resistance to
+        segregation.
+      </p>
+    </div>
+
+    <div class="detail-card">
+      <div class="detail-tag">MINISTER / LEADER</div>
+      <h3>MARTIN LUTHER KING JR.</h3>
+      <p>
+        King became a prominent leader of the movement and
+        advocated nonviolent protest. He helped lead campaigns
+        that challenged segregation and demanded equal rights.
+      </p>
+    </div>
+
+    <div class="detail-card">
+      <div class="detail-tag">LAWYER / LEGAL STRATEGY</div>
+      <h3>THURGOOD MARSHALL</h3>
+      <p>
+        As a leading NAACP lawyer, Marshall argued Brown v. Board
+        of Education before the Supreme Court. His legal work
+        helped challenge segregation through the courts.
+      </p>
+    </div>
+
+    <div class="detail-card blue">
+      <div class="detail-tag">ACTIVIST / ORGANISER</div>
+      <h3>ELLA BAKER</h3>
+      <p>
+        Baker supported grassroots organising and encouraged
+        young people to take leadership roles. She helped create
+        the conditions for student-led activism to grow.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="theory-box">
+    <h3>THEORY CONNECTION: RELATIVE DEPRIVATION</h3>
+    <p>
+      Relative Deprivation Theory helps explain why people may
+      join a social movement when they believe they are being
+      unfairly denied rights or opportunities compared with
+      others. Black Americans experienced unequal access to
+      education, public services, employment and political
+      participation. The contrast between the promise of equal
+      citizenship and the reality of segregation contributed
+      to frustration and demands for change.
+      <br><br>
+      This theory helps explain one reason people mobilised,
+      but it does not explain everything. Organisation,
+      leadership, community networks and political opportunities
+      also helped the movement grow.
+    </p>
+  </div>
+
+  <div class="reflection">
+    <h3>THE BIGGER PICTURE.</h3>
+    <p>
+      The movement emerged from a long history of inequality,
+      but it was shaped by people who organised, challenged
+      discrimination and refused to accept segregation as
+      something that could never change.
+    </p>
+  </div>
+
+</section>
+
+<!-- SECTION TWO -->
+
+<section class="content-section" id="deviance">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">02 / CHALLENGING THE RULES</div>
+      <h2>DEVIANCE &<br><span>SOCIAL NORMS.</span></h2>
+    </div>
+    <div class="section-number">02</div>
+  </div>
+
+  <p class="lead-text">
+    Social norms are the unwritten expectations and rules that
+    influence how people behave in society. During the Civil Rights
+    Movement, segregation was treated as normal in many communities
+    because it was supported by laws, institutions and everyday
+    practices. Activists challenged these expectations by demanding
+    equal treatment.
+  </p>
+
+  <div class="deviance-intro">
+    <div class="section-label" style="color:var(--yellow);">LOOKING AT DEVIANCE</div>
+    <h3>WHO GETS TO DECIDE<br>WHAT IS <span>"NORMAL"?</span></h3>
+    <p>
+      In sociology, deviance refers to behaviour that goes against
+      the norms or expectations of a group or society. It does not
+      automatically mean that the behaviour is harmful or wrong.
+      During the Civil Rights Movement, peaceful protest and
+      civil disobedience challenged rules that activists believed
+      were unjust.
+    </p>
+  </div>
+
+  <div class="section-label">HOW SOCIAL NORMS WERE CHALLENGED</div>
+
+  <div class="norm-grid">
+
+    <div class="norm-card">
+      <div class="small-label">EXAMPLE 01 / PUBLIC TRANSPORT</div>
+      <h3>BUS BOYCOTTS</h3>
+      <p>
+        The Montgomery Bus Boycott challenged the expectation
+        that Black passengers should accept segregated seating.
+        By refusing to use the bus system, participants showed
+        that collective action could challenge an unfair practice.
+      </p>
+    </div>
+
+    <div class="norm-card">
+      <div class="small-label">EXAMPLE 02 / PUBLIC SPACES</div>
+      <h3>SIT-INS</h3>
+      <p>
+        Student activists sat at lunch counters that refused
+        to serve Black customers. Their peaceful presence
+        challenged the social expectation that public spaces
+        could be separated by race.
+      </p>
+    </div>
+
+    <div class="norm-card">
+      <div class="small-label">EXAMPLE 03 / EDUCATION</div>
+      <h3>SCHOOL INTEGRATION</h3>
+      <p>
+        Black students and their families challenged segregated
+        education by demanding access to schools that had
+        previously excluded them. Their actions questioned
+        the idea that separate schools could provide equal
+        opportunities.
+      </p>
+    </div>
+
+    <div class="norm-card">
+      <div class="small-label">EXAMPLE 04 / POLITICAL RIGHTS</div>
+      <h3>VOTING RIGHTS CAMPAIGNS</h3>
+      <p>
+        Activists organised voter-registration campaigns and
+        demonstrations to challenge barriers that prevented
+        Black citizens from participating equally in elections.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="highlight">
+    <h3>BREAKING AN UNJUST<br><span>SOCIAL EXPECTATION.</span></h3>
+    <p>
+      Many activists used nonviolent civil disobedience:
+      deliberately refusing to follow rules or practices they
+      considered unjust. Their actions drew attention to the
+      difference between what the law allowed and what they
+      believed equality should mean.
+    </p>
+  </div>
+
+  <div class="theory-box">
+    <h3>WHY WAS THIS SEEN AS DEVIANT?</h3>
+    <p>
+      In communities where segregation was accepted or enforced,
+      activists who challenged it could be labelled troublemakers
+      or rule-breakers. Their behaviour went against the dominant
+      social expectations of the time.
+      <br><br>
+      However, the label of deviance depends on the social rules
+      being used to judge behaviour. The movement challenged the
+      idea that an established norm was automatically fair or
+      morally right. Over time, activism helped shift public
+      attitudes about segregation and equal rights.
+    </p>
+  </div>
+
+  <div class="reflection">
+    <h3>QUESTION THE "NORMAL".</h3>
+    <p>
+      Something being accepted by society does not necessarily
+      make it fair. The Civil Rights Movement shows how people
+      can challenge harmful social norms and help change what
+      society considers acceptable.
+    </p>
+  </div>
+
+</section>
+
+<!-- SECTION THREE -->
+
+<section class="content-section" id="movement-cycle">
+
+  <div class="section-top">
+    <div>
+      <div class="section-label">03 / HOW A MOVEMENT DEVELOPS</div>
+      <h2>THE MOVEMENT<br><span>CYCLE.</span></h2>
+    </div>
+    <div class="section-number">03</div>
+  </div>
+
+  <p class="lead-text">
+    Social movements often develop through different stages.
+    These stages help explain how an issue gains attention,
+    how people organise around it and how a movement can
+    influence society. The Civil Rights Movement did not follow
+    a perfectly neat sequence, but its development can be
+    understood through a movement-cycle model.
+  </p>
+
+  <div class="highlight">
+    <h3>FROM SHARED<br><span>FRUSTRATION TO ACTION.</span></h3>
+    <p>
+      A social movement can begin when people recognise a
+      shared problem. As awareness grows, people may organise,
+      build networks, attract supporters and push institutions
+      to respond.
+    </p>
+  </div>
+
+  <div class="cycle-list">
+
+    <div class="cycle-card">
+      <div class="cycle-no">01</div>
+      <h3>EMERGENCE</h3>
+      <p>
+        People begin recognising a shared issue and expressing
+        concern about it. During the Civil Rights Movement,
+        generations of racial discrimination and segregation
+        created demands for change. Legal challenges and local
+        activism helped build momentum before the 1950s.
+      </p>
+    </div>
+
+    <div class="cycle-card">
+      <div class="cycle-no">02</div>
+      <h3>COALESCENCE</h3>
+      <p>
+        Individuals and groups begin organising around a common
+        goal. Campaigns such as the Montgomery Bus Boycott,
+        student sit-ins and mass demonstrations brought people
+        together and helped the movement gain national attention.
+      </p>
+    </div>
+
+    <div class="cycle-card">
+      <div class="cycle-no">03</div>
+      <h3>INSTITUTIONALISATION</h3>
+      <p>
+        Some movement activities become more organised through
+        established groups, leadership structures and ongoing
+        campaigns. Organisations such as the NAACP and SCLC
+        helped coordinate legal action, community organising
+        and public demonstrations.
+      </p>
+    </div>
+
+    <div class="cycle-card">
+      <div class="cycle-no">04</div>
+      <h3>DECLINE OR TRANSFORMATION</h3>
+      <p>
+        A movement may lose momentum, achieve some goals or
+        transform into new campaigns. Major legal changes,
+        including the Civil Rights Act of 1964 and Voting Rights
+        Act of 1965, marked important achievements. However,
+        the struggle for racial equality continued beyond these
+        laws.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="theory-box">
+    <h3>WHY DOES THE CYCLE MATTER?</h3>
+    <p>
+      The movement cycle shows that social change usually
+      requires more than one protest or one influential person.
+      Awareness, organisation, leadership, public participation
+      and pressure on institutions can all contribute to a
+      movement's development.
+      <br><br>
+      It also shows that achieving legal change does not mean
+      every social problem has disappeared. Movements can
+      continue, adapt or inspire later campaigns when inequality
+      remains.
+    </p>
+  </div>
+
+  <div class="reflection">
+    <h3>CHANGE IS NOT A FINISH LINE.</h3>
+    <p>
+      The Civil Rights Movement achieved major changes in law
+      and helped shift public attitudes. But the movement's
+      history also shows that progress can be uneven and that
+      legal victories do not automatically remove every form
+      of inequality.
+    </p>
+  </div>
+
+</section>
+
+<!-- SOURCES -->
+
+<section class="content-section" id="history-sources">
+  <div class="section-label">RESEARCH / WHERE THE HISTORY COMES FROM</div>
+
+  <div class="section-top">
+    <div>
+      <h2>CHECK THE<br><span>RECORD.</span></h2>
+    </div>
+    <div class="section-number">↗</div>
+  </div>
+
+  <p class="lead-text">
+    Historical claims should be supported by reliable records.
+    These sources were used to research the timeline, court
+    decisions, campaigns and development of the Civil Rights
+    Movement.
+  </p>
+
+  <div class="source-note">
+    <h3>HISTORICAL SOURCES</h3>
+    <ul>
+      <li>
+        <a href="https://www.archives.gov/education/lessons/brown-v-board/timeline.html" target="_blank" rel="noopener">
+          National Archives — Brown v. Board of Education timeline ↗
+        </a>
+      </li>
+      <li>
+        <a href="https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/" target="_blank" rel="noopener">
+          Library of Congress — The Civil Rights Movement ↗
+        </a>
+      </li>
+      <li>
+        <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era-timeline.html" target="_blank" rel="noopener">
+          Library of Congress — Civil Rights Era Timeline ↗
+        </a>
+      </li>
+      <li>
+        <a href="https://www.archives.gov/milestone-documents/civil-rights-act" target="_blank" rel="noopener">
+          National Archives — Civil Rights Act of 1964 ↗
+        </a>
+      </li>
+      <li>
+        <a href="https://www.loc.gov/exhibits/naacp/the-civil-rights-era.html" target="_blank" rel="noopener">
+          Library of Congress — NAACP and the Civil Rights Era ↗
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- BOTTOM NAVIGATION -->
+
+<section class="bottom-nav">
+  <div class="section-label" style="color:white;">THAT'S THE HISTORY. WHAT CHANGED?</div>
+
+  <h2>THE STORY<br>DOESN'T END.</h2>
+
+  <p>
+    Understanding how the movement emerged is only part of the
+    picture. Next, explore the actions people took, the changes
+    they achieved and the challenges that continued.
+  </p>
+
+  <div class="bottom-links">
+    <a href="index.html">← BACK HOME</a>
+    <a href="movement.html">THE MOVEMENT ↗</a>
+    <a href="impact.html">EXPLORE THE IMPACT ↗</a>
+    <a href="sources.html">VIEW THE EVIDENCE ↗</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">BLACK<span>N</span>WHITE.</div>
+
+    <div class="footer-nav">
+      <a href="index.html">HOME</a>
+      <a href="movement.html">MOVEMENT</a>
+      <a href="history.html">HISTORY</a>
+      <a href="impact.html">IMPACT</a>
+      <a href="sources.html">EVIDENCE</a>
+      <a href="index-of-sources.html">THE INDEX ↗</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>BACK IN LIGHT. — REWRITING THE BEGINNING.</span>
+    <span>BLACKNWHITE. © 2026</span>
+  </div>
+</footer>
+
+<!-- DROPDOWN INTERACTION -->
+
+<script>
+const dropdowns = document.querySelectorAll('.nav-dropdown');
+let scrollClosed = false;
+
+function closeDropdowns() {
+  dropdowns.forEach(dropdown => {
+    dropdown.classList.remove('is-open');
+    const button = dropdown.querySelector('.dropdown-arrow');
+    button.setAttribute('aria-expanded','false');
+  });
+}
+
+dropdowns.forEach(dropdown => {
+  const button = dropdown.querySelector('.dropdown-arrow');
+
+  dropdown.addEventListener('mouseenter',() => {
+    if (window.matchMedia('(hover: hover)').matches && !scrollClosed) {
+      closeDropdowns();
+      dropdown.classList.add('is-open');
+      button.setAttribute('aria-expanded','true');
+    }
+  });
+
+  dropdown.addEventListener('mouseleave',() => {
+    dropdown.classList.remove('is-open');
+    button.setAttribute('aria-expanded','false');
+    scrollClosed = false;
+  });
+
+  button.addEventListener('click',event => {
+    event.stopPropagation();
+
+    const willOpen = !dropdown.classList.contains('is-open');
+    closeDropdowns();
+
+    if (willOpen) {
+      dropdown.classList.add('is-open');
+      button.setAttribute('aria-expanded','true');
+    }
+  });
+
+  dropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
+    link.addEventListener('click',closeDropdowns);
+  });
+});
+
+document.addEventListener('click',event => {
+  if (!event.target.closest('.nav-dropdown')) {
+    closeDropdowns();
+  }
+});
+
+window.addEventListener('scroll',() => {
+  closeDropdowns();
+  scrollClosed = true;
+},{passive:true});
+</script>
+
+</body>
+</html>
