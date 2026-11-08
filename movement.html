@@ -1,0 +1,1423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE MOVEMENT — BLACKNWHITE.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#ff168b;
+  --blue:#245bff;
+  --purple:#8b35e8;
+  --yellow:#ffe600;
+  --orange:#ff7135;
+  --black:#171717;
+  --paper:#faf9f6;
+  --grey:#777;
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
+body {
+  background:var(--paper);
+  color:var(--black);
+  font-family:'Space Grotesk',sans-serif;
+  overflow-x:hidden;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+img {
+  display:block;
+  width:100%;
+  object-fit:cover;
+}
+
+button {
+  font:inherit;
+}
+
+/* HEADER */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--paper);
+  border-bottom:2px solid var(--black);
+}
+
+.nav-wrap {
+  max-width:1400px;
+  margin:auto;
+  min-height:76px;
+  padding:12px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.logo span {
+  color:var(--pink);
+}
+
+nav {
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:23px;
+}
+
+nav > a,
+.nav-drop > a {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.2px;
+  transition:color .2s;
+}
+
+nav > a:hover,
+.nav-drop > a:hover,
+nav .active {
+  color:var(--pink);
+}
+
+.nav-drop {
+  position:relative;
+}
+
+.drop-menu {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:-15px;
+  min-width:190px;
+  padding:12px;
+  background:var(--black);
+  color:white;
+  border-top:4px solid var(--pink);
+  box-shadow:5px 5px 0 var(--pink);
+}
+
+.drop-menu a {
+  display:block;
+  padding:10px 8px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.8px;
+}
+
+.drop-menu a:hover {
+  background:var(--pink);
+  color:white;
+}
+
+.nav-drop.open .drop-menu {
+  display:block;
+}
+
+.drop-toggle {
+  display:none;
+  border:0;
+  background:none;
+  font-size:12px;
+  cursor:pointer;
+  padding:5px;
+}
+
+/* GENERAL */
+
+.section {
+  max-width:1200px;
+  margin:auto;
+  padding:100px 7%;
+}
+
+.eyebrow {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:3px;
+  color:var(--pink);
+  margin-bottom:15px;
+}
+
+.section-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,7vw,88px);
+  line-height:.9;
+  margin-bottom:25px;
+}
+
+.body-copy {
+  font-size:15px;
+  line-height:1.85;
+  color:#444;
+}
+
+.pink {
+  color:var(--pink);
+}
+
+.blue {
+  color:var(--blue);
+}
+
+.marker {
+  font-family:'Permanent Marker',cursive;
+}
+
+/* HERO */
+
+.hero {
+  min-height:650px;
+  padding:90px 7% 75px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:2px solid var(--black);
+  display:flex;
+  align-items:center;
+}
+
+.hero-inner {
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+.hero-tag {
+  display:inline-block;
+  background:var(--yellow);
+  padding:9px 14px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  transform:rotate(-2deg);
+  margin-bottom:25px;
+}
+
+.hero h1 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(90px,16vw,205px);
+  line-height:.76;
+  letter-spacing:-4px;
+  max-width:950px;
+}
+
+.hero h1 span {
+  color:var(--pink);
+  display:block;
+}
+
+.hero-subtitle {
+  font-size:clamp(16px,2vw,22px);
+  font-weight:700;
+  margin-top:35px;
+  max-width:560px;
+  line-height:1.5;
+}
+
+.hero-note {
+  display:inline-block;
+  background:var(--black);
+  color:white;
+  padding:12px 18px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+  margin-top:25px;
+  transform:rotate(1deg);
+}
+
+.hero-sticker {
+  position:absolute;
+  z-index:1;
+  font-family:'Permanent Marker',cursive;
+  pointer-events:none;
+}
+
+.sticker-one {
+  top:17%;
+  right:12%;
+  color:var(--blue);
+  font-size:38px;
+  transform:rotate(10deg);
+}
+
+.sticker-two {
+  bottom:18%;
+  right:8%;
+  background:var(--yellow);
+  padding:12px 18px;
+  font-size:24px;
+  transform:rotate(-8deg);
+}
+
+.sticker-three {
+  top:55%;
+  right:30%;
+  color:var(--purple);
+  font-size:58px;
+  transform:rotate(15deg);
+}
+
+.sticker-four {
+  top:13%;
+  right:37%;
+  color:var(--orange);
+  font-size:25px;
+  transform:rotate(-10deg);
+}
+
+/* TICKER */
+
+.ticker {
+  background:var(--pink);
+  color:white;
+  overflow:hidden;
+  white-space:nowrap;
+  padding:14px 0;
+  border-bottom:2px solid var(--black);
+}
+
+.ticker-track {
+  display:inline-block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:23px;
+  letter-spacing:2px;
+  animation:moveTicker 28s linear infinite;
+}
+
+@keyframes moveTicker {
+  from {transform:translateX(0);}
+  to {transform:translateX(-50%);}
+}
+
+/* INTRO */
+
+.intro-grid {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:65px;
+  align-items:center;
+}
+
+.intro-art {
+  background:var(--black);
+  color:white;
+  min-height:390px;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+
+.intro-art .big-word {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(65px,9vw,120px);
+  line-height:.8;
+  color:var(--yellow);
+  position:relative;
+  z-index:2;
+}
+
+.intro-art .scribble {
+  font-family:'Permanent Marker',cursive;
+  font-size:23px;
+  color:var(--pink);
+  transform:rotate(-7deg);
+  position:relative;
+  z-index:2;
+}
+
+.intro-art .symbol {
+  position:absolute;
+  right:15px;
+  bottom:0;
+  font-size:180px;
+  color:var(--blue);
+  opacity:.7;
+  font-family:'Bebas Neue',sans-serif;
+}
+
+/* PURPOSE */
+
+.purpose-section {
+  background:var(--black);
+  color:white;
+  max-width:none;
+}
+
+.purpose-inner {
+  max-width:1200px;
+  margin:auto;
+}
+
+.purpose-section .body-copy {
+  color:#d4d4d4;
+}
+
+.goal-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:45px;
+}
+
+.goal-card {
+  min-height:210px;
+  padding:25px;
+  background:#252525;
+  border:1px solid #484848;
+  position:relative;
+}
+
+.goal-card .number {
+  font-family:'Bebas Neue',sans-serif;
+  color:var(--pink);
+  font-size:35px;
+}
+
+.goal-card h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:27px;
+  margin:15px 0 10px;
+  letter-spacing:.5px;
+}
+
+.goal-card p {
+  color:#ccc;
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* IMAGE FEATURE */
+
+.image-feature {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+  margin:55px 0;
+}
+
+.feature-image {
+  position:relative;
+  background:#ddd;
+  border:2px solid var(--black);
+}
+
+.feature-image img {
+  height:430px;
+  filter:grayscale(100%);
+}
+
+.image-caption {
+  background:var(--black);
+  color:white;
+  padding:13px 16px;
+  font-size:11px;
+  line-height:1.6;
+}
+
+.image-caption a {
+  color:var(--yellow);
+  text-decoration:underline;
+}
+
+.feature-text h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:45px;
+  line-height:.95;
+  margin-bottom:18px;
+}
+
+.feature-text p {
+  font-size:14px;
+  line-height:1.85;
+  color:#444;
+  margin-bottom:15px;
+}
+
+/* PEOPLE */
+
+.people-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+
+.person-card {
+  border:2px solid var(--black);
+  background:white;
+}
+
+.person-card img {
+  height:240px;
+  filter:grayscale(100%);
+}
+
+.person-info {
+  padding:20px;
+}
+
+.person-info h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;
+  margin-bottom:7px;
+}
+
+.person-info p {
+  font-size:13px;
+  line-height:1.7;
+  color:#555;
+}
+
+/* ORGANISATIONS */
+
+.org-list {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:35px;
+}
+
+.org-item {
+  padding:25px;
+  border-left:6px solid var(--blue);
+  background:#f0eee9;
+}
+
+.org-item:nth-child(2) {
+  border-color:var(--pink);
+}
+
+.org-item:nth-child(3) {
+  border-color:var(--yellow);
+}
+
+.org-item:nth-child(4) {
+  border-color:var(--purple);
+}
+
+.org-item h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px;
+  margin-bottom:8px;
+}
+
+.org-item p {
+  font-size:13px;
+  line-height:1.7;
+  color:#555;
+}
+
+/* CLASSIFICATION */
+
+.classification {
+  background:var(--yellow);
+  border-top:2px solid var(--black);
+  border-bottom:2px solid var(--black);
+}
+
+.classification-inner {
+  max-width:1200px;
+  margin:auto;
+  padding:85px 7%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+}
+
+.classification-stamp {
+  background:var(--black);
+  color:white;
+  padding:35px;
+  transform:rotate(-2deg);
+  box-shadow:9px 9px 0 var(--pink);
+}
+
+.classification-stamp small {
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--pink);
+  font-weight:700;
+}
+
+.classification-stamp strong {
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,7vw,80px);
+  line-height:.9;
+  margin-top:18px;
+}
+
+/* PHOTO STRIP */
+
+.photo-section {
+  background:#eeece7;
+  max-width:none;
+}
+
+.photo-inner {
+  max-width:1200px;
+  margin:auto;
+}
+
+.photo-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:35px;
+}
+
+.photo-card {
+  background:white;
+  border:2px solid var(--black);
+}
+
+.photo-card img {
+  height:260px;
+  filter:grayscale(100%);
+}
+
+.photo-card p {
+  padding:15px;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.photo-card a {
+  color:var(--pink);
+  font-weight:700;
+  text-decoration:underline;
+}
+
+/* CTA */
+
+.next-section {
+  background:var(--pink);
+  color:white;
+  text-align:center;
+  padding:90px 7%;
+  border-top:2px solid var(--black);
+}
+
+.next-section h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(55px,9vw,105px);
+  line-height:.9;
+  margin-bottom:20px;
+}
+
+.next-section p {
+  max-width:570px;
+  margin:0 auto 30px;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.cta-links {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.cta-button {
+  display:inline-block;
+  background:var(--black);
+  color:white;
+  padding:15px 22px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  border:2px solid var(--black);
+  transition:.2s;
+}
+
+.cta-button:hover {
+  background:white;
+  color:var(--black);
+}
+
+.cta-button.light {
+  background:white;
+  color:var(--black);
+}
+
+.cta-button.light:hover {
+  background:var(--yellow);
+}
+
+/* BOTTOM NAV + FOOTER */
+
+.bottom-nav {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  padding:25px 7%;
+  border-bottom:2px solid var(--black);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.bottom-nav a:hover {
+  color:var(--pink);
+}
+
+footer {
+  background:var(--black);
+  color:white;
+  padding:35px 7%;
+}
+
+.footer-inner {
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-logo {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;
+}
+
+.footer-logo span {
+  color:var(--pink);
+}
+
+.footer-links {
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.footer-links a {
+  font-size:10px;
+  color:#ccc;
+}
+
+.footer-links a:hover {
+  color:var(--pink);
+}
+
+.footer-note {
+  width:100%;
+  color:#888;
+  font-size:10px;
+  margin-top:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .nav-wrap {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav {
+    width:100%;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    gap:13px;
+  }
+
+  nav > a,
+  .nav-drop > a {
+    font-size:10px;
+  }
+
+  .drop-menu {
+    left:0;
+  }
+
+  .hero {
+    min-height:570px;
+  }
+
+  .sticker-one {
+    right:5%;
+    top:10%;
+  }
+
+  .sticker-two {
+    right:5%;
+    bottom:8%;
+  }
+
+  .sticker-three {
+    right:10%;
+    top:55%;
+  }
+
+  .intro-grid,
+  .image-feature,
+  .classification-inner {
+    grid-template-columns:1fr;
+  }
+
+  .goal-grid,
+  .people-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .photo-grid {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:560px) {
+  .section {
+    padding:70px 6%;
+  }
+
+  .hero {
+    min-height:520px;
+    padding:75px 6%;
+  }
+
+  .hero h1 {
+    font-size:clamp(75px,19vw,115px);
+    letter-spacing:-2px;
+  }
+
+  .hero-subtitle {
+    max-width:90%;
+  }
+
+  .sticker-one {
+    font-size:25px;
+    top:8%;
+  }
+
+  .sticker-two {
+    font-size:17px;
+    bottom:5%;
+  }
+
+  .sticker-three {
+    font-size:40px;
+  }
+
+  .sticker-four {
+    right:10%;
+    top:35%;
+  }
+
+  .goal-grid,
+  .people-grid,
+  .org-list,
+  .photo-grid {
+    grid-template-columns:1fr;
+  }
+
+  .feature-image img {
+    height:300px;
+  }
+
+  .photo-card img {
+    height:250px;
+  }
+
+  .intro-art {
+    min-height:300px;
+    padding:30px;
+  }
+
+  .bottom-nav {
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a class="logo" href="home.html">BLACK<span>N</span>WHITE.</a>
+
+    <nav>
+      <a href="home.html">HOME</a>
+      <a href="movement.html" class="active">MOVEMENT</a>
+
+      <div class="nav-drop">
+        <a href="history.html">HISTORY</a>
+        <button class="drop-toggle" aria-label="Toggle History menu">⌄</button>
+        <div class="drop-menu">
+          <a href="history.html#emergence">HISTORY & EMERGENCE</a>
+          <a href="history.html#deviance">DEVIANCE</a>
+          <a href="history.html#movement-cycle">MOVEMENT CYCLE</a>
+        </div>
+      </div>
+
+      <div class="nav-drop">
+        <a href="impact.html">IMPACT</a>
+        <button class="drop-toggle" aria-label="Toggle Impact menu">⌄</button>
+        <div class="drop-menu">
+          <a href="impact.html#methods">METHODS & MOBILISATION</a>
+          <a href="impact.html#social-change">SOCIAL CHANGE</a>
+          <a href="impact.html#limitations">ONGOING CHALLENGES</a>
+        </div>
+      </div>
+
+      <a href="evidence.html">EVIDENCE</a>
+      <a href="index.html">INDEX</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">A MOVEMENT FOR EQUALITY · 1950s–1960s</div>
+
+    <h1>THE <span>MOVEMENT.</span></h1>
+
+    <p class="hero-subtitle">
+      A fight against segregation, discrimination and unequal rights.
+      A movement that demanded America live up to its promises of freedom.
+    </p>
+
+    <div class="hero-note">NO MORE SECOND-CLASS CITIZENSHIP.</div>
+  </div>
+
+  <div class="hero-sticker sticker-one">EQUALITY!</div>
+  <div class="hero-sticker sticker-two">MAKE CHANGE.</div>
+  <div class="hero-sticker sticker-three">✳</div>
+  <div class="hero-sticker sticker-four">1954 → 1968</div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    EQUALITY IS NOT A PRIVILEGE ✳ JUSTICE FOR ALL ✳ END SEGREGATION ✳
+    EQUALITY IS NOT A PRIVILEGE ✳ JUSTICE FOR ALL ✳ END SEGREGATION ✳
+    EQUALITY IS NOT A PRIVILEGE ✳ JUSTICE FOR ALL ✳ END SEGREGATION ✳
+  </div>
+</div>
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+  <div class="intro-grid">
+    <div>
+      <div class="eyebrow">01 / WHAT WAS IT?</div>
+      <h2 class="section-title">A DEMAND TO BE <span class="pink">EQUAL.</span></h2>
+
+      <p class="body-copy">
+        The American Civil Rights Movement was a broad campaign for racial
+        equality in the United States. During the 1950s and 1960s, African
+        Americans and their allies organised to challenge racial segregation,
+        discrimination and barriers that prevented Black Americans from
+        enjoying equal rights.
+      </p>
+
+      <br>
+
+      <p class="body-copy">
+        The movement did not begin from nowhere. It grew from generations
+        of resistance to slavery, segregation and racial injustice. Activists
+        used protests, boycotts, legal challenges, speeches and community
+        organising to demand change.
+      </p>
+
+      <br>
+
+      <p class="body-copy">
+        Its central message was simple: rights should not depend on a
+        person's race.
+      </p>
+    </div>
+
+    <div class="intro-art">
+      <div class="scribble">THE FIGHT FOR</div>
+      <div class="big-word">FREEDOM<br>AND<br>JUSTICE.</div>
+      <div class="scribble">NOTHING LESS.</div>
+      <div class="symbol">✳</div>
+    </div>
+  </div>
+</section>
+
+<!-- GOALS -->
+
+<section class="section purpose-section">
+  <div class="purpose-inner">
+    <div class="eyebrow">02 / THE PURPOSE</div>
+    <h2 class="section-title">WHAT WERE THEY <span class="pink">FIGHTING FOR?</span></h2>
+
+    <p class="body-copy">
+      The movement aimed to remove the systems and practices that kept
+      African Americans from having the same opportunities and protections
+      as white Americans.
+    </p>
+
+    <div class="goal-grid">
+      <div class="goal-card">
+        <div class="number">01</div>
+        <h3>END SEGREGATION</h3>
+        <p>
+          Challenge laws and practices that separated people by race in
+          schools, public facilities, transport and other parts of everyday life.
+        </p>
+      </div>
+
+      <div class="goal-card">
+        <div class="number">02</div>
+        <h3>VOTING RIGHTS</h3>
+        <p>
+          Remove unfair barriers that prevented Black Americans from
+          registering to vote and participating in elections.
+        </p>
+      </div>
+
+      <div class="goal-card">
+        <div class="number">03</div>
+        <h3>EQUAL PROTECTION</h3>
+        <p>
+          Demand that laws and government institutions protect people
+          equally, regardless of race.
+        </p>
+      </div>
+
+      <div class="goal-card">
+        <div class="number">04</div>
+        <h3>EDUCATION</h3>
+        <p>
+          Challenge segregated schooling and fight for equal access to
+          educational opportunities.
+        </p>
+      </div>
+
+      <div class="goal-card">
+        <div class="number">05</div>
+        <h3>PUBLIC ACCESS</h3>
+        <p>
+          Challenge racial discrimination in public places, services,
+          accommodation and employment.
+        </p>
+      </div>
+
+      <div class="goal-card">
+        <div class="number">06</div>
+        <h3>DIGNITY & RESPECT</h3>
+        <p>
+          Challenge racist attitudes and the treatment of Black Americans
+          as second-class citizens.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WAS AFFECTED -->
+
+<section class="section">
+  <div class="eyebrow">03 / WHO WAS IT FOR?</div>
+  <h2 class="section-title">WHO DID THE MOVEMENT <span class="pink">REPRESENT?</span></h2>
+
+  <div class="image-feature">
+    <div class="feature-image">
+      <img
+        src="https://nmaahc.si.edu/sites/default/files/styles/max_1300x1300/public/images/slideshow/nmaahc-2011_57_10_3.jpg?itok=wICMJ3s-"
+        alt="Terrence Roberts, a member of the Little Rock Nine, standing with federal soldiers in 1957">
+      <div class="image-caption">
+        Terrence Roberts of the Little Rock Nine with federal soldiers,
+        1957. Image: National Museum of African American History and Culture.
+        <a href="https://nmaahc.si.edu/explore/stories/reflections-little-rock-nine-1957-2017" target="_blank" rel="noopener">View source ↗</a>
+      </div>
+    </div>
+
+    <div class="feature-text">
+      <h3>THE PEOPLE AT THE CENTRE OF THE FIGHT.</h3>
+      <p>
+        The movement primarily sought equality and civil rights for
+        African Americans, who faced racial discrimination in many areas
+        of American life.
+      </p>
+      <p>
+        This included children who were denied equal access to schools,
+        adults blocked from voting, workers facing discrimination and
+        families affected by segregated housing and public services.
+      </p>
+      <p>
+        People from different racial backgrounds also joined the movement
+        as supporters and allies. However, Black Americans were at its
+        centre: organising, leading campaigns and demanding change in
+        their own communities.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+
+<section class="section">
+  <div class="eyebrow">04 / THE PEOPLE</div>
+  <h2 class="section-title">THE FACES BEHIND <span class="blue">THE FIGHT.</span></h2>
+
+  <p class="body-copy">
+    The movement was not led by one person alone. It involved organisers,
+    students, lawyers, ministers, families and ordinary people who took
+    action in their communities.
+  </p>
+
+  <div class="people-grid">
+    <article class="person-card">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Rosa_Parks_1955.jpg"
+        alt="Portrait of Rosa Parks">
+      <div class="person-info">
+        <h3>ROSA PARKS</h3>
+        <p>
+          Her refusal to give up her bus seat in Montgomery in 1955 became
+          a major catalyst for the Montgomery Bus Boycott. Parks was also
+          an experienced activist.
+        </p>
+      </div>
+    </article>
+
+    <article class="person-card">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Martin_Luther_King_Jr_NYWTS_2.jpg"
+        alt="Portrait of Martin Luther King Jr.">
+      <div class="person-info">
+        <h3>MARTIN LUTHER KING JR.</h3>
+        <p>
+          A minister and prominent civil rights leader who advocated
+          nonviolent protest. He helped lead campaigns including the
+          Montgomery Bus Boycott and the 1963 March on Washington.
+        </p>
+      </div>
+    </article>
+
+    <article class="person-card">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Thurgood_Marshall_%28cropped%29.jpg"
+        alt="Portrait of Thurgood Marshall">
+      <div class="person-info">
+        <h3>THURGOOD MARSHALL</h3>
+        <p>
+          A lawyer who helped challenge racial segregation through the
+          courts. He argued the landmark Brown v. Board of Education case
+          before the Supreme Court.
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <p class="body-copy" style="font-size:11px;margin-top:18px;">
+    Portrait image sources: Wikimedia Commons. See the Index page for
+    research sources and the Evidence page for additional archival records.
+  </p>
+</section>
+
+<!-- ORGANISATIONS -->
+
+<section class="section" style="background:#eeece7;max-width:none;">
+  <div style="max-width:1200px;margin:auto;">
+    <div class="eyebrow">05 / COLLECTIVE ACTION</div>
+    <h2 class="section-title">STRONGER <span class="pink">TOGETHER.</span></h2>
+
+    <p class="body-copy">
+      Organisations helped people coordinate campaigns, share information,
+      raise support and challenge discrimination across different states.
+    </p>
+
+    <div class="org-list">
+      <div class="org-item">
+        <h3>NAACP</h3>
+        <p>
+          The National Association for the Advancement of Colored People
+          used legal challenges, campaigning and advocacy to fight racial
+          discrimination. Its legal team played a major role in challenging
+          segregated education.
+        </p>
+      </div>
+
+      <div class="org-item">
+        <h3>SCLC</h3>
+        <p>
+          The Southern Christian Leadership Conference brought together
+          local groups and religious leaders to organise nonviolent
+          campaigns against segregation and injustice.
+        </p>
+      </div>
+
+      <div class="org-item">
+        <h3>SNCC</h3>
+        <p>
+          The Student Nonviolent Coordinating Committee was formed by
+          student activists. It helped organise sit-ins, voter registration
+          campaigns and other direct-action activities.
+        </p>
+      </div>
+
+      <div class="org-item">
+        <h3>CORE</h3>
+        <p>
+          The Congress of Racial Equality organised nonviolent direct action,
+          including Freedom Rides that challenged segregation in interstate
+          travel facilities.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW PHOTO FEATURE -->
+
+<section class="section">
+  <div class="eyebrow">06 / MOMENTS THAT MATTERED</div>
+  <h2 class="section-title">THE STRUGGLE IN <span class="pink">REAL LIFE.</span></h2>
+
+  <p class="body-copy">
+    These photographs show different parts of the struggle: access to
+    education, the challenge to segregation in universities and the
+    determination of people who took part in the movement.
+  </p>
+
+  <div class="photo-grid">
+
+    <article class="photo-card">
+      <img
+        src="https://www.splcenter.org/wp-content/uploads/2020/09/web_05-little-rock-nine_gettyimages-515031416.jpg"
+        alt="The Little Rock Nine arriving at Central High School with a soldier in 1957">
+      <p>
+        <strong>THE LITTLE ROCK NINE · 1957</strong><br>
+        Nine Black students faced opposition as they attempted to attend
+        Central High School in Arkansas.
+        <br><a href="https://www.splcenter.org/resources/stories/profiles-courage-september-4-1957-little-rock-nine-started-movement-integrate-schools/" target="_blank" rel="noopener">Photograph and story source ↗</a>
+      </p>
+    </article>
+
+    <article class="photo-card">
+      <img
+        src="https://storage.googleapis.com/clio-images/medium_9926.14844.jpg"
+        alt="James Meredith walking near the University of Mississippi during integration in 1962">
+      <p>
+        <strong>JAMES MEREDITH · 1962</strong><br>
+        Meredith's enrolment at the University of Mississippi challenged
+        the exclusion of Black students from the institution.
+        <br><a href="https://www.loc.gov/exhibits/african-american-odyssey/civil-rights-era.html#obj8" target="_blank" rel="noopener">Historical source ↗</a>
+      </p>
+    </article>
+
+    <article class="photo-card">
+      <img
+        src="https://static.time.com/v3/assets/bltea6093859af6183b/blt2165908f1a649232/6988483e524fc0536ddf1c91/13_00933582.jpg?auto=webp&branch=production&quality=75&width=3840"
+        alt="A scene from the Little Rock school integration crisis">
+      <p>
+        <strong>INTEGRATING SCHOOLS</strong><br>
+        The Little Rock crisis showed how difficult it could be to enforce
+        desegregation even after a Supreme Court ruling.
+        <br><a href="https://time.com/3874341/little-rock-nine-1957-photos/" target="_blank" rel="noopener">Photograph collection ↗</a>
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- CLASSIFICATION -->
+
+<section class="classification">
+  <div class="classification-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--black);">07 / TYPE OF MOVEMENT</div>
+      <h2 class="section-title">WHAT KIND OF SOCIAL MOVEMENT?</h2>
+
+      <p class="body-copy" style="color:#333;">
+        The American Civil Rights Movement is generally understood as a
+        reform-oriented movement. It sought major changes to laws,
+        institutions and social attitudes, while working to achieve equal
+        rights within the existing political system.
+      </p>
+
+      <br>
+
+      <p class="body-copy" style="color:#333;">
+        It used collective action to challenge established rules and
+        practices rather than attempting to replace the entire political
+        system. Its campaigns aimed to reform the way society treated
+        African Americans.
+      </p>
+    </div>
+
+    <div class="classification-stamp">
+      <small>MOVEMENT CLASSIFICATION</small>
+      <strong>REFORM-<br>ORIENTED.</strong>
+      <p style="font-size:12px;line-height:1.7;margin-top:20px;">
+        Changing laws. Challenging institutions. Demanding equality.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+
+<section class="section">
+  <div class="eyebrow">08 / WHY IT MATTERS</div>
+  <h2 class="section-title">A MOVEMENT THAT <span class="pink">CHANGED THE RULES.</span></h2>
+
+  <div class="image-feature">
+    <div class="feature-text">
+      <h3>THE FIGHT DID NOT END WITH ONE PROTEST.</h3>
+      <p>
+        The Civil Rights Movement brought together many different
+        campaigns, communities and organisations. Their actions helped
+        build pressure for significant legal changes, including the
+        Civil Rights Act of 1964 and the Voting Rights Act of 1965.
+      </p>
+      <p>
+        These achievements were important, but they did not instantly
+        remove racial inequality. Discrimination and unequal opportunities
+        continued in many areas of American life.
+      </p>
+      <p>
+        Understanding the movement means looking at both what it achieved
+        and the challenges that remained.
+      </p>
+    </div>
+
+    <div class="feature-image">
+      <img
+        src="https://www.loc.gov/exhibits/civil-rights-act/images/3c11236_enlarge.jpg"
+        alt="Historical photograph connected to the civil rights struggle">
+      <div class="image-caption">
+        Historical photograph from the Library of Congress Civil Rights
+        Act exhibition.
+        <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">View exhibition ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+
+<section class="next-section">
+  <h2>THE STORY DOESN'T<br>STOP HERE.</h2>
+
+  <p>
+    Explore how the movement emerged, how people challenged social norms,
+    what strategies they used and what changed as a result.
+  </p>
+
+  <div class="cta-links">
+    <a class="cta-button" href="history.html">EXPLORE THE HISTORY ↗</a>
+    <a class="cta-button light" href="impact.html">SEE THE IMPACT ↗</a>
+    <a class="cta-button" href="evidence.html">VIEW THE EVIDENCE ↗</a>
+  </div>
+</section>
+
+</main>
+
+<div class="bottom-nav">
+  <a href="home.html">← BACK HOME</a>
+  <a href="history.html">EXPLORE HISTORY ↗</a>
+  <a href="impact.html">EXPLORE IMPACT ↗</a>
+  <a href="evidence.html">VIEW EVIDENCE ↗</a>
+  <a href="index.html">RESEARCH INDEX ↗</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="home.html">BLACK<span>N</span>WHITE.</a>
+
+    <div class="footer-links">
+      <a href="home.html">HOME</a>
+      <a href="movement.html">MOVEMENT</a>
+      <a href="history.html">HISTORY</a>
+      <a href="impact.html">IMPACT</a>
+      <a href="evidence.html">EVIDENCE</a>
+      <a href="index.html">INDEX</a>
+    </div>
+
+    <div class="footer-note">
+      BACK IN LIGHT. · REWRITING THE BEGINNING.
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.nav-drop').forEach(drop => {
+  const toggle = drop.querySelector('.drop-toggle');
+
+  toggle.addEventListener('click', event => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    document.querySelectorAll('.nav-drop').forEach(other => {
+      if (other !== drop) other.classList.remove('open');
+    });
+
+    drop.classList.toggle('open');
+  });
+
+  drop.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 850) drop.classList.add('open');
+  });
+
+  drop.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 850) drop.classList.remove('open');
+  });
+});
+
+document.addEventListener('click', event => {
+  if (!event.target.closest('.nav-drop')) {
+    document.querySelectorAll('.nav-drop').forEach(drop => {
+      drop.classList.remove('open');
+    });
+  }
+});
+
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.nav-drop').forEach(drop => {
+    drop.classList.remove('open');
+  });
+});
+</script>
+
+</body>
+</html>
