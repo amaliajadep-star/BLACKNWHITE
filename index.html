@@ -93,6 +93,63 @@
       color: var(--pink);
     }
 
+    /* DROPDOWN MENUS */
+
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dropdown-arrow {
+      border: 0;
+      background: transparent;
+      color: var(--pink);
+      font: inherit;
+      font-size: 11px;
+      cursor: pointer;
+      padding: 2px;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: -12px;
+      min-width: 205px;
+      padding: 16px 0 8px;
+      background: var(--paper);
+      border: 1px solid #dedbd5;
+      box-shadow: 5px 5px 0 var(--pink);
+      display: none;
+      flex-direction: column;
+      z-index: 200;
+    }
+
+    .nav-dropdown.is-open .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 14px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: background .2s, color .2s;
+    }
+
+    .dropdown-menu a:hover {
+      background: var(--pink);
+      color: white;
+    }
+
     /* HERO */
 
     .hero {
@@ -435,46 +492,6 @@
       background: var(--yellow);
     }
 
-    /* SUBLINKS */
-
-    .sub-links {
-      margin-top: 55px;
-      padding: 30px 0;
-      border-top: 2px solid var(--black);
-      border-bottom: 2px solid var(--black);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .sub-links-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-    }
-
-    .sub-links-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .sub-links-list a {
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      padding: 9px 12px;
-      border: 1px solid var(--black);
-      transition: .2s;
-    }
-
-    .sub-links-list a:hover {
-      background: var(--pink);
-      border-color: var(--pink);
-      color: white;
-    }
-
     /* RESEARCH INDEX */
 
     .index-link {
@@ -705,11 +722,6 @@
         min-height: 270px;
       }
 
-      .sub-links {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
       .quote {
         padding: 75px 7%;
       }
@@ -721,6 +733,11 @@
 
       .footer-nav {
         gap: 12px;
+      }
+
+      .dropdown-menu {
+        left: -8px;
+        min-width: 190px;
       }
     }
 
@@ -764,18 +781,41 @@
     <nav>
       <a href="index.html">HOME</a>
       <a href="movement.html">MOVEMENT</a>
-      <a href="history.html">HISTORY</a>
-      <a href="impact.html">IMPACT</a>
+
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-trigger">
+          <a href="history.html">HISTORY</a>
+          <button class="dropdown-arrow" type="button" aria-label="Open History menu" aria-expanded="false">⌄</button>
+        </div>
+
+        <div class="dropdown-menu">
+          <a href="history.html#emergence">HISTORY & EMERGENCE</a>
+          <a href="history.html#deviance">DEVIANCE</a>
+          <a href="history.html#movement-cycle">MOVEMENT CYCLE</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-trigger">
+          <a href="impact.html">IMPACT</a>
+          <button class="dropdown-arrow" type="button" aria-label="Open Impact menu" aria-expanded="false">⌄</button>
+        </div>
+
+        <div class="dropdown-menu">
+          <a href="impact.html#methods">METHODS & MOBILISATION</a>
+          <a href="impact.html#social-change">SOCIAL CHANGE</a>
+          <a href="impact.html#limitations">ONGOING CHALLENGES</a>
+        </div>
+      </div>
+
       <a href="sources.html">EVIDENCE</a>
       <a href="index-of-sources.html" class="nav-index">INDEX ↗</a>
     </nav>
   </header>
 
-
   <!-- HERO -->
 
   <section class="hero">
-
     <div class="hero-content">
       <div class="eyebrow">A HISTORY. A MOVEMENT. A VOICE.</div>
 
@@ -801,9 +841,7 @@
     <div class="sticker sticker-five">NO LABELS.</div>
     <div class="sticker sticker-six">BE THE CHANGE!</div>
     <div class="sticker sticker-seven">BREAK THE PATTERN.</div>
-
   </section>
-
 
   <!-- TICKER -->
 
@@ -816,11 +854,9 @@
     </div>
   </div>
 
-
   <!-- INTRO -->
 
   <section class="intro">
-
     <div>
       <div class="section-label">01 / THE BIGGER PICTURE</div>
 
@@ -844,14 +880,11 @@
         to influence society today.
       </p>
     </div>
-
   </section>
-
 
   <!-- ART PANEL -->
 
   <section class="art-panel">
-
     <div class="art-sticker">MORE THAN A LABEL.</div>
 
     <h2>
@@ -864,16 +897,13 @@
       Equality is more than a promise. It takes action, resistance
       and people willing to challenge what society accepts.
     </p>
-
   </section>
-
 
   <!-- EXPLORE -->
 
   <section class="explore" id="explore">
 
     <div class="explore-heading">
-
       <div>
         <div class="section-label">FIND YOUR WAY THROUGH</div>
         <h2>EXPLORE<br>THE STORY.</h2>
@@ -884,14 +914,11 @@
         Discover the history, the resistance and the legacy
         that changed America.
       </p>
-
     </div>
-
 
     <div class="explore-grid">
 
       <a href="movement.html" class="explore-card">
-
         <div>
           <div class="card-number">01 / THE MOVEMENT</div>
           <div class="card-tag">START HERE!</div>
@@ -906,12 +933,9 @@
         </div>
 
         <div class="card-arrow">↗</div>
-
       </a>
 
-
       <a href="history.html" class="explore-card pink-card">
-
         <div>
           <div class="card-number">02 / THE HISTORY</div>
           <div class="card-tag">THE BEGINNING</div>
@@ -926,12 +950,9 @@
         </div>
 
         <div class="card-arrow">↗</div>
-
       </a>
 
-
       <a href="impact.html" class="explore-card blue-card">
-
         <div>
           <div class="card-number">03 / THE IMPACT</div>
           <div class="card-tag">MAKE CHANGE</div>
@@ -946,12 +967,9 @@
         </div>
 
         <div class="card-arrow">↗</div>
-
       </a>
 
-
       <a href="sources.html" class="explore-card yellow-card">
-
         <div>
           <div class="card-number">04 / THE EVIDENCE</div>
           <div class="card-tag">LOOK CLOSER</div>
@@ -966,34 +984,13 @@
         </div>
 
         <div class="card-arrow">↗</div>
-
       </a>
 
     </div>
 
-
-    <!-- EXTRA TOPIC LINKS -->
-
-    <div class="sub-links">
-
-      <div class="sub-links-title">GO DEEPER. ↘</div>
-
-      <div class="sub-links-list">
-        <a href="history.html#emergence">HISTORY & EMERGENCE</a>
-        <a href="history.html#deviance">DEVIANCE</a>
-        <a href="history.html#movement-cycle">MOVEMENT CYCLE</a>
-        <a href="impact.html#methods">METHODS & MOBILISATION</a>
-        <a href="impact.html#social-change">SOCIAL CHANGE</a>
-        <a href="impact.html#limitations">ONGOING CHALLENGES</a>
-      </div>
-
-    </div>
-
-
     <!-- INDEX -->
 
     <a href="index-of-sources.html" class="index-link">
-
       <div>
         <div class="section-label">EXTRA / RESEARCH ARCHIVE</div>
 
@@ -1007,30 +1004,24 @@
       </div>
 
       <div class="index-arrow">↗</div>
-
     </a>
 
   </section>
 
-
   <!-- QUOTE -->
 
   <section class="quote">
-
     <div class="section-label">A VOICE CAN CHANGE EVERYTHING</div>
 
     <p>
       CHANGE DOESN'T BEGIN WITH SILENCE.<br>
       IT BEGINS WITH <span>A VOICE.</span>
     </p>
-
   </section>
-
 
   <!-- FINAL SECTION -->
 
   <section class="final-section">
-
     <div class="section-label" style="color:white;">
       THE CONVERSATION DOESN'T END HERE
     </div>
@@ -1045,16 +1036,12 @@
     <a href="movement.html" class="final-link">
       START EXPLORING ↗
     </a>
-
   </section>
-
 
   <!-- FOOTER -->
 
   <footer>
-
     <div class="footer-top">
-
       <div class="footer-logo">
         BLACK<span>N</span>WHITE.
       </div>
@@ -1067,15 +1054,74 @@
         <a href="sources.html">EVIDENCE</a>
         <a href="index-of-sources.html">THE INDEX ↗</a>
       </div>
-
     </div>
 
     <div class="footer-bottom">
       <span>BACK IN LIGHT. — REWRITING THE BEGINNING.</span>
       <span>BLACKNWHITE. © 2026</span>
     </div>
-
   </footer>
+
+  <!-- DROPDOWN INTERACTION -->
+
+  <script>
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    let scrollClosed = false;
+
+    function closeDropdowns() {
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('is-open');
+
+        const button = dropdown.querySelector('.dropdown-arrow');
+        button.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector('.dropdown-arrow');
+
+      dropdown.addEventListener('mouseenter', () => {
+        if (window.matchMedia('(hover: hover)').matches && !scrollClosed) {
+          closeDropdowns();
+          dropdown.classList.add('is-open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      dropdown.addEventListener('mouseleave', () => {
+        dropdown.classList.remove('is-open');
+        button.setAttribute('aria-expanded', 'false');
+        scrollClosed = false;
+      });
+
+      button.addEventListener('click', event => {
+        event.stopPropagation();
+
+        const willOpen = !dropdown.classList.contains('is-open');
+        closeDropdowns();
+
+        if (willOpen) {
+          dropdown.classList.add('is-open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      dropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
+        link.addEventListener('click', closeDropdowns);
+      });
+    });
+
+    document.addEventListener('click', event => {
+      if (!event.target.closest('.nav-dropdown')) {
+        closeDropdowns();
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      closeDropdowns();
+      scrollClosed = true;
+    }, { passive: true });
+  </script>
 
 </body>
 </html>
