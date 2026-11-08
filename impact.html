@@ -371,10 +371,48 @@ nav a:hover {
 }
 
 .section-intro {
-  max-width:800px;
+  max-width:850px;
   font-size:15px;
   line-height:1.9;
-  margin-bottom:45px;
+  margin-bottom:35px;
+}
+
+.analysis-text {
+  max-width:850px;
+  font-size:14px;
+  line-height:1.95;
+  margin:25px 0 40px;
+}
+
+.analysis-text strong {
+  color:var(--pink);
+}
+
+.content-section:not(.dark) .analysis-text strong {
+  color:#d90070;
+}
+
+.analysis-box {
+  margin-top:35px;
+  padding:30px;
+  border:1px solid var(--pink);
+  box-shadow:7px 7px 0 var(--pink);
+}
+
+.analysis-box h3 {
+  font-family:'Permanent Marker',cursive;
+  color:var(--pink);
+  font-size:22px;
+  margin-bottom:14px;
+}
+
+.analysis-box p {
+  font-size:14px;
+  line-height:1.9;
+}
+
+.analysis-box p + p {
+  margin-top:15px;
 }
 
 /* METHOD CARDS */
@@ -430,6 +468,14 @@ nav a:hover {
   color:var(--pink);
 }
 
+.method-card:nth-child(7) .number {
+  color:var(--yellow);
+}
+
+.method-card:nth-child(8) .number {
+  color:#6d91ff;
+}
+
 /* MOBILISATION STRIP */
 
 .mobilisation {
@@ -454,7 +500,7 @@ nav a:hover {
   line-height:1.8;
 }
 
-/* SOCIAL CHANGE */
+/* CHANGE CARDS */
 
 .change-grid {
   display:grid;
@@ -497,6 +543,8 @@ nav a:hover {
   letter-spacing:1px;
   text-transform:uppercase;
 }
+
+/* BIG FEATURE */
 
 .big-stat {
   margin-top:25px;
@@ -882,8 +930,15 @@ footer span {
       These changes affected public spaces, employment, education and
       political participation. However, new laws did not automatically
       remove unequal opportunities, prejudice or discrimination.
-      The movement achieved significant progress, while leaving
-      challenges that continued beyond the 1960s.
+      To evaluate the movement's effectiveness, it is important to
+      consider both what it achieved and what remained unresolved.
+    </p>
+    <br>
+    <p>
+      Its success was not simply that people protested or that new
+      laws were passed. Its significance was that sustained collective
+      action helped turn demands for equality into changes that the
+      government was required to recognise and enforce.
     </p>
   </div>
 </section>
@@ -919,11 +974,12 @@ footer span {
   </div>
 
   <p class="section-intro">
-    The movement did not rely on one leader or one protest.
-    It brought together ordinary people, students, community
-    organisations, religious groups and national civil rights
-    organisations. Different methods helped attract attention,
-    challenge unfair rules and put pressure on people in power.
+    The Civil Rights Movement used a combination of direct action,
+    community organisation, legal challenges and public communication.
+    These methods were connected: demonstrations attracted attention,
+    local organisations coordinated participation, and political
+    pressure encouraged government action. The movement's strength
+    came from the way these different approaches supported one another.
   </p>
 
   <div class="method-grid">
@@ -932,10 +988,16 @@ footer span {
       <div class="number">01</div>
       <h3>BOYCOTTS</h3>
       <p>
-        People refused to use businesses or services that supported
-        segregation. The Montgomery Bus Boycott (1955–1956) showed
-        how organised community action could challenge discriminatory
-        systems and create economic pressure.
+        Boycotts involved people deliberately refusing to use businesses
+        or services that supported discriminatory practices. The
+        Montgomery Bus Boycott (1955–1956), organised after Rosa Parks'
+        arrest, encouraged Black residents to stop using the city's
+        segregated bus system. Thousands participated, many relying
+        on carpools and alternative transport. The sustained loss of
+        passengers created economic pressure and kept segregation
+        in the public spotlight. The boycott contributed to the
+        desegregation of Montgomery's buses. However, maintaining it
+        required considerable time, organisation and personal sacrifice.
       </p>
     </article>
 
@@ -943,10 +1005,16 @@ footer span {
       <div class="number">02</div>
       <h3>SIT-INS</h3>
       <p>
-        Protesters peacefully occupied seats at segregated lunch
-        counters and refused to leave when they were denied service.
-        Student-led sit-ins in 1960 helped challenge segregation
-        in public businesses.
+        Sit-ins involved protesters occupying seats at segregated
+        lunch counters and peacefully remaining there when they were
+        refused service. Student-led sit-ins began in Greensboro,
+        North Carolina, in February 1960 and spread to other cities.
+        Their visibility encouraged more students to participate and
+        challenged businesses that depended on public customers.
+        Sit-ins helped make segregation increasingly difficult for
+        businesses to defend publicly. However, participants faced
+        arrest, intimidation and resistance, meaning participation
+        required commitment and support from local communities.
       </p>
     </article>
 
@@ -954,10 +1022,16 @@ footer span {
       <div class="number">03</div>
       <h3>MARCHES &amp; DEMONSTRATIONS</h3>
       <p>
-        Large public demonstrations made demands for equality visible.
-        The 1963 March on Washington brought hundreds of thousands
-        of people together to call for jobs, freedom and civil rights
-        legislation.
+        Marches brought large groups together to make demands visible
+        to the public and government. The 1963 March on Washington
+        brought approximately 250,000 people to the nation's capital
+        to call for jobs and freedom. Large demonstrations attracted
+        media coverage, communicated the scale of public support and
+        increased pressure on political leaders. They also allowed
+        people from different communities to demonstrate a shared
+        purpose. However, a large crowd did not automatically create
+        legal change; demonstrations needed to be supported by
+        continued organising and political action.
       </p>
     </article>
 
@@ -965,10 +1039,16 @@ footer span {
       <div class="number">04</div>
       <h3>FREEDOM RIDES</h3>
       <p>
-        Activists travelled together on interstate buses to challenge
-        segregation in bus terminals and facilities. Their journeys
-        drew attention to the failure to enforce federal desegregation
-        rulings.
+        In 1961, civil rights activists travelled on interstate buses
+        through the South to challenge segregation in bus terminals
+        and facilities. The Freedom Riders tested whether federal
+        desegregation rulings were being enforced in practice.
+        Their journeys exposed the difference between having legal
+        protections and actually receiving them. National attention
+        increased pressure on federal authorities to act. The rides
+        demonstrated how direct action could reveal failures in
+        enforcement, although the campaign also faced intense
+        opposition and placed participants under serious pressure.
       </p>
     </article>
 
@@ -977,9 +1057,15 @@ footer span {
       <h3>VOTER REGISTRATION</h3>
       <p>
         Campaigners worked to help Black Americans register to vote
-        despite discriminatory barriers. These efforts exposed how
-        voting restrictions prevented people from having a fair
-        voice in government.
+        despite discriminatory barriers such as literacy tests,
+        intimidation and unfair registration practices. Campaigns
+        in places such as Mississippi exposed how local systems
+        restricted political participation. Increasing voter
+        registration gave Black communities a stronger opportunity
+        to influence elections and challenge political exclusion.
+        These campaigns also helped demonstrate why federal voting
+        protections were necessary. However, registration work
+        could be difficult where local authorities resisted change.
       </p>
     </article>
 
@@ -987,10 +1073,50 @@ footer span {
       <div class="number">06</div>
       <h3>LEGAL ACTION &amp; LOBBYING</h3>
       <p>
-        Civil rights organisations challenged segregation through
-        the courts and pushed elected officials to change laws.
-        Legal campaigns and public protest worked alongside each
-        other to demand lasting reform.
+        Organisations such as the NAACP used legal challenges to
+        contest discriminatory laws and practices. The Supreme
+        Court's decision in Brown v. Board of Education (1954)
+        declared racial segregation in public schools unconstitutional.
+        Civil rights leaders also lobbied political representatives
+        and called for federal legislation. Legal action could
+        establish protections that applied beyond one location,
+        while protest helped create pressure for governments to
+        enforce them. However, court decisions did not always lead
+        to immediate change because some authorities resisted
+        implementing them.
+      </p>
+    </article>
+
+    <article class="method-card">
+      <div class="number">07</div>
+      <h3>COMMUNITY ORGANISING</h3>
+      <p>
+        Local organisers built relationships through churches,
+        neighbourhood groups, student organisations and community
+        meetings. These networks helped recruit volunteers, share
+        information and coordinate transport, events and campaigns.
+        Local involvement meant the movement was not dependent on
+        a small number of famous leaders. It also allowed communities
+        to identify problems that directly affected them. This
+        strengthened participation, although organising across
+        different locations and groups could require considerable
+        time and coordination.
+      </p>
+    </article>
+
+    <article class="method-card">
+      <div class="number">08</div>
+      <h3>MEDIA &amp; PUBLIC COMMUNICATION</h3>
+      <p>
+        Newspapers, radio, television, leaflets, speeches and public
+        meetings helped spread information about the movement.
+        Television coverage brought images of demonstrations and
+        resistance into homes across the United States. This helped
+        people who were not directly involved understand the
+        inequalities being challenged. Media attention could
+        increase public pressure on government officials, but
+        coverage was not always fair or supportive, and access
+        to national media was not controlled by activists.
       </p>
     </article>
 
@@ -1000,11 +1126,80 @@ footer span {
     <h3>HOW DID THEY<br>BUILD SUPPORT?</h3>
     <p>
       Churches, student groups, local organisers and organisations
-      such as the NAACP and the Southern Christian Leadership
-      Conference helped coordinate campaigns. Newspapers, television
-      coverage, speeches and public meetings spread information
-      beyond local communities. This helped turn local struggles
-      into a wider national movement.
+      such as the NAACP, the Southern Christian Leadership Conference
+      (SCLC) and the Student Nonviolent Coordinating Committee (SNCC)
+      helped coordinate campaigns. They connected local concerns
+      to national goals, recruited participants and organised
+      demonstrations, voter registration drives and other activities.
+      Their networks helped campaigns reach beyond individual towns
+      and cities. This meant that people could contribute in different
+      ways, even if they could not attend a major demonstration.
+    </p>
+  </div>
+
+  <div class="analysis-box">
+    <h3>WHY DID THESE METHODS WORK TOGETHER?</h3>
+    <p>
+      The methods were most effective when they reinforced one another.
+      For example, a boycott could disrupt an established system,
+      while public demonstrations made the issue visible and community
+      organisations helped maintain participation. Media coverage
+      could then spread information about the campaign to a wider
+      audience. This created a chain reaction: <strong>local action
+      attracted attention, attention increased public pressure, and
+      sustained pressure made political inaction more difficult.</strong>
+    </p>
+    <p>
+      This combination also helped the movement reach different
+      audiences. Some people joined protests, others supported
+      campaigns through churches or community networks, and
+      organisations pursued legal and political change. The movement
+      therefore had several ways to involve supporters rather than
+      relying on one activity.
+    </p>
+  </div>
+
+  <div class="analysis-box">
+    <h3>WHAT ABOUT THE OPPOSITION?</h3>
+    <p>
+      The movement also faced organised opposition. Segregationist
+      groups, some local authorities and resistant political leaders
+      attempted to preserve existing racial arrangements. Opposition
+      included public criticism, discriminatory local policies,
+      resistance to court decisions, economic pressure and intimidation.
+      This could discourage participation, make organising more
+      difficult and delay the implementation of legal changes.
+    </p>
+    <p>
+      Some authorities also failed to protect activists or enforce
+      existing desegregation rulings. This made federal intervention
+      increasingly important. The opposition therefore affected the
+      movement's reach and progress, but it also exposed how deeply
+      segregation was supported by parts of the existing system.
+      In turn, this strengthened the argument that local action
+      alone was not enough and that federal protection was needed.
+    </p>
+  </div>
+
+  <div class="analysis-box">
+    <h3>HOW EFFECTIVE WERE THE METHODS?</h3>
+    <p>
+      The movement's methods were effective because they created
+      pressure in several areas at once. Boycotts used economic
+      pressure, demonstrations attracted public attention, legal
+      challenges established new rights, and community organising
+      helped sustain participation. Their combined influence
+      contributed to major legal and political changes.
+    </p>
+    <p>
+      However, each method had limitations. Boycotts could be
+      difficult to maintain, demonstrations did not guarantee
+      government action, and legal victories could be weakened
+      by poor enforcement. Opposition could also discourage
+      participants and slow progress. This suggests that no single
+      method was enough on its own. The movement's effectiveness
+      came from combining direct action with organisation,
+      communication and political pressure.
     </p>
   </div>
 </section>
@@ -1037,7 +1232,11 @@ footer span {
         In Brown v. Board of Education, the Supreme Court ruled that
         racial segregation in public schools was unconstitutional.
         The decision challenged the legal basis of segregated
-        schooling, although implementation faced strong resistance.
+        schooling and gave civil rights campaigners an important
+        legal victory. It affected Black students and families who
+        had been denied equal treatment under segregated education.
+        However, resistance meant that desegregation was not
+        immediate or consistent across the country.
       </p>
       <span class="impact-label">Legal change</span>
     </article>
@@ -1047,9 +1246,13 @@ footer span {
       <h3>PUBLIC SPACES &amp; EMPLOYMENT</h3>
       <p>
         The Civil Rights Act of 1964 prohibited discrimination in
-        public accommodations and employment. It also strengthened
-        federal action against discrimination in education and
-        federally assisted programs.
+        public accommodations and employment on specified grounds,
+        including race. It challenged the legal basis of segregation
+        in many public settings and gave the federal government
+        stronger tools to address discrimination. This affected
+        people's access to services and opportunities, although
+        the existence of a law did not guarantee that discrimination
+        would immediately disappear in everyday life.
       </p>
       <span class="impact-label">Legal change</span>
     </article>
@@ -1059,9 +1262,13 @@ footer span {
       <h3>VOTING RIGHTS</h3>
       <p>
         The Voting Rights Act of 1965 targeted discriminatory
-        voting practices, including literacy tests used to prevent
-        Black Americans from voting. It gave the federal government
-        stronger powers to protect voting rights.
+        practices that had prevented Black Americans from voting.
+        It gave the federal government stronger powers to protect
+        voting rights and address barriers such as literacy tests.
+        This was significant because voting allowed citizens to
+        participate more fully in political decisions that affected
+        their communities. Its impact was especially important in
+        areas where Black voters had faced systematic exclusion.
       </p>
       <span class="impact-label">Political change</span>
     </article>
@@ -1071,9 +1278,14 @@ footer span {
       <h3>PUBLIC ATTITUDES &amp; PARTICIPATION</h3>
       <p>
         The movement brought racial inequality into national
-        discussion and inspired other groups to organise for
-        equal rights. More people became involved in challenging
-        discrimination and demanding political accountability.
+        discussion and challenged the idea that segregation
+        should be accepted as normal. Television, speeches,
+        demonstrations and community campaigns exposed the
+        experiences of people affected by discrimination.
+        The movement also inspired other groups to organise
+        and demand equal treatment. However, public awareness
+        did not mean that everyone changed their beliefs or
+        supported racial equality.
       </p>
       <span class="impact-label">Social change</span>
     </article>
@@ -1081,14 +1293,58 @@ footer span {
   </div>
 
   <div class="big-stat">
-    <strong>250,000</strong>
+    <strong>1964<br>+ 1965</strong>
     <p>
-      By the end of 1965, around a quarter of a million new Black
-      voters had been registered following the Voting Rights Act.
-      This shows how legal reform could produce measurable changes
-      in political participation.
+      Two major federal laws marked turning points in the movement's
+      impact. The Civil Rights Act of 1964 addressed discrimination
+      in public accommodations and employment, while the Voting
+      Rights Act of 1965 strengthened federal protection of voting
+      rights. Together, they show how sustained protest, organising
+      and political pressure could contribute to changes in national
+      law.
       <br><br>
-      <small>Source: U.S. National Archives — Voting Rights Act (1965).</small>
+      <small>Sources: U.S. National Archives — Civil Rights Act and Voting Rights Act.</small>
+    </p>
+  </div>
+
+  <div class="analysis-box">
+    <h3>WHO EXPERIENCED THE CHANGE?</h3>
+    <p>
+      Black Americans were the central group affected by the movement
+      because they had experienced the segregation and discrimination
+      it sought to challenge. Changes to public accommodations,
+      employment and voting protections affected access to services,
+      opportunities and political participation. Black students
+      and families also gained stronger legal grounds to challenge
+      segregated education.
+    </p>
+    <p>
+      The changes also affected American society more broadly.
+      Government institutions faced greater responsibility to
+      protect civil rights, while businesses, schools and public
+      authorities were required to respond to new legal standards.
+      The movement therefore changed both the rights of individuals
+      and the expectations placed on institutions.
+    </p>
+  </div>
+
+  <div class="analysis-box">
+    <h3>WHY WAS THIS SIGNIFICANT?</h3>
+    <p>
+      The laws were significant because they moved civil rights
+      demands beyond public debate and into enforceable federal
+      protections. Before these changes, discriminatory practices
+      could be maintained through state and local systems. Federal
+      legislation increased the government's ability to challenge
+      those practices and protect citizens.
+    </p>
+    <p>
+      However, legal change and social change are not identical.
+      A law can prohibit discrimination, but it cannot instantly
+      remove prejudice, unequal resources or resistance. The
+      movement was therefore successful in changing important
+      rules and institutions, while the wider effects took longer
+      and remained contested.
     </p>
   </div>
 </section>
@@ -1108,7 +1364,9 @@ footer span {
     The Civil Rights Movement achieved major legal victories,
     but legislation alone could not immediately undo generations
     of inequality. Discrimination and unequal access to opportunities
-    continued in different parts of American society.
+    continued in different parts of American society. Evaluating
+    the movement means recognising both its achievements and
+    the limits of the change it had created.
   </p>
 
   <div class="limit-grid">
@@ -1119,23 +1377,31 @@ footer span {
         <li>
           <strong>Legal segregation:</strong>
           Federal laws and court decisions challenged officially
-          enforced racial segregation.
+          enforced racial segregation and provided stronger legal
+          protections against discrimination.
         </li>
         <li>
           <strong>Voting access:</strong>
-          Federal protections made it harder for authorities
-          to use discriminatory barriers to prevent Black
-          citizens from voting.
+          Federal protections made it harder for authorities to
+          use discriminatory barriers to prevent Black citizens
+          from voting.
         </li>
         <li>
           <strong>Public awareness:</strong>
-          Protest and media coverage brought racial inequality
-          to national attention.
+          Protest, speeches and media coverage brought racial
+          inequality to national attention and challenged the
+          idea that segregation was acceptable.
         </li>
         <li>
           <strong>Political participation:</strong>
-          More Black Americans were able to register and
-          participate in elections.
+          Voting protections created greater opportunities for
+          Black Americans to register, vote and influence
+          political decisions.
+        </li>
+        <li>
+          <strong>Legal accountability:</strong>
+          Federal institutions gained stronger responsibilities
+          and powers to address certain forms of discrimination.
         </li>
       </ul>
     </div>
@@ -1146,12 +1412,13 @@ footer span {
         <li>
           <strong>Economic inequality:</strong>
           Legal rights did not automatically create equal access
-          to income, employment or wealth.
+          to income, employment, wealth or financial security.
         </li>
         <li>
           <strong>Housing:</strong>
           Discrimination and unequal opportunities in housing
-          continued to affect where people could live.
+          continued to affect where people could live and the
+          resources available to communities.
         </li>
         <li>
           <strong>Education:</strong>
@@ -1164,20 +1431,67 @@ footer span {
           Changing laws could not instantly change individual
           beliefs, behaviour or social attitudes.
         </li>
+        <li>
+          <strong>Enforcement:</strong>
+          Some authorities and communities resisted change,
+          meaning that legal protections did not always produce
+          immediate or equal results.
+        </li>
       </ul>
     </div>
 
   </div>
 
+  <div class="analysis-box">
+    <h3>WHY DID SOME PROBLEMS CONTINUE?</h3>
+    <p>
+      One limitation was that the movement could challenge laws
+      more directly than it could change every social and economic
+      condition. Ending a discriminatory rule did not automatically
+      provide equal access to housing, education, employment or
+      wealth. These inequalities were connected to long-standing
+      systems and attitudes that could not be removed through
+      legislation alone.
+    </p>
+    <p>
+      Another limitation was resistance to enforcement. Even after
+      legal decisions and federal laws were introduced, some
+      institutions and communities resisted putting them into
+      practice. This meant that the effects of legal change could
+      vary depending on location and the willingness of authorities
+      to uphold the new protections.
+    </p>
+  </div>
+
   <div class="reflection">
     <h3>SO, DID THE MOVEMENT SUCCEED?</h3>
     <p>
-      Yes — in significant ways. The movement helped secure major
-      legal protections, expanded political participation and
-      changed public debate about racial equality. However, its
-      achievements were not the same as the complete elimination
-      of racism. Its impact should be understood as substantial
-      progress, alongside continuing challenges.
+      Overall, the American Civil Rights Movement was highly
+      significant and achieved substantial social change. Its
+      campaigns helped challenge legal segregation, strengthen
+      voting protections and expand the rights of Black Americans.
+      The Civil Rights Act of 1964 and Voting Rights Act of 1965
+      demonstrate that collective action could influence national
+      laws and government responsibilities.
+    </p>
+    <br>
+    <p>
+      However, its success should not be confused with the complete
+      elimination of racial inequality. Economic disadvantage,
+      discrimination, prejudice and unequal opportunities continued
+      beyond the major legislative victories of the 1960s. The
+      movement was therefore effective in achieving important
+      legal and political reforms, but it did not resolve every
+      cause or consequence of racial inequality.
+    </p>
+    <br>
+    <p>
+      <strong>Final judgement:</strong> The movement changed the
+      direction of American society by turning demands for equality
+      into major legal protections. Its achievements were
+      transformative, but the continuing challenges show that
+      social change is an ongoing process rather than a single
+      moment of success.
     </p>
   </div>
 </section>
@@ -1204,14 +1518,14 @@ footer span {
       The Civil Rights Movement — Primary Source Set
     </a>
 
-    <a href="https://wwws.loc.gov/exhibits/african-american-odyssey/civil-rights-era.html" target="_blank" rel="noopener">
+    <a href="https://www.loc.gov/exhibits/african-american-odyssey/civil-rights-era.html" target="_blank" rel="noopener">
       <span>LIBRARY OF CONGRESS</span>
       The Civil Rights Era
     </a>
 
     <a href="https://www.nps.gov/subjects/civilrights/modern-civil-rights-movement.htm" target="_blank" rel="noopener">
       <span>NATIONAL PARK SERVICE</span>
-      The Modern Civil Rights Movement, 1954–1964
+      The Modern Civil Rights Movement
     </a>
 
     <a href="https://www.loc.gov/collections/civil-rights-history-project/articles-and-essays/nonviolent-philosophy-and-self-defense/" target="_blank" rel="noopener">
@@ -1226,7 +1540,7 @@ footer span {
     <div class="section-label">KEEP DIGGING</div>
     <h2>THE EVIDENCE SPEAKS.</h2>
   </div>
- <a href="evidence.html#impact-evidence">EXPLORE THE EVIDENCE →</a>
+  <a href="evidence.html#impact-evidence">EXPLORE THE EVIDENCE →</a>
 </section>
 
 </main>
@@ -1296,3 +1610,4 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
+
