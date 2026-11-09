@@ -81,30 +81,36 @@ nav {
   letter-spacing:1px;
 }
 
-nav > a {
+nav > a,
+.dropdown-line > a {
   transition:color .2s;
 }
 
-nav > a:hover {
+nav > a:hover,
+.dropdown-line > a:hover {
   color:var(--pink);
 }
 
-.dropdown {
+.dropdown,
+.nav-dropdown {
   position:relative;
 }
 
-.dropdown-line {
+.dropdown-line,
+.nav-dropdown-trigger {
   display:flex;
   align-items:center;
   gap:4px;
 }
 
-.dropdown-toggle {
+.dropdown-toggle,
+.dropdown-arrow {
   border:0;
   background:none;
   cursor:pointer;
   font-size:12px;
   padding:5px;
+  color:var(--black);
 }
 
 .dropdown-menu {
@@ -134,7 +140,10 @@ nav > a:hover {
 
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu,
-.dropdown.open .dropdown-menu {
+.dropdown.open .dropdown-menu,
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
   display:block;
 }
 
@@ -451,6 +460,7 @@ nav > a:hover {
   border:1px solid #555;
   padding:25px;
   background:#202020;
+  scroll-margin-top:100px;
 }
 
 .source-group-header {
@@ -660,6 +670,12 @@ footer {
   .source-group {
     padding:19px;
   }
+
+  .source-group-header {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:5px;
+  }
 }
 </style>
 </head>
@@ -676,7 +692,7 @@ footer {
     <div class="dropdown">
       <div class="dropdown-line">
         <a href="history.html">HISTORY</a>
-        <button class="dropdown-toggle" aria-label="Toggle History menu">⌄</button>
+        <button class="dropdown-toggle" type="button" aria-label="Toggle History menu">⌄</button>
       </div>
       <div class="dropdown-menu">
         <a href="history.html#emergence">EMERGENCE</a>
@@ -688,7 +704,7 @@ footer {
     <div class="dropdown">
       <div class="dropdown-line">
         <a href="impact.html">IMPACT</a>
-        <button class="dropdown-toggle" aria-label="Toggle Impact menu">⌄</button>
+        <button class="dropdown-toggle" type="button" aria-label="Toggle Impact menu">⌄</button>
       </div>
       <div class="dropdown-menu">
         <a href="impact.html#methods">METHODS</a>
@@ -696,22 +712,20 @@ footer {
         <a href="impact.html#limitations">LIMITATIONS</a>
       </div>
     </div>
-    
-    <div class="nav-dropdown">
-  <div class="nav-dropdown-trigger">
-    <a href="youth.html">YOUTH</a>
-    <button class="dropdown-arrow" type="button"
-      aria-label="Open Youth menu" aria-expanded="false">⌄</button>
-  </div>
 
-  <div class="dropdown-menu">
-    <a href="youth.html#young-people">YOUNG PEOPLE IN ACTION</a>
-    <a href="youth.html#impact">IMPACT & EFFECTIVENESS</a>
-    <a href="youth.html#today">YOUNG PEOPLE TODAY</a>
-    <a href="youth.html#take-action">WHAT CAN YOU DO?</a>
-  </div>
-</div>
-    
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-trigger">
+        <a href="youth.html">YOUTH</a>
+        <button class="dropdown-arrow" type="button" aria-label="Open Youth menu" aria-expanded="false">⌄</button>
+      </div>
+      <div class="dropdown-menu">
+        <a href="youth.html#young-people">YOUNG PEOPLE IN ACTION</a>
+        <a href="youth.html#impact">IMPACT & EFFECTIVENESS</a>
+        <a href="youth.html#today">YOUNG PEOPLE TODAY</a>
+        <a href="youth.html#take-action">WHAT CAN YOU DO?</a>
+      </div>
+    </div>
+
     <a href="evidence.html">EVIDENCE</a>
     <a href="index.html">INDEX</a>
   </nav>
@@ -730,7 +744,7 @@ footer {
       THE RECORD BEHIND THE STORY.
       A collection of photographs, historical records and research
       used throughout BLACKNWHITE. to explore the American Civil
-      Rights Movement.
+      Rights Movement and the role of young people in creating change.
     </p>
     <div class="hero-number">FILE NO. 001</div>
   </div>
@@ -752,19 +766,22 @@ footer {
     <p>
       This index brings together the research and references used
       throughout BLACKNWHITE. It is the central reference list for
-      the Movement, History, Impact and Evidence pages.
+      the Movement, History, Impact, Youth and Evidence pages.
     </p>
 
     <p>
-      It includes historical information, court decisions,
-      legislation, organisations, photographs and government
-      statistics. The sources are grouped by topic to make it
-      easier to find where information came from.
+      The sources include historical information, court decisions,
+      legislation, organisations, photographs, government records
+      and examples of young people taking action. Each section
+      explains which parts of the website its sources help support.
     </p>
 
     <p>
-      Whenever you want to check a fact, explore a historical event
-      further or view an original record, start here.
+      These references allow readers to check information,
+      investigate events further and distinguish between
+      historical evidence, research and modern examples.
+      Whenever you want to check where an idea or fact came from,
+      start here.
     </p>
   </div>
 </section>
@@ -877,133 +894,408 @@ footer {
   <h2>FOLLOW THE SOURCES.</h2>
 
   <p class="sources-intro">
-    These are the main research sources used across the website.
-    They are organised by the kind of information they support,
-    rather than by the page they appeared on. Some sources are
-    relevant to more than one section of the website.
+    This research index is organised around the five main content
+    pages of BLACKNWHITE. Each section identifies the sources
+    that support the information, examples and analysis on that
+    page. Some references appear more than once because they
+    provide evidence for different parts of the project.
   </p>
 
-  <div class="source-group">
+  <!-- MOVEMENT -->
+
+  <div class="source-group" id="movement-sources">
     <div class="source-group-header">
-      <h3>HISTORICAL BACKGROUND</h3>
-      <span>01 / HISTORY</span>
+      <h3>THE MOVEMENT</h3>
+      <span>01 / PEOPLE & ORGANISATIONS</span>
     </div>
+
     <p>
-      Used for the origins of the movement, segregation,
-      historical events, court decisions and the development
-      of the Civil Rights Movement.
+      These sources support the Movement page's discussion of
+      the people, leaders, organisations and campaigns involved
+      in challenging racial segregation in the United States.
+      They provide historical background on groups such as the
+      NAACP, SCLC, SNCC and CORE, as well as individuals and
+      events that helped shape the movement.
     </p>
+
     <ul class="source-list">
-      <li><a href="https://www.archives.gov/education/lessons/brown-v-board/timeline.html" target="_blank" rel="noopener">National Archives — Brown v. Board of Education timeline</a></li>
-      <li><a href="https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/" target="_blank" rel="noopener">Library of Congress — Civil Rights Movement timeline</a></li>
-      <li><a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era-timeline.html" target="_blank" rel="noopener">Library of Congress — Civil Rights Era timeline</a></li>
-      <li><a href="https://www.loc.gov/classroom-materials/civil-rights-movement/" target="_blank" rel="noopener">Library of Congress — Civil Rights Movement primary source set</a></li>
-      <li><a href="https://www.nps.gov/subjects/civilrights/modern-civil-rights-movement.htm" target="_blank" rel="noopener">National Park Service — Modern Civil Rights Movement</a></li>
-      <li><a href="https://www.britannica.com/event/American-civil-rights-movement" target="_blank" rel="noopener">Encyclopaedia Britannica — American Civil Rights Movement</a></li>
-      <li><a href="https://www.loc.gov/exhibits/african-american-odyssey/civil-rights-era.html" target="_blank" rel="noopener">Library of Congress — African American Odyssey: Civil Rights Era</a></li>
+      <li>
+        <a href="https://www.loc.gov/exhibits/naacp/the-civil-rights-era.html" target="_blank" rel="noopener">
+          Library of Congress — The NAACP and the Civil Rights Era
+        </a>
+        <p>Provides historical context about the NAACP's role in legal challenges, campaigns and the wider Civil Rights Movement.</p>
+      </li>
+
+      <li>
+        <a href="https://snccdigital.org/" target="_blank" rel="noopener">
+          SNCC Digital Gateway — Student Nonviolent Coordinating Committee
+        </a>
+        <p>Explains the work of student activists, organisers and local communities, including the development of SNCC.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/" target="_blank" rel="noopener">
+          Library of Congress — Civil Rights History Project
+        </a>
+        <p>Contains interviews and historical material from people who participated in the movement.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/collections/voices-of-civil-rights/about-this-collection/" target="_blank" rel="noopener">
+          Library of Congress — Voices of the Civil Rights Movement
+        </a>
+        <p>Provides first-hand accounts and perspectives from people involved in civil rights activism.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/item/2011646955/" target="_blank" rel="noopener">
+          Library of Congress — James Meredith photograph record
+        </a>
+        <p>Supports the page's visual and historical references to James Meredith and school desegregation.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/pictures/item/99404333/" target="_blank" rel="noopener">
+          Library of Congress — Martin Luther King Jr. photograph record
+        </a>
+        <p>Provides an archival photograph record connected to one of the movement's most recognised leaders.</p>
+      </li>
+
+      <li>
+        <a href="https://www.naacp.org/" target="_blank" rel="noopener">
+          NAACP — Organisation and history
+        </a>
+        <p>Provides information about the organisation's history and its continuing work for civil rights.</p>
+      </li>
+
+      <li>
+        <a href="https://www.nps.gov/subjects/civilrights/modern-civil-rights-movement.htm" target="_blank" rel="noopener">
+          National Park Service — Modern Civil Rights Movement
+        </a>
+        <p>Provides a broader historical overview of major campaigns, people and events.</p>
+      </li>
     </ul>
   </div>
 
-  <div class="source-group">
+  <!-- HISTORY -->
+
+  <div class="source-group" id="history-sources">
     <div class="source-group-header">
-      <h3>PEOPLE & ORGANISATIONS</h3>
-      <span>02 / THE MOVEMENT</span>
+      <h3>HISTORY</h3>
+      <span>02 / BACKGROUND & DEVELOPMENT</span>
     </div>
+
     <p>
-      Used for information about the people, leaders, campaigners
-      and organisations involved in challenging racial inequality.
+      These sources support the History page's explanation of
+      segregation, the emergence of the movement, major events
+      and the historical conditions that led people to organise.
+      They also provide information about court decisions and
+      the development of civil rights campaigns over time.
     </p>
+
     <ul class="source-list">
-      <li><a href="https://www.naacp.org/" target="_blank" rel="noopener">NAACP — Organisation and history</a></li>
-      <li><a href="https://snccdigital.org/" target="_blank" rel="noopener">SNCC Digital Gateway — Student activism and organising</a></li>
-      <li><a href="https://nmaahc.si.edu/explore/stories/reflections-little-rock-nine-1957-2017" target="_blank" rel="noopener">National Museum of African American History and Culture — Little Rock Nine</a></li>
-      <li><a href="https://www.loc.gov/collections/voices-of-civil-rights/about-this-collection/" target="_blank" rel="noopener">Library of Congress — Voices of the Civil Rights Movement</a></li>
-      <li><a href="https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/" target="_blank" rel="noopener">Library of Congress — Civil Rights History Project</a></li>
+      <li>
+        <a href="https://www.archives.gov/education/lessons/brown-v-board/timeline.html" target="_blank" rel="noopener">
+          National Archives — Brown v. Board of Education timeline
+        </a>
+        <p>Explains the legal challenge to school segregation and the events surrounding the Supreme Court decision.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/" target="_blank" rel="noopener">
+          Library of Congress — Civil Rights Movement timeline
+        </a>
+        <p>Places important civil rights events within the wider history of the United States after World War II.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era-timeline.html" target="_blank" rel="noopener">
+          Library of Congress — Civil Rights Era timeline
+        </a>
+        <p>Provides a timeline of key events and turning points during the Civil Rights Era.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/classroom-materials/civil-rights-movement/" target="_blank" rel="noopener">
+          Library of Congress — Civil Rights Movement primary source set
+        </a>
+        <p>Includes historical documents and records that help explain the movement through original evidence.</p>
+      </li>
+
+      <li>
+        <a href="https://www.britannica.com/event/American-civil-rights-movement" target="_blank" rel="noopener">
+          Encyclopaedia Britannica — American Civil Rights Movement
+        </a>
+        <p>Provides a general historical overview of the movement, its causes, major events and outcomes.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/exhibits/african-american-odyssey/civil-rights-era.html" target="_blank" rel="noopener">
+          Library of Congress — African American Odyssey: Civil Rights Era
+        </a>
+        <p>Explores the wider history of African American activism and the struggle for civil rights.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/exhibits/naacp/the-civil-rights-era.html" target="_blank" rel="noopener">
+          Library of Congress — The NAACP and the Civil Rights Era
+        </a>
+        <p>Provides background on the campaigns and legal challenges that contributed to the movement's development.</p>
+      </li>
     </ul>
   </div>
 
-  <div class="source-group">
+  <!-- IMPACT -->
+
+  <div class="source-group" id="impact-sources">
     <div class="source-group-header">
-      <h3>LAWS & COURT DECISIONS</h3>
-      <span>03 / LEGAL CHANGE</span>
+      <h3>THE IMPACT</h3>
+      <span>03 / METHODS & SOCIAL CHANGE</span>
     </div>
+
     <p>
-      Used for the legal turning points discussed throughout
-      the Movement, History, Impact and Evidence pages.
+      These sources support the Impact page's analysis of protest
+      methods, nonviolent action, legal achievements and the
+      limitations of social change. They help explain what the
+      movement achieved, how those changes occurred and why
+      discrimination did not disappear after new laws were passed.
     </p>
+
     <ul class="source-list">
-      <li><a href="https://www.archives.gov/milestone-documents/civil-rights-act" target="_blank" rel="noopener">National Archives — Civil Rights Act of 1964</a></li>
-      <li><a href="https://www.archives.gov/milestone-documents/voting-rights-act" target="_blank" rel="noopener">National Archives — Voting Rights Act of 1965</a></li>
-      <li><a href="https://www.archives.gov/education/lessons/brown-v-board/timeline.html" target="_blank" rel="noopener">National Archives — Brown v. Board of Education</a></li>
-      <li><a href="https://www.loc.gov/exhibits/civil-rights-act/" target="_blank" rel="noopener">Library of Congress — The Civil Rights Act of 1964</a></li>
-      <li><a href="https://www.loc.gov/exhibits/civil-rights-act/civil-rights-era.html" target="_blank" rel="noopener">Library of Congress — Civil Rights Era collection</a></li>
+      <li>
+        <a href="https://www.archives.gov/milestone-documents/civil-rights-act" target="_blank" rel="noopener">
+          National Archives — Civil Rights Act of 1964
+        </a>
+        <p>Provides the historical document and background for the legislation that prohibited discrimination in several areas of public life.</p>
+      </li>
+
+      <li>
+        <a href="https://www.archives.gov/milestone-documents/voting-rights-act" target="_blank" rel="noopener">
+          National Archives — Voting Rights Act of 1965
+        </a>
+        <p>Supports discussion of federal action against discriminatory voting practices.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/collections/civil-rights-history-project/articles-and-essays/nonviolent-philosophy-and-self-defense/" target="_blank" rel="noopener">
+          Library of Congress — Nonviolent Philosophy and Self Defense
+        </a>
+        <p>Explains ideas and debates around nonviolent protest and self-defence during the movement.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/classroom-materials/civil-rights-movement/" target="_blank" rel="noopener">
+          Library of Congress — Civil Rights Movement primary source set
+        </a>
+        <p>Provides historical documents and examples that can be used to examine protest methods and their effects.</p>
+      </li>
+
+      <li>
+        <a href="https://www.nps.gov/subjects/civilrights/modern-civil-rights-movement.htm" target="_blank" rel="noopener">
+          National Park Service — Modern Civil Rights Movement
+        </a>
+        <p>Provides context for the movement's achievements and the ongoing struggle for civil rights.</p>
+      </li>
+
+      <li>
+        <a href="https://www.census.gov/topics/income-poverty/poverty/data/tables.html" target="_blank" rel="noopener">
+          U.S. Census Bureau — Poverty data tables
+        </a>
+        <p>Provides statistical information that can help examine wider social and economic inequalities.</p>
+      </li>
+
+      <li>
+        <a href="https://www.census.gov/topics/income-poverty/poverty.html" target="_blank" rel="noopener">
+          U.S. Census Bureau — Income and poverty information
+        </a>
+        <p>Provides background information and data about income and poverty in the United States.</p>
+      </li>
     </ul>
   </div>
 
-  <div class="source-group">
+  <!-- YOUTH -->
+
+  <div class="source-group" id="youth-sources">
     <div class="source-group-header">
-      <h3>METHODS & MOBILISATION</h3>
-      <span>04 / COLLECTIVE ACTION</span>
+      <h3>YOUNG PEOPLE & CHANGE</h3>
+      <span>04 / THE YOUTH PAGE</span>
     </div>
+
     <p>
-      Used to support information about nonviolent protest,
-      direct action, sit-ins, boycotts, marches and the ways
-      people organised to demand change.
+      These sources support the Youth page's investigation of
+      young people's involvement in the American Civil Rights
+      Movement. They cover the Little Rock Nine, student sit-ins,
+      the Birmingham Children's Crusade and the role of student
+      organisers. The final sources are used separately for the
+      modern Australian student protest example.
     </p>
+
     <ul class="source-list">
-      <li><a href="https://www.loc.gov/collections/civil-rights-history-project/articles-and-essays/nonviolent-philosophy-and-self-defense/" target="_blank" rel="noopener">Library of Congress — Nonviolent Philosophy and Self Defense</a></li>
-      <li><a href="https://www.loc.gov/classroom-materials/civil-rights-movement/" target="_blank" rel="noopener">Library of Congress — Civil Rights Movement primary sources</a></li>
-      <li><a href="https://snccdigital.org/" target="_blank" rel="noopener">SNCC Digital Gateway — Student organising and direct action</a></li>
+      <li>
+        <a href="https://www.nps.gov/chsc/learn/historyculture/the-little-rock-nine.htm" target="_blank" rel="noopener">
+          National Park Service — The Little Rock Nine
+        </a>
+        <p>Explains how nine Black teenagers challenged school segregation at Central High School in Little Rock, Arkansas, in 1957.</p>
+      </li>
+
+      <li>
+        <a href="https://snccdigital.org/" target="_blank" rel="noopener">
+          SNCC Digital Gateway — Student activism and organising
+        </a>
+        <p>Provides historical information about student-led organising, direct action and the role of young activists in the movement.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/exhibits/naacp/the-civil-rights-era.html" target="_blank" rel="noopener">
+          Library of Congress — The Civil Rights Era
+        </a>
+        <p>Provides context for the wider movement and the campaigns in which young people participated.</p>
+      </li>
+
+      <li>
+        <a href="https://www.archives.gov/research/african-americans/civil-rights" target="_blank" rel="noopener">
+          National Archives — African American Civil Rights records
+        </a>
+        <p>Provides access to government records and historical material connected to the struggle for civil rights.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/classroom-materials/civil-rights-movement/" target="_blank" rel="noopener">
+          Library of Congress — Civil Rights Movement primary source set
+        </a>
+        <p>Offers historical documents and materials that can support research into student activism and civil rights campaigns.</p>
+      </li>
+
+      <li>
+        <a href="https://www.abc.net.au/news/2026-08-13/one-nation-students-protest-pauline-hanson/107033644" target="_blank" rel="noopener">
+          ABC News — Students protest Pauline Hanson, August 2026
+        </a>
+        <p>Reports on a modern Australian student protest. This is used as a contemporary example of young people participating in public demonstrations, not as part of the historical American movement.</p>
+      </li>
+
+      <li>
+        <a href="https://aapnews.aap.com.au/news/i-don-t-like-it-second-student-wave-protests-hanson" target="_blank" rel="noopener">
+          Australian Associated Press — Second wave of student protests, September 2026
+        </a>
+        <p>Provides additional reporting on student demonstrations in Australia and helps examine youth participation in current social issues.</p>
+      </li>
     </ul>
+
+    <div class="source-note">
+      <strong>IMPORTANT DISTINCTION:</strong>
+      The American Civil Rights Movement is the main historical
+      case study on this page. The Australian student protests are
+      included as a separate modern example to show how young
+      people can participate in social movements today. They are
+      not presented as part of the American Civil Rights Movement.
+    </div>
   </div>
 
-  <div class="source-group">
-    <div class="source-group-header">
-      <h3>SOCIAL CHANGE & IMPACT</h3>
-      <span>05 / THE IMPACT</span>
-    </div>
-    <p>
-      Used to examine the achievements of the movement,
-      changes to federal law, voting rights and the challenges
-      that continued after major legal reforms.
-    </p>
-    <ul class="source-list">
-      <li><a href="https://www.archives.gov/milestone-documents/civil-rights-act" target="_blank" rel="noopener">National Archives — Civil Rights Act of 1964</a></li>
-      <li><a href="https://www.archives.gov/milestone-documents/voting-rights-act" target="_blank" rel="noopener">National Archives — Voting Rights Act of 1965</a></li>
-      <li><a href="https://www.census.gov/topics/income-poverty/poverty/data/tables.html" target="_blank" rel="noopener">U.S. Census Bureau — Poverty data tables</a></li>
-      <li><a href="https://www.census.gov/topics/income-poverty/poverty.html" target="_blank" rel="noopener">U.S. Census Bureau — Income and poverty information</a></li>
-      <li><a href="https://www.nps.gov/subjects/civilrights/modern-civil-rights-movement.htm" target="_blank" rel="noopener">National Park Service — Modern Civil Rights Movement</a></li>
-    </ul>
-  </div>
+  <!-- EVIDENCE -->
 
-  <div class="source-group">
+  <div class="source-group" id="evidence-sources">
     <div class="source-group-header">
-      <h3>PHOTOGRAPHS & PRIMARY EVIDENCE</h3>
-      <span>06 / THE RECORD</span>
+      <h3>THE EVIDENCE</h3>
+      <span>05 / PRIMARY RECORDS</span>
     </div>
+
     <p>
-      Used for historical photographs and records shown throughout
-      the website. These collections help document events, people,
-      protests and the conditions that shaped the movement.
+      These sources support the Evidence page's use of photographs,
+      archival records, government documents and historical
+      collections. Primary sources are especially important
+      because they allow readers to examine records created
+      during the period, rather than relying only on later
+      descriptions of events.
     </p>
+
     <ul class="source-list">
-      <li><a href="https://www.archives.gov/research/african-americans/civil-rights" target="_blank" rel="noopener">National Archives — African American Civil Rights records</a></li>
-      <li><a href="https://www.loc.gov/collections/selma-to-montgomery-march/" target="_blank" rel="noopener">Library of Congress — Selma to Montgomery March</a></li>
-      <li><a href="https://www.loc.gov/collections/civil-rights-history-project/" target="_blank" rel="noopener">Library of Congress — Civil Rights History Project collection</a></li>
-      <li><a href="https://www.loc.gov/exhibits/civil-rights-act/" target="_blank" rel="noopener">Library of Congress — Civil Rights Act exhibition</a></li>
-      <li><a href="https://www.splcenter.org/resources/stories/profiles-courage-september-4-1957-little-rock-nine-started-movement-integrate-schools/" target="_blank" rel="noopener">Southern Poverty Law Center — The Little Rock Nine</a></li>
-      <li><a href="https://time.com/3874341/little-rock-nine-1957-photos/" target="_blank" rel="noopener">TIME — Little Rock Nine historical photographs</a></li>
-      <li><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons — Historical photograph archive</a></li>
+      <li>
+        <a href="https://www.loc.gov/item/94500293/" target="_blank" rel="noopener">
+          Library of Congress — Rosa Parks fingerprinting photograph
+        </a>
+        <p>An archival photograph record connected to Rosa Parks and the events surrounding the Montgomery Bus Boycott.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/exhibits/brown/brown-brown.html#obj99" target="_blank" rel="noopener">
+          Library of Congress — Brown v. Board historical photograph
+        </a>
+        <p>Provides a visual record connected to the legal challenge against school segregation.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/item/2003654395/" target="_blank" rel="noopener">
+          Library of Congress — 1963 March on Washington photograph
+        </a>
+        <p>Provides an archival record of the large demonstration held in Washington, D.C.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/item/97504801/" target="_blank" rel="noopener">
+          Library of Congress — Selma to Montgomery March photograph
+        </a>
+        <p>Documents the voting rights marches in Alabama in 1965.</p>
+      </li>
+
+      <li>
+        <a href="https://www.archives.gov/milestone-documents/civil-rights-act" target="_blank" rel="noopener">
+          National Archives — Civil Rights Act of 1964
+        </a>
+        <p>Provides access to the original legislation and information about its historical significance.</p>
+      </li>
+
+      <li>
+        <a href="https://www.archives.gov/milestone-documents/voting-rights-act" target="_blank" rel="noopener">
+          National Archives — Voting Rights Act of 1965
+        </a>
+        <p>Provides access to the legislation that addressed discriminatory voting practices.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/collections/selma-to-montgomery-march/" target="_blank" rel="noopener">
+          Library of Congress — Selma to Montgomery March collection
+        </a>
+        <p>Contains photographs and other historical materials relating to the 1965 voting rights marches.</p>
+      </li>
+
+      <li>
+        <a href="https://www.loc.gov/collections/civil-rights-history-project/" target="_blank" rel="noopener">
+          Library of Congress — Civil Rights History Project collection
+        </a>
+        <p>Provides interviews and historical material that preserve the experiences of people involved in the movement.</p>
+      </li>
+
+      <li>
+        <a href="https://www.archives.gov/research/african-americans/civil-rights" target="_blank" rel="noopener">
+          National Archives — African American Civil Rights records
+        </a>
+        <p>Provides access to government records and other primary sources relating to the struggle for civil rights.</p>
+      </li>
+
+      <li>
+        <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">
+          Wikimedia Commons — Historical photograph archive
+        </a>
+        <p>Provides access to historical images. Individual image records should be checked for their original source, creator and usage information.</p>
+      </li>
     </ul>
   </div>
 
   <div class="source-note">
     <strong>RESEARCH NOTE:</strong>
     This index gathers the main sources referenced across
-    BLACKNWHITE. Some sources appear in more than one category
-    because they support different parts of the website.
-    Photographs are credited to their relevant collections or
-    image records wherever those details are available.
+    BLACKNWHITE. Sources are grouped according to the page and
+    topic they support. Some references appear in more than one
+    section because the same historical document or collection
+    can provide evidence for different parts of the project.
+
+    <br><br>
+
+    Primary sources, such as photographs, government documents
+    and first-hand accounts, are used alongside secondary sources
+    that provide historical explanations and context. Photographs
+    should be credited to their individual record pages wherever
+    possible, rather than only to the wider collection.
   </div>
 
 </section>
@@ -1040,15 +1332,15 @@ footer {
 </footer>
 
 <script>
-document.querySelectorAll('.dropdown-toggle').forEach(button => {
+document.querySelectorAll('.dropdown-toggle, .dropdown-arrow').forEach(button => {
   button.addEventListener('click', event => {
     event.preventDefault();
     event.stopPropagation();
 
-    const dropdown = button.closest('.dropdown');
+    const dropdown = button.closest('.dropdown, .nav-dropdown');
     const wasOpen = dropdown.classList.contains('open');
 
-    document.querySelectorAll('.dropdown').forEach(item => {
+    document.querySelectorAll('.dropdown, .nav-dropdown').forEach(item => {
       item.classList.remove('open');
     });
 
@@ -1059,15 +1351,15 @@ document.querySelectorAll('.dropdown-toggle').forEach(button => {
 });
 
 document.addEventListener('click', event => {
-  if (!event.target.closest('.dropdown')) {
-    document.querySelectorAll('.dropdown').forEach(item => {
+  if (!event.target.closest('.dropdown, .nav-dropdown')) {
+    document.querySelectorAll('.dropdown, .nav-dropdown').forEach(item => {
       item.classList.remove('open');
     });
   }
 });
 
 window.addEventListener('scroll', () => {
-  document.querySelectorAll('.dropdown').forEach(item => {
+  document.querySelectorAll('.dropdown, .nav-dropdown').forEach(item => {
     item.classList.remove('open');
   });
 });
@@ -1075,4 +1367,5 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
+
 
