@@ -1,1 +1,2051 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YOUTH — BLACKNWHITE.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#ff168b;
+  --blue:#245bff;
+  --purple:#8b35e8;
+  --yellow:#ffe600;
+  --orange:#ff7135;
+  --black:#171717;
+  --paper:#faf9f6;
+  --grey:#777;
+  --line:#d8d6d0;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
+body {
+  background:var(--paper);
+  color:var(--black);
+  font-family:'Space Grotesk',sans-serif;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+img {
+  display:block;
+  width:100%;
+  object-fit:cover;
+}
+
+button {
+  font:inherit;
+}
+
+/* NAVIGATION */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  padding:18px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  background:rgba(250,249,246,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.logo {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.logo span {
+  color:var(--pink);
+}
+
+nav {
+  display:flex;
+  align-items:center;
+  gap:19px;
+  flex-wrap:wrap;
+}
+
+nav > a,
+.nav-dropdown-trigger > a {
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  transition:.2s;
+}
+
+nav > a:hover,
+.nav-dropdown-trigger > a:hover {
+  color:var(--pink);
+}
+
+.nav-index {
+  color:var(--pink);
+}
+
+.nav-dropdown {
+  position:relative;
+}
+
+.nav-dropdown-trigger {
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.dropdown-arrow {
+  border:0;
+  background:none;
+  cursor:pointer;
+  font-size:15px;
+  padding:2px 4px;
+  color:var(--black);
+}
+
+.dropdown-menu {
+  display:none;
+  position:absolute;
+  top:25px;
+  left:0;
+  min-width:205px;
+  padding:9px;
+  background:var(--paper);
+  border:1px solid var(--black);
+  box-shadow:5px 5px 0 var(--pink);
+}
+
+.nav-dropdown.is-open .dropdown-menu {
+  display:block;
+}
+
+.dropdown-menu a {
+  display:block;
+  padding:11px 10px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+  border-bottom:1px solid var(--line);
+}
+
+.dropdown-menu a:last-child {
+  border-bottom:0;
+}
+
+.dropdown-menu a:hover {
+  background:var(--yellow);
+}
+
+/* GENERAL */
+
+.eyebrow {
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.pink {
+  color:var(--pink);
+}
+
+.blue {
+  color:var(--blue);
+}
+
+.marker {
+  font-family:'Permanent Marker',cursive;
+}
+
+.section-number {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:17px;
+  color:var(--pink);
+  letter-spacing:2px;
+}
+
+.section-heading {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,8vw,100px);
+  line-height:.88;
+  letter-spacing:-1px;
+  text-transform:uppercase;
+}
+
+.section-intro {
+  max-width:720px;
+  font-size:16px;
+  line-height:1.8;
+  color:#454545;
+}
+
+.small-label {
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--grey);
+}
+
+.photo-frame {
+  position:relative;
+  background:#e5e1da;
+  overflow:hidden;
+}
+
+.photo-frame img {
+  width:100%;
+  height:100%;
+  min-height:220px;
+  object-fit:cover;
+  filter:grayscale(100%);
+  transition:filter .4s, transform .5s;
+}
+
+.photo-frame:hover img {
+  filter:grayscale(0%);
+  transform:scale(1.025);
+}
+
+.photo-caption {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+  padding-top:9px;
+  font-size:10px;
+  line-height:1.5;
+  color:var(--grey);
+}
+
+.photo-caption a {
+  color:var(--blue);
+  text-decoration:underline;
+  white-space:nowrap;
+}
+
+/* HERO */
+
+.hero {
+  padding:75px 8% 55px;
+  border-bottom:1px solid var(--black);
+}
+
+.hero-topline {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.hero-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(75px,15vw,190px);
+  line-height:.76;
+  letter-spacing:-3px;
+  max-width:1100px;
+}
+
+.hero-title .outline {
+  color:transparent;
+  -webkit-text-stroke:2px var(--black);
+}
+
+.hero-title .pink-word {
+  color:var(--pink);
+}
+
+.hero-bottom {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:end;
+  margin-top:45px;
+}
+
+.hero-description {
+  max-width:510px;
+  font-size:16px;
+  line-height:1.85;
+}
+
+.hero-note {
+  justify-self:end;
+  max-width:280px;
+  padding:20px;
+  border:1px solid var(--black);
+  transform:rotate(2deg);
+  background:var(--yellow);
+}
+
+.hero-note p {
+  font-family:'Permanent Marker',cursive;
+  font-size:19px;
+  line-height:1.4;
+}
+
+.hero-image-strip {
+  display:grid;
+  grid-template-columns:1.35fr .8fr .8fr;
+  gap:10px;
+  margin-top:55px;
+}
+
+.hero-image-strip .photo-frame {
+  height:260px;
+}
+
+.hero-image-strip .photo-frame:first-child {
+  height:330px;
+}
+
+.hero-image-strip .photo-frame:nth-child(2) {
+  margin-top:35px;
+}
+
+.hero-image-strip .photo-frame:nth-child(3) {
+  margin-top:70px;
+}
+
+/* SECTION 1 */
+
+.youth-section {
+  padding:105px 8%;
+  border-bottom:1px solid var(--black);
+}
+
+.section-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:30px;
+  margin-bottom:45px;
+}
+
+.section-top .section-intro {
+  max-width:430px;
+  padding-top:10px;
+}
+
+.history-lead {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+  margin-bottom:75px;
+}
+
+.history-lead .photo-frame {
+  height:440px;
+}
+
+.history-lead h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(36px,5vw,65px);
+  line-height:.95;
+  margin:15px 0;
+}
+
+.history-lead p,
+.story-copy p {
+  font-size:14px;
+  line-height:1.9;
+  color:#454545;
+  margin-bottom:15px;
+}
+
+.fact-line {
+  border-top:1px solid var(--black);
+  border-bottom:1px solid var(--black);
+  padding:14px 0;
+  margin-top:22px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.story-row {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:55px;
+  align-items:center;
+  padding:55px 0;
+  border-top:1px solid var(--line);
+}
+
+.story-row.reverse {
+  grid-template-columns:1.15fr .85fr;
+}
+
+.story-row.reverse .story-image {
+  order:2;
+}
+
+.story-image .photo-frame {
+  height:350px;
+}
+
+.story-copy h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(38px,5vw,65px);
+  line-height:.92;
+  margin:12px 0 20px;
+}
+
+.story-copy .date {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:19px;
+  color:var(--pink);
+  letter-spacing:1px;
+}
+
+.story-copy .highlight {
+  margin-top:20px;
+  padding:15px 18px;
+  border-left:4px solid var(--pink);
+  background:#f0eee8;
+  font-size:13px;
+  line-height:1.7;
+  font-weight:600;
+}
+
+.mini-gallery {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:45px;
+}
+
+.mini-gallery .photo-frame {
+  height:190px;
+}
+
+.mini-gallery .photo-caption {
+  font-size:9px;
+}
+
+/* TIMELINE */
+
+.timeline-area {
+  margin-top:85px;
+  padding:35px;
+  background:var(--black);
+  color:var(--paper);
+}
+
+.timeline-heading {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:end;
+  margin-bottom:35px;
+}
+
+.timeline-heading h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:55px;
+  line-height:.9;
+}
+
+.timeline-heading p {
+  max-width:300px;
+  font-size:11px;
+  line-height:1.7;
+  color:#c9c7c2;
+}
+
+.timeline {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid #777;
+}
+
+.timeline-item {
+  padding:22px 18px 5px 0;
+  margin-right:18px;
+  border-right:1px solid #555;
+}
+
+.timeline-item:last-child {
+  border-right:0;
+}
+
+.timeline-item strong {
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:35px;
+  color:var(--yellow);
+  margin-bottom:10px;
+}
+
+.timeline-item p {
+  font-size:11px;
+  line-height:1.7;
+  color:#dedbd5;
+}
+
+/* SECTION 2 */
+
+.evaluation-section {
+  padding:110px 8%;
+  background:#efede7;
+  border-bottom:1px solid var(--black);
+}
+
+.evaluation-title {
+  display:grid;
+  grid-template-columns:1fr .7fr;
+  gap:50px;
+  align-items:end;
+  margin-bottom:65px;
+}
+
+.evaluation-title p {
+  font-size:15px;
+  line-height:1.85;
+  max-width:450px;
+}
+
+.evaluation-feature {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:start;
+}
+
+.evaluation-feature h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:48px;
+  line-height:.95;
+  margin-bottom:18px;
+}
+
+.evaluation-feature p {
+  font-size:14px;
+  line-height:1.9;
+  color:#444;
+  margin-bottom:17px;
+}
+
+.evaluation-quote {
+  padding:35px;
+  background:var(--pink);
+  color:white;
+  margin-top:35px;
+  transform:rotate(-1deg);
+}
+
+.evaluation-quote p {
+  font-family:'Permanent Marker',cursive;
+  font-size:clamp(23px,3vw,36px);
+  line-height:1.3;
+  color:white;
+}
+
+.evaluation-quote span {
+  display:block;
+  margin-top:18px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.scoreboard {
+  border-top:2px solid var(--black);
+  margin-top:65px;
+}
+
+.score-row {
+  display:grid;
+  grid-template-columns:180px 1fr 1fr;
+  gap:25px;
+  padding:23px 0;
+  border-bottom:1px solid #aaa69d;
+  align-items:start;
+}
+
+.score-row h4 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:23px;
+  line-height:1;
+}
+
+.score-row p {
+  font-size:12px;
+  line-height:1.8;
+  color:#454545;
+}
+
+.score-row .result {
+  font-weight:700;
+  color:var(--blue);
+}
+
+.evaluation-conclusion {
+  margin-top:45px;
+  padding:28px;
+  border:2px solid var(--black);
+  background:var(--paper);
+}
+
+.evaluation-conclusion h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.evaluation-conclusion p {
+  max-width:850px;
+  font-size:14px;
+  line-height:1.9;
+}
+
+/* SECTION 3 */
+
+.today-section {
+  padding:105px 8%;
+  border-bottom:1px solid var(--black);
+}
+
+.today-intro {
+  display:grid;
+  grid-template-columns:1fr .8fr;
+  gap:55px;
+  align-items:end;
+  margin-bottom:50px;
+}
+
+.today-intro p {
+  max-width:450px;
+  font-size:15px;
+  line-height:1.85;
+}
+
+.case-study {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:start;
+}
+
+.case-image .photo-frame {
+  height:420px;
+}
+
+.case-content {
+  padding:10px 0;
+}
+
+.case-tag {
+  display:inline-block;
+  padding:7px 10px;
+  background:var(--blue);
+  color:white;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  margin-bottom:18px;
+}
+
+.case-content h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(42px,6vw,72px);
+  line-height:.9;
+  margin-bottom:22px;
+}
+
+.case-content p {
+  font-size:14px;
+  line-height:1.9;
+  color:#444;
+  margin-bottom:16px;
+}
+
+.case-facts {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:30px;
+}
+
+.case-fact {
+  padding:15px;
+  border-top:3px solid var(--pink);
+  background:#efede7;
+}
+
+.case-fact strong {
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:27px;
+  margin-bottom:6px;
+}
+
+.case-fact span {
+  font-size:10px;
+  line-height:1.5;
+  color:#555;
+}
+
+.case-evaluation {
+  margin-top:55px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  padding:30px;
+  background:var(--yellow);
+}
+
+.case-evaluation h4 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.case-evaluation p {
+  font-size:13px;
+  line-height:1.8;
+}
+
+.case-note {
+  margin-top:30px;
+  padding:18px;
+  border-left:4px solid var(--blue);
+  background:#f0eee8;
+  font-size:12px;
+  line-height:1.8;
+}
+
+/* SECTION 4 */
+
+.action-section {
+  padding:110px 8%;
+  background:var(--black);
+  color:var(--paper);
+}
+
+.action-heading {
+  display:grid;
+  grid-template-columns:1fr .7fr;
+  gap:50px;
+  align-items:end;
+  margin-bottom:60px;
+}
+
+.action-heading .section-heading {
+  color:var(--yellow);
+}
+
+.action-heading p {
+  font-size:15px;
+  line-height:1.85;
+  color:#d4d1cb;
+}
+
+.action-intro {
+  max-width:800px;
+  font-size:18px;
+  line-height:1.8;
+  margin-bottom:55px;
+}
+
+.action-list {
+  border-top:1px solid #666;
+}
+
+.action-item {
+  display:grid;
+  grid-template-columns:80px 1fr 1.1fr;
+  gap:25px;
+  align-items:start;
+  padding:25px 0;
+  border-bottom:1px solid #666;
+}
+
+.action-item .number {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:40px;
+  color:var(--pink);
+}
+
+.action-item h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;
+  line-height:1;
+}
+
+.action-item p {
+  font-size:12px;
+  line-height:1.8;
+  color:#d4d1cb;
+}
+
+.action-bottom {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  margin-top:65px;
+}
+
+.action-bottom .big-message {
+  font-family:'Permanent Marker',cursive;
+  font-size:clamp(30px,5vw,58px);
+  line-height:1.2;
+  color:var(--pink);
+}
+
+.action-bottom p {
+  font-size:14px;
+  line-height:1.9;
+  color:#d4d1cb;
+}
+
+/* SOURCES */
+
+.sources {
+  padding:65px 8%;
+  background:#e9e7e0;
+}
+
+.sources h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.sources-intro {
+  max-width:650px;
+  font-size:12px;
+  line-height:1.8;
+  margin-bottom:25px;
+  color:#555;
+}
+
+.source-list {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 35px;
+  border-top:1px solid #aaa69d;
+}
+
+.source-list a {
+  display:block;
+  padding:15px 0;
+  border-bottom:1px solid #aaa69d;
+  font-size:12px;
+  line-height:1.6;
+  font-weight:700;
+}
+
+.source-list a:hover {
+  color:var(--pink);
+}
+
+.source-list span {
+  display:block;
+  font-size:9px;
+  font-weight:400;
+  color:var(--grey);
+  margin-top:4px;
+}
+
+footer {
+  padding:30px 8%;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  background:var(--paper);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+footer a {
+  color:var(--pink);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+  header {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  nav {
+    gap:12px;
+  }
+
+  .hero-bottom,
+  .history-lead,
+  .evaluation-title,
+  .evaluation-feature,
+  .today-intro,
+  .case-study,
+  .action-heading,
+  .action-bottom {
+    grid-template-columns:1fr;
+  }
+
+  .hero-note {
+    justify-self:start;
+  }
+
+  .story-row,
+  .story-row.reverse {
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+  }
+
+  .story-row.reverse .story-image {
+    order:0;
+  }
+
+  .score-row {
+    grid-template-columns:130px 1fr 1fr;
+  }
+}
+
+@media(max-width:600px) {
+  header {
+    padding:14px 5%;
+  }
+
+  nav {
+    gap:10px;
+  }
+
+  nav > a,
+  .nav-dropdown-trigger > a {
+    font-size:9px;
+  }
+
+  .hero,
+  .youth-section,
+  .evaluation-section,
+  .today-section,
+  .action-section {
+    padding:65px 6%;
+  }
+
+  .hero-title {
+    font-size:clamp(65px,18vw,105px);
+  }
+
+  .hero-image-strip {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero-image-strip .photo-frame,
+  .hero-image-strip .photo-frame:first-child {
+    height:200px;
+    margin-top:0;
+  }
+
+  .hero-image-strip .photo-frame:first-child {
+    grid-column:span 2;
+  }
+
+  .section-top {
+    flex-direction:column;
+  }
+
+  .history-lead {
+    gap:25px;
+  }
+
+  .history-lead .photo-frame {
+    height:280px;
+  }
+
+  .story-row,
+  .story-row.reverse {
+    grid-template-columns:1fr;
+    gap:20px;
+    padding:40px 0;
+  }
+
+  .story-image .photo-frame {
+    height:260px;
+  }
+
+  .mini-gallery {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mini-gallery .photo-frame {
+    height:150px;
+  }
+
+  .timeline-area {
+    padding:22px;
+  }
+
+  .timeline-heading {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .timeline {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .timeline-item {
+    border-right:0;
+    border-bottom:1px solid #555;
+    padding-bottom:20px;
+  }
+
+  .score-row {
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .case-image .photo-frame {
+    height:280px;
+  }
+
+  .case-facts {
+    grid-template-columns:1fr;
+  }
+
+  .case-evaluation {
+    grid-template-columns:1fr;
+    padding:22px;
+  }
+
+  .action-item {
+    grid-template-columns:45px 1fr;
+    gap:12px;
+  }
+
+  .action-item p {
+    grid-column:2;
+  }
+
+  .source-list {
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="home.html">BLACK<span>N</span>WHITE.</a>
+
+  <nav>
+    <a href="home.html">HOME</a>
+    <a href="movement.html">MOVEMENT</a>
+
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-trigger">
+        <a href="history.html">HISTORY</a>
+        <button class="dropdown-arrow" type="button" aria-label="Open History menu" aria-expanded="false">⌄</button>
+      </div>
+      <div class="dropdown-menu">
+        <a href="history.html#emergence">EMERGENCE</a>
+        <a href="history.html#deviance">DEVIANCE</a>
+        <a href="history.html#movement-cycle">MOVEMENT CYCLE</a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-trigger">
+        <a href="impact.html">IMPACT</a>
+        <button class="dropdown-arrow" type="button" aria-label="Open Impact menu" aria-expanded="false">⌄</button>
+      </div>
+      <div class="dropdown-menu">
+        <a href="impact.html#methods">METHODS</a>
+        <a href="impact.html#social-change">SOCIAL CHANGE</a>
+        <a href="impact.html#limitations">LIMITATIONS</a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-trigger">
+        <a href="youth.html">YOUTH</a>
+        <button class="dropdown-arrow" type="button" aria-label="Open Youth menu" aria-expanded="false">⌄</button>
+      </div>
+      <div class="dropdown-menu">
+        <a href="youth.html#young-people">YOUNG PEOPLE IN ACTION</a>
+        <a href="youth.html#impact">IMPACT &amp; EFFECTIVENESS</a>
+        <a href="youth.html#today">YOUNG PEOPLE TODAY</a>
+        <a href="youth.html#take-action">WHAT CAN YOU DO?</a>
+      </div>
+    </div>
+
+    <a href="evidence.html">EVIDENCE</a>
+    <a class="nav-index" href="index.html">INDEX</a>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-topline">
+    <span class="eyebrow">BLACKNWHITE. / YOUTH &amp; SOCIAL CHANGE</span>
+    <span class="eyebrow">CHAPTER 04 — THE NEXT GENERATION</span>
+  </div>
+
+  <h1 class="hero-title">
+    TOO YOUNG<br>
+    <span class="outline">TO MATTER?</span><br>
+    <span class="pink-word">THINK AGAIN.</span>
+  </h1>
+
+  <div class="hero-bottom">
+    <p class="hero-description">
+      Young people have never needed to wait until adulthood to challenge
+      injustice. Throughout the American Civil Rights Movement, students
+      and teenagers played an important role in confronting segregation,
+      organising demonstrations and demanding equal treatment.
+      Their actions helped bring national attention to racial inequality
+      and showed that social change does not belong to one generation alone.
+    </p>
+
+    <div class="hero-note">
+      <p>"Your age does not decide whether your voice matters."</p>
+    </div>
+  </div>
+
+  <div class="hero-image-strip">
+
+    <div>
+      <div class="photo-frame">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Operation_Arkansas,_Little_Rock_Nine.jpg"
+             alt="Federal soldiers escorting students during the Little Rock school desegregation crisis">
+      </div>
+      <div class="photo-caption">
+        <span>The Little Rock Nine, 1957</span>
+        <a href="https://commons.wikimedia.org/wiki/File:Operation_Arkansas,_Little_Rock_Nine.jpg" target="_blank" rel="noopener">IMAGE SOURCE ↗</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="photo-frame">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Greensboro_Four.jpg"
+             alt="The Greensboro Four and the student sit-in movement">
+      </div>
+      <div class="photo-caption">
+        <span>Student sit-in movement</span>
+        <a href="https://commons.wikimedia.org/wiki/File:Greensboro_Four.jpg" target="_blank" rel="noopener">IMAGE SOURCE ↗</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="photo-frame">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chlidren%27s_Crusade_1963.jpg"
+             alt="Young demonstrators taking part in the Birmingham Children's Crusade">
+      </div>
+      <div class="photo-caption">
+        <span>Birmingham, 1963</span>
+        <a href="https://commons.wikimedia.org/wiki/File:Chlidren%27s_Crusade_1963.jpg" target="_blank" rel="noopener">IMAGE SOURCE ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 1: YOUNG PEOPLE IN ACTION -->
+
+<section class="youth-section" id="young-people">
+
+  <div class="section-top">
+    <div>
+      <div class="section-number">01 / THE PEOPLE WHO ACTED</div>
+      <h2 class="section-heading">YOUNG PEOPLE<br>IN ACTION.</h2>
+    </div>
+
+    <p class="section-intro">
+      The American Civil Rights Movement was not made up of adults alone.
+      Students, teenagers and young organisers helped challenge segregation
+      in schools, public spaces and communities. Their participation
+      became an important part of the movement's growing strength.
+    </p>
+  </div>
+
+
+  <!-- LITTLE ROCK -->
+
+  <div class="history-lead">
+
+    <div>
+      <div class="photo-frame">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Operation_Arkansas,_Little_Rock_Nine.jpg"
+             alt="The Little Rock Nine being escorted by federal soldiers">
+      </div>
+      <div class="photo-caption">
+        <span>Federal soldiers escorting students at Central High School.</span>
+        <a href="https://commons.wikimedia.org/wiki/File:Operation_Arkansas,_Little_Rock_Nine.jpg" target="_blank" rel="noopener">VIEW IMAGE ↗</a>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow pink">CASE STUDY 01 / EDUCATION</span>
+      <h3>THE LITTLE ROCK NINE</h3>
+
+      <p>
+        In 1957, nine Black teenagers attempted to attend Central High School
+        in Little Rock, Arkansas. Their enrolment followed the 1954 Supreme
+        Court decision in <em>Brown v. Board of Education</em>, which ruled
+        that racial segregation in public schools was unconstitutional.
+      </p>
+
+      <p>
+        However, the court decision did not immediately make schools
+        integrated. The students faced intense opposition when they tried
+        to enter the school. Arkansas Governor Orval Faubus initially used
+        the National Guard to prevent them from entering. President
+        Dwight D. Eisenhower eventually sent federal troops to protect
+        the students and enforce the court's ruling.
+      </p>
+
+      <p>
+        The teenagers became known as the Little Rock Nine. By attending
+        Central High School despite the resistance, they challenged the
+        idea that public education could remain separated by race.
+        Their experience also exposed how difficult it could be to turn
+        a legal decision into real change.
+      </p>
+
+      <div class="fact-line">
+        <span>1957</span>
+        <span>Little Rock, Arkansas</span>
+        <span>School desegregation</span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- GREENSBORO FOUR -->
+
+  <div class="story-row">
+
+    <div class="story-image">
+      <div class="photo-frame">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Greensboro_Four.jpg"
+             alt="The Greensboro Four, whose sit-in helped inspire student demonstrations">
+      </div>
+      <div class="photo-caption">
+        <span>The Greensboro Four helped inspire a wider student sit-in movement.</span>
+        <a href="https://commons.wikimedia.org/wiki/File:Greensboro_Four.jpg" target="_blank" rel="noopener">VIEW IMAGE ↗</a>
+      </div>
+    </div>
+
+    <div class="story-copy">
+      <span class="date">01 FEBRUARY 1960</span>
+      <h3>THE GREENSBORO FOUR</h3>
+
+      <p>
+        Four Black college students — Ezell Blair Jr., David Richmond,
+        Franklin McCain and Joseph McNeil — sat down at a segregated
+        Woolworth's lunch counter in Greensboro, North Carolina.
+        They were refused service because of their race, but they
+        remained seated until the store closed.
+      </p>
+
+      <p>
+        The students returned over the following days, and more students
+        joined them. Their action helped inspire similar sit-ins across
+        the southern United States. Students used peaceful, organised
+        demonstrations to challenge segregation in restaurants and
+        other public spaces.
+      </p>
+
+      <p>
+        The sit-ins were important because they directly challenged
+        everyday discrimination. Instead of accepting that certain
+        facilities were reserved for white customers, the students
+        made their refusal to accept segregation visible.
+      </p>
+
+      <div class="highlight">
+        WHY IT MATTERED: A small group of students helped inspire
+        a much larger campaign. Their actions showed how one organised
+        protest could encourage others to participate.
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- CHILDREN'S CRUSADE -->
+
+  <div class="story-row reverse">
+
+    <div class="story-image">
+      <div class="photo-frame">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chlidren%27s_Crusade_1963.jpg"
+             alt="Young people participating in the Birmingham Children's Crusade in 1963">
+      </div>
+      <div class="photo-caption">
+        <span>Young demonstrators during the Birmingham Children's Crusade.</span>
+        <a href="https://commons.wikimedia.org/wiki/File:Chlidren%27s_Crusade_1963.jpg" target="_blank" rel="noopener">VIEW IMAGE ↗</a>
+      </div>
+    </div>
+
+    <div class="story-copy">
+      <span class="date">MAY 1963</span>
+      <h3>THE BIRMINGHAM CHILDREN'S CRUSADE</h3>
+
+      <p>
+        In Birmingham, Alabama, young people joined demonstrations
+        against racial segregation. During the Birmingham Children's
+        Crusade in May 1963, school students and other young
+        demonstrators took part in marches organised as part of
+        the wider campaign against segregation.
+      </p>
+
+      <p>
+        The participation of children and teenagers attracted
+        significant media attention. Images and reports of young
+        demonstrators facing opposition during the protests were
+        seen across the country. This brought greater public
+        attention to the treatment of Black Americans in Birmingham.
+      </p>
+
+      <p>
+        The campaign was connected to the wider work of local civil
+        rights organisers, including the Southern Christian Leadership
+        Conference (SCLC), community members and families. Young
+        participants were not acting in isolation; they were part
+        of a larger organised struggle.
+      </p>
+
+      <div class="highlight">
+        WHY IT MATTERED: The Children's Crusade demonstrated that
+        young people were active participants in the movement,
+        not simply observers of events organised by adults.
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- SNCC -->
+
+  <div class="story-row">
+
+    <div class="story-image">
+      <div class="photo-frame">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/1000_students_wanted_for_the_SNCC_Mississippi_Freedom_Summer_Project_(26276560142).jpg"
+             alt="Historical Student Nonviolent Coordinating Committee Freedom Summer recruitment material">
+      </div>
+      <div class="photo-caption">
+        <span>SNCC and the wider student-led organising movement.</span>
+        <a href="https://commons.wikimedia.org/wiki/Category:Student_Nonviolent_Coordinating_Committee" target="_blank" rel="noopener">IMAGE COLLECTION ↗</a>
+      </div>
+    </div>
+
+    <div class="story-copy">
+      <span class="date">ESTABLISHED 1960</span>
+      <h3>SNCC: STUDENTS ORGANISING FOR CHANGE</h3>
+
+      <p>
+        The Student Nonviolent Coordinating Committee (SNCC) was
+        established in 1960 as student activism grew across the
+        southern United States. It gave young activists a way
+        to organise beyond individual demonstrations.
+      </p>
+
+      <p>
+        SNCC members helped coordinate sit-ins, voter registration
+        campaigns, Freedom Rides and local community organising.
+        Many young activists travelled to communities where Black
+        citizens faced barriers to voting and worked alongside
+        local residents to challenge those barriers.
+      </p>
+
+      <p>
+        SNCC became an important organisation within the Civil Rights
+        Movement because it gave students greater influence over
+        the direction of campaigns. Young people were not only
+        attending protests — they were helping plan, organise
+        and lead them.
+      </p>
+
+      <div class="highlight">
+        WHY IT MATTERED: SNCC helped turn student participation
+        into sustained organisation, connecting local action
+        with a wider national movement.
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- EXTRA HISTORICAL GALLERY -->
+
+  <div style="margin-top:70px;">
+    <div class="eyebrow pink">THE MOVEMENT IN PICTURES</div>
+    <h3 style="font-family:'Bebas Neue';font-size:48px;margin:10px 0 8px;">
+      MORE THAN ONE GENERATION.
+    </h3>
+    <p class="section-intro">
+      Young activists took part in different campaigns and forms of
+      organising. These events were connected by a shared challenge
+      to racial segregation and unequal treatment.
+    </p>
+
+    <div class="mini-gallery">
+
+      <div>
+        <div class="photo-frame">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Greensboro_Four.jpg"
+               alt="Greensboro Four student sit-in photograph">
+        </div>
+        <div class="photo-caption"><span>Student sit-ins</span></div>
+      </div>
+
+      <div>
+        <div class="photo-frame">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chlidren%27s_Crusade_1963.jpg"
+               alt="Young people in the Birmingham campaign">
+        </div>
+        <div class="photo-caption"><span>Birmingham, 1963</span></div>
+      </div>
+
+      <div>
+        <div class="photo-frame">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Operation_Arkansas,_Little_Rock_Nine.jpg"
+               alt="Little Rock Nine school desegregation">
+        </div>
+        <div class="photo-caption"><span>Little Rock, 1957</span></div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- TIMELINE -->
+
+  <div class="timeline-area">
+
+    <div class="timeline-heading">
+      <h3>YOUNG PEOPLE<br>ON THE TIMELINE.</h3>
+      <p>
+        A selection of events showing how student participation
+        developed during the Civil Rights Movement.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <strong>1957</strong>
+        <p>
+          The Little Rock Nine attempt to integrate Central High School
+          in Arkansas.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>1960</strong>
+        <p>
+          The Greensboro Four help inspire student sit-ins.
+          SNCC is established later that year.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>1961</strong>
+        <p>
+          Young activists participate in Freedom Rides challenging
+          segregation in interstate travel.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>1963</strong>
+        <p>
+          Young people take part in the Birmingham Children's Crusade
+          and wider campaigns against segregation.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- SECTION 2: IMPACT AND EFFECTIVENESS -->
+
+<section class="evaluation-section" id="impact">
+
+  <div class="evaluation-title">
+    <div>
+      <div class="section-number">02 / EVALUATING THE CONTRIBUTION</div>
+      <h2 class="section-heading">IMPACT &amp;<br>EFFECTIVENESS.</h2>
+    </div>
+
+    <p>
+      The involvement of young people helped strengthen the Civil Rights
+      Movement, but how effective were their actions? To evaluate their
+      contribution, it is important to consider what changed, what their
+      actions achieved and what still depended on the wider movement.
+    </p>
+  </div>
+
+
+  <div class="evaluation-feature">
+
+    <div>
+      <span class="eyebrow pink">WHAT THEY ACHIEVED</span>
+      <h3>THE POWER OF<br>PARTICIPATION.</h3>
+
+      <p>
+        Young people helped expand the number of people involved in
+        the movement. Student sit-ins, school desegregation campaigns
+        and demonstrations encouraged more young people to participate
+        in challenging segregation. This increased the movement's
+        visibility and showed that opposition to racial discrimination
+        existed across generations.
+      </p>
+
+      <p>
+        Their actions also placed pressure on institutions and
+        businesses. Sit-ins challenged segregated lunch counters
+        directly, while the Little Rock Nine exposed the resistance
+        that remained even after school segregation had been ruled
+        unconstitutional.
+      </p>
+
+      <p>
+        The Birmingham Children's Crusade attracted national attention
+        to the struggle against segregation. The participation of
+        young demonstrators helped make the issue difficult for
+        the wider public and political leaders to ignore.
+      </p>
+
+      <p>
+        Organisations such as SNCC also made youth activism more
+        organised and sustained. Instead of relying only on individual
+        protests, students could coordinate campaigns and work with
+        communities over time.
+      </p>
+    </div>
+
+    <div>
+      <span class="eyebrow blue">WHAT LIMITED THEIR IMPACT?</span>
+      <h3>CHANGE DID NOT<br>HAPPEN OVERNIGHT.</h3>
+
+      <p>
+        Although young people made important contributions, their
+        actions did not immediately end segregation. The Little Rock
+        Nine still needed federal protection to attend school, showing
+        that public opposition and resistance from authorities could
+        continue even after a court ruling.
+      </p>
+
+      <p>
+        Young activists also depended on wider support. Community
+        organisations, churches, parents, adult organisers, lawyers
+        and established civil rights groups helped provide resources,
+        guidance and coordination. Youth activism was powerful,
+        but it was one part of a much larger movement.
+      </p>
+
+      <p>
+        Major legal changes also required action beyond student
+        demonstrations. The Civil Rights Act of 1964 and the Voting
+        Rights Act of 1965 were important achievements of the wider
+        Civil Rights Movement, involving years of organising,
+        legal challenges and political pressure.
+      </p>
+
+      <p>
+        Even after these laws were passed, racial inequality did not
+        disappear. Legal reform created important protections, but
+        it did not automatically remove discrimination from everyday
+        life.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="evaluation-quote">
+    <p>
+      "Young people did not create the movement alone.
+      They helped make it stronger, louder and harder to ignore."
+    </p>
+    <span>THE CONTRIBUTION OF YOUTH ACTIVISM</span>
+  </div>
+
+
+  <div class="scoreboard">
+
+    <div class="eyebrow" style="margin:25px 0 15px;">ASSESSING THE EFFECTIVENESS</div>
+
+    <div class="score-row">
+      <h4>PUBLIC AWARENESS</h4>
+      <p>
+        Student protests and the Birmingham campaign brought greater
+        attention to segregation and the treatment of Black Americans.
+      </p>
+      <p class="result">
+        HIGH CONTRIBUTION — helped make racial inequality more visible
+        to the wider public.
+      </p>
+    </div>
+
+    <div class="score-row">
+      <h4>PARTICIPATION</h4>
+      <p>
+        Sit-ins and youth organisations encouraged more students
+        to become involved in campaigns and community activism.
+      </p>
+      <p class="result">
+        HIGH CONTRIBUTION — expanded involvement and developed
+        a new generation of organisers.
+      </p>
+    </div>
+
+    <div class="score-row">
+      <h4>PRESSURE FOR CHANGE</h4>
+      <p>
+        Direct action challenged businesses, schools and authorities,
+        contributing to pressure for desegregation.
+      </p>
+      <p class="result">
+        SIGNIFICANT CONTRIBUTION — strengthened the wider campaign
+        for social and legal change.
+      </p>
+    </div>
+
+    <div class="score-row">
+      <h4>LEGAL CHANGE</h4>
+      <p>
+        Young activists contributed to the movement that helped
+        achieve legal reform, but they were not solely responsible
+        for passing legislation.
+      </p>
+      <p class="result">
+        SHARED CONTRIBUTION — legal change depended on many groups,
+        institutions and political decisions.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="evaluation-conclusion">
+    <h3>OVERALL EVALUATION: HIGHLY EFFECTIVE, BUT NOT ALONE.</h3>
+    <p>
+      Overall, young people's involvement was highly effective in
+      strengthening the American Civil Rights Movement. Their actions
+      increased public awareness, encouraged wider participation and
+      placed pressure on institutions that maintained segregation.
+      However, youth activism was most effective as part of a collective
+      effort. It worked alongside community organising, adult leadership,
+      legal challenges and political action. Young people were not the
+      only reason change occurred, but they were an important part of
+      making that change possible.
+    </p>
+  </div>
+
+</section>
+
+
+<!-- SECTION 3: YOUNG PEOPLE TODAY -->
+
+<section class="today-section" id="today">
+
+  <div class="today-intro">
+    <div>
+      <div class="section-number">03 / THE NEXT GENERATION</div>
+      <h2 class="section-heading">YOUNG PEOPLE<br>TODAY.</h2>
+    </div>
+
+    <p>
+      Youth activism did not end with the American Civil Rights Movement.
+      Young people continue to use public demonstrations, organisations,
+      social media and community campaigns to speak about issues they
+      believe affect their generation. This Australian example shows
+      how students are still participating in public debate.
+    </p>
+  </div>
+
+
+  <div class="case-study">
+
+    <div class="case-image">
+      <div class="photo-frame">
+        <img src="https://live-production.wcms.abc-cdn.net.au/03ccf5bd1d24c3e2827bae2d6d6e1f17?cropH=2252&cropW=3378&height=900&impolicy=wcms_crop_resize&width=1200&xPos=311&yPos=0"
+             alt="Students gathered at a Melbourne protest in August 2026">
+      </div>
+      <div class="photo-caption">
+        <span>Students gathered at a protest in Melbourne in August 2026.</span>
+        <a href="https://www.abc.net.au/news/2026-08-13/one-nation-students-protest-pauline-hanson/107033644" target="_blank" rel="noopener">ABC NEWS ↗</a>
+      </div>
+    </div>
+
+    <div class="case-content">
+
+      <span class="case-tag">AUSTRALIA / 2026 / MODERN YOUTH ACTIVISM</span>
+
+      <h3>STUDENTS SPEAKING OUT AGAINST RACISM.</h3>
+
+      <p>
+        In August 2026, high school and university students across
+        Australia joined protests opposing One Nation and its leader,
+        Pauline Hanson. Students gathered in cities including Melbourne,
+        Sydney and Brisbane, with hundreds attending rallies in each
+        of those cities, according to ABC News.
+      </p>
+
+      <p>
+        Students carried handmade signs and banners and spoke about
+        their concerns surrounding racism, discrimination and political
+        policies. Some students explained that although they were
+        too young to vote, they still wanted to express their views
+        and participate in democracy.
+      </p>
+
+      <p>
+        The demonstrations were organised as public rallies, with
+        students and university groups participating. In September
+        2026, a second wave of protests took place across major cities
+        and regional centres. AAP reported that thousands of high
+        school and university students joined the later demonstrations.
+      </p>
+
+      <p>
+        This is a separate, modern Australian example of youth activism.
+        It is not part of the historical American Civil Rights Movement,
+        but it demonstrates that young people continue to use collective
+        action to raise concerns about equality and discrimination.
+      </p>
+
+      <div class="case-facts">
+        <div class="case-fact">
+          <strong>AUG 2026</strong>
+          <span>First major national wave of student protests.</span>
+        </div>
+        <div class="case-fact">
+          <strong>SEP 2026</strong>
+          <span>A second wave of demonstrations took place.</span>
+        </div>
+        <div class="case-fact">
+          <strong>AUSTRALIA</strong>
+          <span>Rallies occurred in capital cities and regional centres.</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="case-evaluation">
+
+    <div>
+      <h4>HOW EFFECTIVE WERE THEY?</h4>
+      <p>
+        The protests were effective in making students' views visible
+        and attracting media attention. The size of the demonstrations
+        showed that young people were willing to participate in public
+        debate, even when they could not yet vote. The second wave
+        also demonstrated that the issue continued to motivate student
+        participation beyond a single event.
+      </p>
+    </div>
+
+    <div>
+      <h4>WHAT IS STILL UNCLEAR?</h4>
+      <p>
+        Public attention does not automatically lead to policy change.
+        At this stage, it is too early to claim that the student
+        demonstrations directly changed laws or election outcomes.
+        Their longer-term effectiveness will depend on whether the
+        attention they created leads to continued discussion,
+        organisation or political responses.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="case-note">
+    <strong>CONNECTION TO THE CIVIL RIGHTS MOVEMENT:</strong>
+    Both examples show young people using collective action to
+    make their concerns visible. However, the historical context,
+    issues and political circumstances are different. The Australian
+    protests are a modern comparison, not a continuation of the
+    American Civil Rights Movement itself.
+  </div>
+
+</section>
+
+
+<!-- SECTION 4: WHAT CAN YOU DO? -->
+
+<section class="action-section" id="take-action">
+
+  <div class="action-heading">
+    <div>
+      <div class="section-number">04 / YOUR TURN</div>
+      <h2 class="section-heading">WHAT CAN<br>YOU DO?</h2>
+    </div>
+
+    <p>
+      You do not need to be a politician, a famous activist or an adult
+      to make a contribution. Most people begin by noticing something
+      that needs to change and deciding not to ignore it.
+    </p>
+  </div>
+
+
+  <p class="action-intro">
+    Being a student does not mean you have no influence.
+    You can start with the people around you, the information you share
+    and the choices you make in your own community.
+  </p>
+
+
+  <div class="action-list">
+
+    <div class="action-item">
+      <div class="number">01</div>
+      <h3>LEARN BEFORE YOU SPEAK.</h3>
+      <p>
+        Read about the issue using reliable sources. Check facts,
+        understand different perspectives and learn about the history
+        behind the problem. Being informed helps you explain why
+        something matters instead of simply repeating what you have heard.
+      </p>
+    </div>
+
+    <div class="action-item">
+      <div class="number">02</div>
+      <h3>START CONVERSATIONS.</h3>
+      <p>
+        Talk respectfully with friends, classmates and family about
+        equality and discrimination. You do not need to argue with
+        everyone. Sometimes asking questions and sharing reliable
+        information can help people think more carefully about an issue.
+      </p>
+    </div>
+
+    <div class="action-item">
+      <div class="number">03</div>
+      <h3>MAKE YOUR SCHOOL MORE INCLUSIVE.</h3>
+      <p>
+        Work with your student council, a teacher or a school group
+        to create an awareness campaign, display information or organise
+        an event that encourages respect. Change can begin in the
+        environment you are already part of.
+      </p>
+    </div>
+
+    <div class="action-item">
+      <div class="number">04</div>
+      <h3>SUPPORT PEOPLE AROUND YOU.</h3>
+      <p>
+        If someone is being treated unfairly, do not pretend it is
+        acceptable. Listen, show support and speak with a trusted
+        adult when help is needed. Everyday actions can help create
+        a safer and more respectful community.
+      </p>
+    </div>
+
+    <div class="action-item">
+      <div class="number">05</div>
+      <h3>WORK WITH OTHERS.</h3>
+      <p>
+        Join an age-appropriate school or community initiative,
+        or help organise a peaceful awareness activity with support
+        from a trusted adult. Working together can make an idea
+        more visible and give it a greater chance of reaching people.
+      </p>
+    </div>
+
+    <div class="action-item">
+      <div class="number">06</div>
+      <h3>LET DECISION-MAKERS KNOW.</h3>
+      <p>
+        Students can write respectful letters or emails to school
+        leaders and local representatives about issues that matter
+        to their community. Explain the problem, provide evidence
+        and suggest a realistic change.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="action-bottom">
+    <div class="big-message">
+      YOU DON'T HAVE TO CHANGE EVERYTHING AT ONCE.
+    </div>
+
+    <p>
+      The young people involved in the Civil Rights Movement were
+      part of something much larger than themselves. Their actions
+      mattered because they joined others who wanted change.
+      You can take the same lesson into your own life: learn,
+      speak up respectfully, support others and work with your
+      community. You do not need to be famous, or organise a huge
+      protest, to make a meaningful contribution.
+    </p>
+  </div>
+
+</section>
+
+
+<!-- SOURCES -->
+
+<section class="sources">
+
+  <div class="eyebrow pink">RESEARCH / REFERENCES</div>
+  <h2>READ THE EVIDENCE.</h2>
+
+  <p class="sources-intro">
+    These sources were used to research the historical events,
+    the contribution of young people and the modern Australian
+    example. Image credits are linked beneath the photographs.
+  </p>
+
+  <div class="source-list">
+
+    <a href="https://www.loc.gov/exhibits/naacp/the-civil-rights-era.html" target="_blank" rel="noopener">
+      Library of Congress — The Civil Rights Era
+      <span>Student sit-ins, the Greensboro Four and the formation of SNCC.</span>
+    </a>
+
+    <a href="https://www.nps.gov/chsc/learn/historyculture/the-little-rock-nine.htm" target="_blank" rel="noopener">
+      National Park Service — The Little Rock Nine
+      <span>Background on the students and school desegregation.</span>
+    </a>
+
+    <a href="https://snccdigital.org/" target="_blank" rel="noopener">
+      SNCC Digital Gateway
+      <span>Research on student organising and the work of SNCC.</span>
+    </a>
+
+    <a href="https://www.archives.gov/research/african-americans/civil-rights" target="_blank" rel="noopener">
+      U.S. National Archives — Civil Rights
+      <span>Historical records and documents relating to the movement.</span>
+    </a>
+
+    <a href="https://www.abc.net.au/news/2026-08-13/one-nation-students-protest-pauline-hanson/107033644" target="_blank" rel="noopener">
+      ABC News — Students rally in Australian cities, August 2026
+      <span>Reporting on the first wave of student demonstrations.</span>
+    </a>
+
+    <a href="https://aapnews.aap.com.au/news/i-don-t-like-it-second-student-wave-protests-hanson" target="_blank" rel="noopener">
+      AAP — Second student wave protests, September 2026
+      <span>Reporting on the later demonstrations across Australia.</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+  <span>BLACKNWHITE. — BACK IN LIGHT.</span>
+  <span>REWRITING THE BEGINNING.</span>
+  <a href="index.html">RETURN TO INDEX ↑</a>
+</footer>
+
+
+<script>
+const dropdowns = document.querySelectorAll('.nav-dropdown');
+let scrollClosed = false;
+
+function closeDropdowns() {
+  dropdowns.forEach(dropdown => {
+    dropdown.classList.remove('is-open');
+    const button = dropdown.querySelector('.dropdown-arrow');
+    button.setAttribute('aria-expanded', 'false');
+  });
+}
+
+dropdowns.forEach(dropdown => {
+  const button = dropdown.querySelector('.dropdown-arrow');
+
+  dropdown.addEventListener('mouseenter', () => {
+    if (window.matchMedia('(hover: hover)').matches && !scrollClosed) {
+      closeDropdowns();
+      dropdown.classList.add('is-open');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    dropdown.classList.remove('is-open');
+    button.setAttribute('aria-expanded', 'false');
+    scrollClosed = false;
+  });
+
+  button.addEventListener('click', event => {
+    event.stopPropagation();
+
+    const willOpen = !dropdown.classList.contains('is-open');
+
+    closeDropdowns();
+
+    if (willOpen) {
+      dropdown.classList.add('is-open');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  dropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
+    link.addEventListener('click', closeDropdowns);
+  });
+});
+
+document.addEventListener('click', event => {
+  if (!event.target.closest('.nav-dropdown')) {
+    closeDropdowns();
+  }
+});
+
+window.addEventListener('scroll', () => {
+  closeDropdowns();
+  scrollClosed = true;
+}, { passive:true });
+</script>
+
+</body>
+</html>
+
